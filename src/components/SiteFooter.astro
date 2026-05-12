@@ -1,0 +1,68 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.svg';
+import { site } from '../config/site';
+---
+
+<footer class="bg-black text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <div class="lg:col-span-2">
+        <a href="/" class="flex items-center gap-3 mb-5">
+          <Image src={logo} alt="GB Design" width={40} height={40} class="rounded-sm object-contain" />
+          <span class="text-white font-bold text-lg">{site.name}</span>
+        </a>
+        <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
+          {site.description}
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-white font-semibold text-xs uppercase tracking-widest mb-5">Esplora</h3>
+        <ul class="space-y-3">
+          <li><a href="/missione" class="text-gray-400 hover:text-white text-sm transition-colors">Mission</a></li>
+          <li><a href="/storia" class="text-gray-400 hover:text-white text-sm transition-colors">La nostra storia</a></li>
+          <li><a href="/servizi" class="text-gray-400 hover:text-white text-sm transition-colors">Servizi</a></li>
+          <li><a href="#recensioni" class="text-gray-400 hover:text-white text-sm transition-colors">Recensioni</a></li>
+          <li><a href="#contatti" class="text-gray-400 hover:text-white text-sm transition-colors">Contatti</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-white font-semibold text-xs uppercase tracking-widest mb-5">Contatti</h3>
+        <ul class="space-y-3">
+          <li>
+            <a href={`tel:${site.phone}`} class="text-gray-400 hover:text-white text-sm transition-colors">
+              {site.phoneDisplay}
+            </a>
+          </li>
+          <li>
+            <a href={`mailto:${site.email}`} class="text-gray-400 hover:text-white text-sm transition-colors">
+              {site.email}
+            </a>
+          </li>
+          <li>
+            <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white text-sm transition-colors">
+              Facebook
+            </a>
+          </li>
+          <li>
+            <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white text-sm transition-colors">
+              Instagram
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-gray-500 text-xs">
+        © {new Date().getFullYear()} {site.name} — P.IVA {site.piva} — REA {site.rea}
+      </p>
+      <div class="flex gap-5">
+        <a href="/privacy" class="text-gray-500 hover:text-gray-300 text-xs transition-colors">Privacy Policy</a>
+        <a href="/cookie" class="text-gray-500 hover:text-gray-300 text-xs transition-colors">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>

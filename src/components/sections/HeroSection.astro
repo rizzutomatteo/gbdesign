@@ -1,0 +1,74 @@
+---
+import { Image } from 'astro:assets';
+import logo from '../../assets/logo.svg';
+import { site } from '../../config/site';
+---
+
+<section class="min-h-screen bg-black flex flex-col items-center justify-center relative overflow-hidden pt-16">
+  <div class="absolute top-0 left-0 right-0 h-1 bg-brand"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,#3a000040,transparent)]"></div>
+
+  <div class="relative z-10 text-center px-4 max-w-3xl mx-auto w-full">
+    <div class="mb-8 flex justify-center">
+      <Image
+        src={logo}
+        alt="GB Design — Traslochi Macerata"
+        width={180}
+        height={180}
+        class="rounded-2xl shadow-2xl ring-1 ring-white/10"
+      />
+    </div>
+
+    <h1 class="text-white text-5xl sm:text-6xl md:text-7xl font-black tracking-tight mb-3 leading-none">
+      {site.name}
+    </h1>
+
+    <p class="text-brand text-sm sm:text-base font-bold uppercase tracking-[0.25em] mb-5">
+      {site.tagline}
+    </p>
+
+    <p class="text-gray-400 text-lg leading-relaxed max-w-xl mx-auto mb-10">
+      {site.description}
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-10 mb-12 border-y border-white/10 py-8">
+      <div class="text-center">
+        <div class="text-brand text-3xl font-black">{site.stats.anni}+</div>
+        <div class="text-gray-500 text-xs uppercase tracking-wider mt-1">Anni</div>
+      </div>
+      <div class="text-center">
+        <div class="text-brand text-3xl font-black">{site.stats.traslochi}+</div>
+        <div class="text-gray-500 text-xs uppercase tracking-wider mt-1">Traslochi</div>
+      </div>
+      <div class="text-center">
+        <div class="text-brand text-3xl font-black">{site.stats.rating}</div>
+        <div class="text-gray-500 text-xs uppercase tracking-wider mt-1">Voto medio</div>
+      </div>
+      <div class="text-center">
+        <div class="text-brand text-3xl font-black">{site.stats.recensioni}+</div>
+        <div class="text-gray-500 text-xs uppercase tracking-wider mt-1">Recensioni</div>
+      </div>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href={`tel:${site.phone}`}
+        class="bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-lg font-bold text-base transition-colors duration-200"
+      >
+        Chiama Ora — {site.phoneDisplay}
+      </a>
+      <a
+        href="#contatti"
+        class="border border-white/20 hover:border-white/40 text-white hover:bg-white/5 px-8 py-4 rounded-lg font-bold text-base transition-all duration-200"
+      >
+        Richiedi Preventivo
+      </a>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+    <div class="motion-safe:animate-bounce w-6 h-10 border-2 border-white/20 rounded-full flex items-start justify-center pt-2">
+      <div class="w-1 h-2 bg-brand rounded-full"></div>
+    </div>
+  </div>
+</section>
