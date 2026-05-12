@@ -1,0 +1,53 @@
+---
+import { site } from '../../config/site';
+---
+
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14">
+      <p class="text-brand text-xs font-bold uppercase tracking-[0.2em] mb-3">Chi siamo</p>
+      <h2 class="text-gray-900 text-3xl sm:text-4xl font-black">
+        Passione e competenza al tuo servizio
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 lg:gap-10">
+      <div class="bg-white rounded-2xl p-8 lg:p-10 shadow-sm border border-gray-100 flex flex-col group hover:shadow-md transition-shadow duration-300">
+        <div class="w-10 h-1 bg-brand mb-6 rounded-full"></div>
+        <p class="text-brand text-xs font-bold uppercase tracking-[0.2em] mb-3">Mission</p>
+        <h3 class="text-gray-900 text-2xl font-bold mb-4">Il nostro impegno</h3>
+        <p class="text-gray-600 leading-relaxed flex-1">
+          Ogni trasloco è unico quanto le persone che lo affrontano. Il nostro impegno è rendere
+          il tuo trasferimento sereno, puntuale e senza sorprese. Dal primo sopralluogo all'ultimo
+          scatolone, ci prendiamo cura di tutto noi.
+        </p>
+        <a
+          href="/missione"
+          class="mt-8 inline-flex items-center gap-2 text-brand font-semibold group/link"
+        >
+          <span>Scopri la nostra mission</span>
+          <span class="group-hover/link:translate-x-1 transition-transform duration-200 inline-block">→</span>
+        </a>
+      </div>
+
+      <div class="bg-white rounded-2xl p-8 lg:p-10 shadow-sm border border-gray-100 flex flex-col group hover:shadow-md transition-shadow duration-300">
+        <div class="w-10 h-1 bg-brand mb-6 rounded-full"></div>
+        <p class="text-brand text-xs font-bold uppercase tracking-[0.2em] mb-3">La nostra storia</p>
+        <h3 class="text-gray-900 text-2xl font-bold mb-4">Dal 2008 ad oggi</h3>
+        <p class="text-gray-600 leading-relaxed flex-1">
+          Tutto è partito da una scommessa: offrire un servizio di traslochi come quello che
+          vorresti tu stesso ricevere. Oltre {site.stats.anni} anni dopo, siamo ancora qui,
+          con oltre {site.stats.traslochi} famiglie e aziende spostate in tutta la provincia
+          di Macerata.
+        </p>
+        <a
+          href="/storia"
+          class="mt-8 inline-flex items-center gap-2 text-brand font-semibold group/link"
+        >
+          <span>Leggi la nostra storia</span>
+          <span class="group-hover/link:translate-x-1 transition-transform duration-200 inline-block">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
