@@ -17,7 +17,7 @@ import { site } from '../config/site';
           <Image src={logo} alt="GB Design" width={38} height={38} class="rounded object-contain flex-shrink-0" />
           <span class="font-display font-bold text-lg text-white group-hover:text-brand/90 transition-colors duration-200 tracking-tight">{site.name}</span>
         </a>
-        <p class="text-ink-200/70 text-sm leading-relaxed max-w-xs font-light">
+        <p class="text-ink-200/70 text-sm leading-relaxed max-w-xs">
           {site.description}
         </p>
       </div>
@@ -26,11 +26,11 @@ import { site } from '../config/site';
       <div>
         <h3 class="text-white/50 font-bold text-[10px] uppercase tracking-[0.3em] mb-5">Esplora</h3>
         <ul class="space-y-3">
-          <li><a href="/missione"   class="text-ink-200/70 hover:text-white text-sm font-light transition-colors duration-200">Mission</a></li>
-          <li><a href="/storia"     class="text-ink-200/70 hover:text-white text-sm font-light transition-colors duration-200">La nostra storia</a></li>
-          <li><a href="/servizi"    class="text-ink-200/70 hover:text-white text-sm font-light transition-colors duration-200">Servizi</a></li>
-          <li><a href="#recensioni" class="text-ink-200/70 hover:text-white text-sm font-light transition-colors duration-200">Recensioni</a></li>
-          <li><a href="#contatti"   class="text-ink-200/70 hover:text-white text-sm font-light transition-colors duration-200">Contatti</a></li>
+          <li><a href="/missione"   class="text-ink-200/70 hover:text-white text-sm transition-colors duration-200">Mission</a></li>
+          <li><a href="/storia"     class="text-ink-200/70 hover:text-white text-sm transition-colors duration-200">La nostra storia</a></li>
+          <li><a href="/servizi"    class="text-ink-200/70 hover:text-white text-sm transition-colors duration-200">Servizi</a></li>
+          <li><a href="#recensioni" class="text-ink-200/70 hover:text-white text-sm transition-colors duration-200">Recensioni</a></li>
+          <li><a href="#contatti"   class="text-ink-200/70 hover:text-white text-sm transition-colors duration-200">Contatti</a></li>
         </ul>
       </div>
 
@@ -39,22 +39,22 @@ import { site } from '../config/site';
         <h3 class="text-white/50 font-bold text-[10px] uppercase tracking-[0.3em] mb-5">Contatti</h3>
         <ul class="space-y-3">
           <li>
-            <a href={`tel:${site.phone}`} class="text-ink-200/70 hover:text-white text-sm font-light transition-colors duration-200">
+            <a href={`tel:${site.phone}`} class="text-ink-200/70 hover:text-white text-sm transition-colors duration-200">
               {site.phoneDisplay}
             </a>
           </li>
           <li>
-            <a href={`mailto:${site.email}`} class="text-ink-200/70 hover:text-white text-sm font-light transition-colors duration-200">
+            <a href={`mailto:${site.email}`} class="text-ink-200/70 hover:text-white text-sm transition-colors duration-200">
               {site.email}
             </a>
           </li>
           <li>
-            <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" class="text-ink-200/70 hover:text-white text-sm font-light transition-colors duration-200">
+            <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" class="text-ink-200/70 hover:text-white text-sm transition-colors duration-200">
               Facebook
             </a>
           </li>
           <li>
-            <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" class="text-ink-200/70 hover:text-white text-sm font-light transition-colors duration-200">
+            <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" class="text-ink-200/70 hover:text-white text-sm transition-colors duration-200">
               Instagram
             </a>
           </li>

@@ -27,7 +27,7 @@ const reviews = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <div class="text-center mb-12 sm:mb-16">
-      <p class="text-brand text-[10px] sm:text-xs font-bold uppercase tracking-[0.3em] mb-3">Cosa dicono di noi</p>
+      <p class="text-brand text-xs sm:text-sm font-bold uppercase tracking-[0.3em] mb-3">Cosa dicono di noi</p>
       <h2 class="font-display font-bold text-ink-900 text-2xl sm:text-3xl md:text-4xl mb-5 leading-snug">Le recensioni dei clienti</h2>
       <div class="flex items-center justify-center gap-1 flex-wrap">
         {Array.from({ length: 5 }).map(() => (
@@ -51,10 +51,10 @@ const reviews = [
               </svg>
             ))}
           </div>
-          <p class="text-ink-700 leading-relaxed text-sm mb-6 italic flex-1 relative z-10">"{review.text}"</p>
+          <p class="text-ink-700 leading-relaxed text-base mb-6 italic flex-1 relative z-10">"{review.text}"</p>
           <div class="border-t border-warm-200 pt-4 relative z-10">
-            <p class="text-ink-900 font-semibold text-sm">{review.name}</p>
-            <p class="text-ink-400 text-xs mt-0.5">{review.city}</p>
+            <p class="text-ink-900 font-semibold text-base">{review.name}</p>
+            <p class="text-ink-400 text-sm mt-0.5">{review.city}</p>
           </div>
         </div>
       ))}
