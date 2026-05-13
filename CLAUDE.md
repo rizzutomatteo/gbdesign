@@ -128,4 +128,10 @@ Quando lavori su un'area specifica, **leggi anche il file dedicato**. Sono in `d
 
 ---
 
+## 8.  github
+
+
+---
+
 *Ultima revisione: 12 maggio 2026.*
+
