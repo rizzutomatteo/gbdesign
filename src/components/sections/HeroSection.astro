@@ -4,9 +4,8 @@ import logo from '../../assets/logo.svg';
 import { site } from '../../config/site';
 ---
 
-<section class="min-h-screen bg-black flex flex-col items-center justify-center relative overflow-hidden pt-24 pb-20">
+<section class="min-h-screen bg-stone-50 flex flex-col items-center justify-center relative overflow-hidden pt-24 pb-20">
   <div class="absolute top-0 left-0 right-0 h-1 bg-brand"></div>
-  <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,#3a000040,transparent)]"></div>
 
   <div class="relative z-10 text-center px-4 max-w-3xl mx-auto w-full">
     <div class="mb-6 sm:mb-8 flex justify-center">
@@ -15,11 +14,11 @@ import { site } from '../../config/site';
         alt="GB Design — Traslochi Macerata"
         width={180}
         height={180}
-        class="rounded-2xl shadow-2xl ring-1 ring-white/10 w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44"
+        class="rounded-2xl shadow-lg ring-1 ring-gray-200 w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44"
       />
     </div>
 
-    <h1 class="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-3 leading-none">
+    <h1 class="text-gray-900 text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight mb-3 leading-none">
       {site.name}
     </h1>
 
@@ -27,11 +26,11 @@ import { site } from '../../config/site';
       {site.tagline}
     </p>
 
-    <p class="text-gray-400 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-8 sm:mb-10">
+    <p class="text-gray-600 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-8 sm:mb-10">
       {site.description}
     </p>
 
-    <div class="flex flex-wrap justify-center gap-6 sm:gap-10 mb-8 sm:mb-12 border-y border-white/10 py-6 sm:py-8">
+    <div class="flex flex-wrap justify-center gap-6 sm:gap-10 mb-8 sm:mb-12 border-y border-gray-200 py-6 sm:py-8">
       <div class="text-center">
         <div class="text-brand text-3xl font-black">{site.stats.anni}+</div>
         <div class="text-gray-500 text-xs uppercase tracking-wider mt-1">Anni</div>
@@ -59,7 +58,7 @@ import { site } from '../../config/site';
       </a>
       <a
         href="#contatti"
-        class="border border-white/20 hover:border-white/40 text-white hover:bg-white/5 px-8 py-4 rounded-lg font-bold text-base transition-all duration-200"
+        class="border border-gray-300 hover:border-brand text-gray-700 hover:text-brand px-8 py-4 rounded-lg font-bold text-base transition-all duration-200"
       >
         Richiedi Preventivo
       </a>

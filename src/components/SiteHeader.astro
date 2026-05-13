@@ -4,8 +4,7 @@ import logo from '../assets/logo.svg';
 import { site } from '../config/site';
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm">
-  <div class="absolute bottom-0 left-0 right-0 h-px bg-white/10"></div>
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <a href="/" class="flex items-center gap-3 group">
@@ -17,19 +16,19 @@ import { site } from '../config/site';
           class="rounded-sm object-contain"
         />
         <span
-          class="text-white font-bold text-base hidden sm:block group-hover:text-brand transition-colors duration-200"
+          class="text-gray-900 font-bold text-base hidden sm:block group-hover:text-brand transition-colors duration-200"
         >
           {site.name}
         </span>
       </a>
 
       <nav class="hidden lg:flex items-center gap-7" aria-label="Navigazione principale">
-        <a href="/missione" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-200">Mission</a>
-        <a href="/storia" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-200">Storia</a>
-        <a href="/servizi" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-200">Servizi</a>
-        <a href="#recensioni" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-200">Recensioni</a>
-        <a href="#lavori" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-200">Lavori</a>
-        <a href="#contatti" class="text-gray-400 hover:text-white text-sm font-medium transition-colors duration-200">Contatti</a>
+        <a href="/missione" class="text-gray-500 hover:text-gray-900 text-sm font-medium transition-colors duration-200">Mission</a>
+        <a href="/storia" class="text-gray-500 hover:text-gray-900 text-sm font-medium transition-colors duration-200">Storia</a>
+        <a href="/servizi" class="text-gray-500 hover:text-gray-900 text-sm font-medium transition-colors duration-200">Servizi</a>
+        <a href="#recensioni" class="text-gray-500 hover:text-gray-900 text-sm font-medium transition-colors duration-200">Recensioni</a>
+        <a href="#lavori" class="text-gray-500 hover:text-gray-900 text-sm font-medium transition-colors duration-200">Lavori</a>
+        <a href="#contatti" class="text-gray-500 hover:text-gray-900 text-sm font-medium transition-colors duration-200">Contatti</a>
       </nav>
 
       <div class="flex items-center gap-2 sm:gap-3">
@@ -47,7 +46,7 @@ import { site } from '../config/site';
           id="menu-toggle"
           aria-label="Apri menu"
           aria-expanded="false"
-          class="lg:hidden text-white p-1"
+          class="lg:hidden text-gray-700 p-1"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -59,14 +58,14 @@ import { site } from '../config/site';
     </div>
   </div>
 
-  <div id="mobile-menu" class="hidden lg:hidden bg-black border-t border-white/10">
+  <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100">
     <nav class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1" aria-label="Menu mobile">
-      <a href="/missione" class="text-gray-300 hover:text-white py-2 text-sm font-medium transition-colors">Mission</a>
-      <a href="/storia" class="text-gray-300 hover:text-white py-2 text-sm font-medium transition-colors">Storia</a>
-      <a href="/servizi" class="text-gray-300 hover:text-white py-2 text-sm font-medium transition-colors">Servizi</a>
-      <a href="#recensioni" class="text-gray-300 hover:text-white py-2 text-sm font-medium transition-colors">Recensioni</a>
-      <a href="#lavori" class="text-gray-300 hover:text-white py-2 text-sm font-medium transition-colors">Lavori</a>
-      <a href="#contatti" class="text-gray-300 hover:text-white py-2 text-sm font-medium transition-colors">Contatti</a>
+      <a href="/missione" class="text-gray-600 hover:text-gray-900 py-2 text-sm font-medium transition-colors">Mission</a>
+      <a href="/storia" class="text-gray-600 hover:text-gray-900 py-2 text-sm font-medium transition-colors">Storia</a>
+      <a href="/servizi" class="text-gray-600 hover:text-gray-900 py-2 text-sm font-medium transition-colors">Servizi</a>
+      <a href="#recensioni" class="text-gray-600 hover:text-gray-900 py-2 text-sm font-medium transition-colors">Recensioni</a>
+      <a href="#lavori" class="text-gray-600 hover:text-gray-900 py-2 text-sm font-medium transition-colors">Lavori</a>
+      <a href="#contatti" class="text-gray-600 hover:text-gray-900 py-2 text-sm font-medium transition-colors">Contatti</a>
     </nav>
   </div>
 </header>
