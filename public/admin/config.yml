@@ -91,23 +91,29 @@ collections:
         hint: 'Scrivi qui le parole esatte del cliente.'
 
   # ─────────────────────────────────────────────────────────────
-  # 📷 I NOSTRI LAVORI
+  # 🔨 MONTAGGI
   # ─────────────────────────────────────────────────────────────
-  - name: 'lavori'
-    label: '📷 I nostri lavori'
+  - name: 'montaggi'
+    label: '🔨 Montaggi'
     label_singular: 'Lavoro'
     description: >
-      Gestisci le foto dei lavori eseguiti che appaiono
-      nella galleria del sito.
-    folder: 'src/content/lavori'
+      Gestisci i lavori eseguiti che appaiono nella pagina Montaggi,
+      divisi in «Montaggi di pregio» e «Traslochi».
+    folder: 'src/content/montaggi'
     create: true
     delete: true
     slug: '{{titolo | slugify}}'
-    summary: '{{titolo}} — {{data}}'
+    summary: '{{titolo}} — {{luogo}} ({{categoria}})'
     editor:
       preview: false
-    sortable_fields: ['data', 'titolo']
+    sortable_fields: ['data', 'titolo', 'categoria']
     view_filters:
+      - label: 'Montaggi di pregio'
+        field: categoria
+        pattern: 'montaggio-di-pregio'
+      - label: 'Traslochi'
+        field: categoria
+        pattern: 'trasloco'
       - label: 'Solo in evidenza'
         field: in_evidenza
         pattern: true
@@ -116,27 +122,33 @@ collections:
         name: titolo
         widget: string
         hint: >
-          Es. «Cucina in arte povera a Macerata» oppure
-          «Montaggio armadio scorrevole a Civitanova».
+          Es. «Cucina a isola» oppure «Appartamento 4 locali».
+
+      - label: 'Luogo'
+        name: luogo
+        widget: string
+        hint: >
+          Per i montaggi: solo la città. Es. «Macerata», «Civitanova Marche».
+          Per i traslochi: partenza e arrivo. Es. «Macerata → Porto Recanati».
 
       - label: 'Descrizione breve'
         name: descrizione
         widget: text
-        required: false
-        hint: '1-2 frasi che descrivono il lavoro. Facoltativo.'
+        hint: '1-2 frasi che descrivono il lavoro.'
 
-      - label: 'Foto'
-        name: foto
-        widget: image
-        hint: >
-          Carica la foto del lavoro finito.
-          Usa immagini orizzontali di buona qualità (almeno 800px di larghezza).
+      - label: 'Categoria'
+        name: categoria
+        widget: select
+        hint: 'Scegli se questo lavoro è un montaggio di pregio o un trasloco.'
+        options:
+          - { label: '🔧 Montaggio di pregio', value: 'montaggio-di-pregio' }
+          - { label: '🚚 Trasloco', value: 'trasloco' }
 
       - label: 'Metti in evidenza'
         name: in_evidenza
         widget: boolean
         default: false
-        hint: 'Se attivato, questa foto appare nelle prime posizioni della galleria.'
+        hint: 'Se attivato, questo lavoro appare tra i primi.'
 
       - label: 'Data del lavoro'
         name: data
@@ -145,6 +157,14 @@ collections:
         date_format: 'DD/MM/YYYY'
         time_format: false
         hint: "Il mese e l'anno in cui è stato completato il lavoro."
+
+      - label: 'Foto (facoltativa)'
+        name: foto
+        widget: image
+        required: false
+        hint: >
+          Carica la foto del lavoro finito.
+          Usa immagini orizzontali di buona qualità (almeno 800px di larghezza).
 
   # ─────────────────────────────────────────────────────────────
   # 📅 LA NOSTRA STORIA
@@ -185,14 +205,14 @@ collections:
         hint: "2-3 frasi che raccontano questo momento dell'azienda."
 
   # ─────────────────────────────────────────────────────────────
-  # 🔧 COME LAVORIAMO
+  # 🔧 PROGETTAZIONE
   # ─────────────────────────────────────────────────────────────
   - name: 'passaggi'
-    label: '🔧 Come lavoriamo'
+    label: '🔧 Progettazione'
     label_singular: 'Passaggio'
     description: >
-      I passi del processo di lavoro mostrati nella sezione
-      «Come lavoriamo». Modificali con cautela: cambiano
+      I passi del processo di lavoro mostrati nella pagina
+      «Progettazione». Modificali con cautela: cambiano
       il modo in cui presentiamo il nostro metodo ai clienti.
     folder: 'src/content/passaggi'
     create: true
