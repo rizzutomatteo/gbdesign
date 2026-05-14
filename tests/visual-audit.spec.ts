@@ -71,7 +71,9 @@ for (const vp of viewports) {
         if (rect.right > docWidth + 2) {
           const tag = el.tagName.toLowerCase();
           const id = el.id ? `#${el.id}` : '';
-          const cls = el.classList.length ? `.${Array.from(el.classList).slice(0, 2).join('.')}` : '';
+          const cls = el.classList.length
+            ? `.${Array.from(el.classList).slice(0, 2).join('.')}`
+            : '';
           offenders.push({
             selector: `${tag}${id}${cls}`,
             right: Math.round(rect.right),
@@ -85,7 +87,9 @@ for (const vp of viewports) {
 
     // Log results to stdout for inspection
     console.log(`\n=== ${vp.name} (${vp.width}x${vp.height}) ===`);
-    console.log(`Horizontal overflow: ${overflowInfo.hasOverflow} (scrollWidth=${overflowInfo.scrollWidth}, clientWidth=${overflowInfo.docWidth})`);
+    console.log(
+      `Horizontal overflow: ${overflowInfo.hasOverflow} (scrollWidth=${overflowInfo.scrollWidth}, clientWidth=${overflowInfo.docWidth})`
+    );
     if (overflowInfo.offenders.length > 0) {
       console.log('Offending elements (bleeds outside viewport):');
       overflowInfo.offenders.forEach((o) =>

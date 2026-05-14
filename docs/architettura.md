@@ -121,20 +121,20 @@ gbdesign-traslochi/
 
 ## 3. Sezioni della home: mapping completo
 
-| # | Sezione | Componente | Contenuto sorgente |
-|---|---|---|---|
-| 1 | Header | `layout/Header.astro` | `src/config/site.ts` (telefono, nav) |
-| 2 | Hero | `sections/Hero.astro` | hard-coded (claim del brand) |
-| 3 | Mission | `sections/Mission.astro` | hard-coded breve |
-| 4 | I numeri | `sections/Numeri.astro` | `site.ts → numeri_chiave` |
-| 5 | Come lavoriamo | `sections/ComeLavoriamo.astro` | content collection `passaggi/` |
-| 6 | I nostri lavori | `sections/Lavori.astro` | content collection `lavori/` |
-| 7 | Recensioni | `sections/Recensioni.astro` | content collection `recensioni/` |
-| 8 | Storia | `sections/Storia.astro` | content collection `tappe-storia/` |
-| 9 | Sedi | `sections/Sedi.astro` | `site.ts → sedi[]` |
-| 10 | Social | `sections/Social.astro` | `site.ts → social` |
-| 11 | Contatti | `sections/ContattiForm.astro` | static + `site.ts` (recapiti) |
-| 12 | Footer | `layout/Footer.astro` | `site.ts` |
+| #   | Sezione         | Componente                     | Contenuto sorgente                   |
+| --- | --------------- | ------------------------------ | ------------------------------------ |
+| 1   | Header          | `layout/Header.astro`          | `src/config/site.ts` (telefono, nav) |
+| 2   | Hero            | `sections/Hero.astro`          | hard-coded (claim del brand)         |
+| 3   | Mission         | `sections/Mission.astro`       | hard-coded breve                     |
+| 4   | I numeri        | `sections/Numeri.astro`        | `site.ts → numeri_chiave`            |
+| 5   | Come lavoriamo  | `sections/ComeLavoriamo.astro` | content collection `passaggi/`       |
+| 6   | I nostri lavori | `sections/Lavori.astro`        | content collection `lavori/`         |
+| 7   | Recensioni      | `sections/Recensioni.astro`    | content collection `recensioni/`     |
+| 8   | Storia          | `sections/Storia.astro`        | content collection `tappe-storia/`   |
+| 9   | Sedi            | `sections/Sedi.astro`          | `site.ts → sedi[]`                   |
+| 10  | Social          | `sections/Social.astro`        | `site.ts → social`                   |
+| 11  | Contatti        | `sections/ContattiForm.astro`  | static + `site.ts` (recapiti)        |
+| 12  | Footer          | `layout/Footer.astro`          | `site.ts`                            |
 
 **Tutto ciò che cambia nel tempo** (recensioni, foto lavori, tappe storia, step processo) vive in **content collection Markdown** sotto `src/content/`. Aggiungi un file → al prossimo deploy compare in pagina. Niente hardcoding nei `.astro`.
 
@@ -146,50 +146,50 @@ Tutti i dati aziendali stanno qui. Esempio di forma:
 
 ```ts
 export const site = {
-  ragioneSociale: "GB Design S.r.l.",
+  ragioneSociale: 'GB Design S.r.l.',
   annoFondazione: 2008,
-  pIva: "01234567890",
-  rea: "MC-123456",
+  pIva: '01234567890',
+  rea: 'MC-123456',
 
-  dominio: "gbdesign-traslochi.it",
+  dominio: 'gbdesign-traslochi.it',
 
   contatti: {
-    telefono: "+39 0733 234567",
-    whatsapp: "+39 320 1234567",
-    email: "info@gbdesign-traslochi.it",
-    pec: "gbdesign@pec.it",
+    telefono: '+39 0733 234567',
+    whatsapp: '+39 320 1234567',
+    email: 'info@gbdesign-traslochi.it',
+    pec: 'gbdesign@pec.it',
   },
 
   sedi: [
     {
-      tipo: "sede principale",
-      indirizzo: "Contrada Piediripa 25",
-      cap: "62100",
-      citta: "Macerata",
-      provincia: "MC",
-      regione: "Marche",
-      paese: "IT",
+      tipo: 'sede principale',
+      indirizzo: 'Contrada Piediripa 25',
+      cap: '62100',
+      citta: 'Macerata',
+      provincia: 'MC',
+      regione: 'Marche',
+      paese: 'IT',
       geo: { lat: 43.2812, lng: 13.4536 },
-      orari: "Lun-Ven 8:30-19:00 · Sab 9:00-13:00",
+      orari: 'Lun-Ven 8:30-19:00 · Sab 9:00-13:00',
     },
     {
-      tipo: "sede operativa",
-      indirizzo: "Via Adriatica 100",
-      cap: "62012",
-      citta: "Civitanova Marche",
-      provincia: "MC",
-      regione: "Marche",
-      paese: "IT",
+      tipo: 'sede operativa',
+      indirizzo: 'Via Adriatica 100',
+      cap: '62012',
+      citta: 'Civitanova Marche',
+      provincia: 'MC',
+      regione: 'Marche',
+      paese: 'IT',
       geo: { lat: 43.3072, lng: 13.7228 },
-      orari: "Lun-Ven 9:00-18:00",
+      orari: 'Lun-Ven 9:00-18:00',
     },
   ],
 
   social: {
-    instagram: "https://instagram.com/gbdesign.traslochi",
-    facebook: "https://facebook.com/GBDesignTraslochi",
-    tiktok: "",
-    youtube: "",
+    instagram: 'https://instagram.com/gbdesign.traslochi',
+    facebook: 'https://facebook.com/GBDesignTraslochi',
+    tiktok: '',
+    youtube: '',
   },
 
   numeriChiave: {
@@ -212,10 +212,10 @@ export type Site = typeof site;
 Definizione schema in `src/content/config.ts`:
 
 ```ts
-import { defineCollection, z } from "astro:content";
+import { defineCollection, z } from 'astro:content';
 
 const recensioni = defineCollection({
-  type: "content",
+  type: 'content',
   schema: z.object({
     autore: z.string(),
     citta: z.string().optional(),
@@ -226,18 +226,19 @@ const recensioni = defineCollection({
 });
 
 const lavori = defineCollection({
-  type: "content",
-  schema: ({ image }) => z.object({
-    titolo: z.string(),
-    descrizione: z.string().optional(),
-    foto: image(),
-    in_evidenza: z.boolean().default(false),
-    data: z.date(),
-  }),
+  type: 'content',
+  schema: ({ image }) =>
+    z.object({
+      titolo: z.string(),
+      descrizione: z.string().optional(),
+      foto: image(),
+      in_evidenza: z.boolean().default(false),
+      data: z.date(),
+    }),
 });
 
 const tappeStoria = defineCollection({
-  type: "content",
+  type: 'content',
   schema: z.object({
     anno: z.number(),
     titolo: z.string(),
@@ -246,25 +247,26 @@ const tappeStoria = defineCollection({
 });
 
 const passaggi = defineCollection({
-  type: "content",
-  schema: ({ image }) => z.object({
-    ordine: z.number(),
-    titolo: z.string(),
-    descrizione: z.string(),
-    icona: z.string(),    // nome icona astro-icon
-    foto: image().optional(),
-  }),
+  type: 'content',
+  schema: ({ image }) =>
+    z.object({
+      ordine: z.number(),
+      titolo: z.string(),
+      descrizione: z.string(),
+      icona: z.string(), // nome icona astro-icon
+      foto: image().optional(),
+    }),
 });
 
-export const collections = { recensioni, lavori, "tappe-storia": tappeStoria, passaggi };
+export const collections = { recensioni, lavori, 'tappe-storia': tappeStoria, passaggi };
 ```
 
 Esempio `src/content/recensioni/laura-macerata.md`:
 
 ```markdown
 ---
-autore: "Laura B."
-citta: "Macerata"
+autore: 'Laura B.'
+citta: 'Macerata'
 rating: 5
 data: 2026-03-12
 in_evidenza: true
@@ -278,17 +280,17 @@ e una libreria senza un graffio. Costo onesto, niente sorprese. Consigliatissimi
 
 ## 6. Naming
 
-| Tipo | Convenzione | Esempio |
-|---|---|---|
-| Componenti Astro | PascalCase | `PreventivoForm.astro` |
-| Pagine | kebab-case | `chi-siamo.astro` |
-| Slug URL | kebab-case minuscolo | `/contatti` |
-| File content | kebab-case | `laura-macerata.md` |
-| Variabili TS | camelCase | `numeriChiave` |
-| Tipi / interfacce | PascalCase | `Sede`, `Recensione` |
-| Classi CSS custom | kebab-case | `hero-grid` |
-| CSS variables | kebab-case con prefisso | `--color-brand-500` |
+| Tipo              | Convenzione             | Esempio                |
+| ----------------- | ----------------------- | ---------------------- |
+| Componenti Astro  | PascalCase              | `PreventivoForm.astro` |
+| Pagine            | kebab-case              | `chi-siamo.astro`      |
+| Slug URL          | kebab-case minuscolo    | `/contatti`            |
+| File content      | kebab-case              | `laura-macerata.md`    |
+| Variabili TS      | camelCase               | `numeriChiave`         |
+| Tipi / interfacce | PascalCase              | `Sede`, `Recensione`   |
+| Classi CSS custom | kebab-case              | `hero-grid`            |
+| CSS variables     | kebab-case con prefisso | `--color-brand-500`    |
 
 ---
 
-*Aggiornato: 12 maggio 2026.*
+_Aggiornato: 12 maggio 2026._
