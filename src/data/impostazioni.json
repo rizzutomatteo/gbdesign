@@ -1,20 +1,20 @@
 {
-  "name": "GB Design",
-  "tagline": "Montaggio Cucine & Mobili",
-  "description": "Montiamo cucine, armadi, librerie e qualsiasi mobile nella provincia di Macerata. Precisi, puntuali, senza stress.",
-  "phone": "+390000000000",
-  "phoneDisplay": "000 000 0000",
-  "whatsapp": "390000000000",
-  "email": "info@gbdesign.it",
   "googleReviews": "https://g.page/r/gbdesign/review",
-  "stats": {
-    "anni": 15,
-    "lavori": 2500,
-    "rating": "4,9",
-    "recensioni": 120
-  },
+  "name": "GB Design",
   "social": {
     "facebook": "https://www.facebook.com/gbdesignmobili",
     "instagram": "https://www.instagram.com/gbdesignmobili"
+  },
+  "phone": "+390000000000",
+  "tagline": "Montaggio Cucine & Mobili",
+  "whatsapp": "390000000000",
+  "phoneDisplay": "000 000 0000",
+  "email": "info@gbdesign.it",
+  "description": "Montiamo cucine, armadi, librerie e qualsiasi mobile nella provincia di Macerata. Precisi, puntuali, senza stress.",
+  "stats": {
+    "anni": 14,
+    "lavori": 2500,
+    "rating": "4,9",
+    "recensioni": 120
   }
 }
