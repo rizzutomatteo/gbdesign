@@ -30,3 +30,6 @@ pnpm-debug.log*
 /playwright/.cache/
 /playwright/.auth/
 /tests/screenshots/
+
+# Local Netlify folder
+.netlify

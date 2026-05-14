@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   /* Brand */
@@ -6,7 +6,7 @@
   --color-brand-dark: #9a1f22;
 
   /* Palette calda avorio */
-  --color-warm-50:  #faf8f5;
+  --color-warm-50: #faf8f5;
   --color-warm-100: #f3efe8;
   --color-warm-200: #e8e2d9;
   --color-warm-300: #d4ccc0;
@@ -33,8 +33,12 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -42,8 +46,14 @@ body {
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(22px); }
-  to   { opacity: 1; transform: translateY(0);    }
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Ingresso scalato per l'hero */
@@ -51,9 +61,21 @@ body {
   opacity: 0;
   animation: fadeInUp 0.65s ease-out forwards;
 }
-.hero-enter > *:nth-child(1) { animation-delay: 0.05s; }
-.hero-enter > *:nth-child(2) { animation-delay: 0.15s; }
-.hero-enter > *:nth-child(3) { animation-delay: 0.25s; }
-.hero-enter > *:nth-child(4) { animation-delay: 0.35s; }
-.hero-enter > *:nth-child(5) { animation-delay: 0.45s; }
-.hero-enter > *:nth-child(6) { animation-delay: 0.55s; }
+.hero-enter > *:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.hero-enter > *:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.hero-enter > *:nth-child(3) {
+  animation-delay: 0.25s;
+}
+.hero-enter > *:nth-child(4) {
+  animation-delay: 0.35s;
+}
+.hero-enter > *:nth-child(5) {
+  animation-delay: 0.45s;
+}
+.hero-enter > *:nth-child(6) {
+  animation-delay: 0.55s;
+}
