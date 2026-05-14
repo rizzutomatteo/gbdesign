@@ -18,6 +18,9 @@
     "decap-cms-app": "^3.12.2",
     "tailwindcss": "^4.3.0"
   },
+  "overrides": {
+    "vite": "^7"
+  },
   "devDependencies": {
     "@playwright/test": "^1.60.0",
     "@tailwindcss/postcss": "^4.3.0",

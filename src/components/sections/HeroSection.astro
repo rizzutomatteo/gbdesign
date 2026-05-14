@@ -4,71 +4,59 @@ import logo from '../../assets/logo.svg';
 import { site } from '../../config/site';
 ---
 
-<section class="min-h-screen bg-black flex flex-col items-center justify-center relative overflow-hidden pt-16">
+<section class="min-h-screen bg-warm-50 flex flex-col items-center justify-center relative overflow-hidden pt-24 pb-20">
+  <!-- Accento brand superiore -->
   <div class="absolute top-0 left-0 right-0 h-1 bg-brand"></div>
-  <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,#3a000040,transparent)]"></div>
 
-  <div class="relative z-10 text-center px-4 max-w-3xl mx-auto w-full">
-    <div class="mb-8 flex justify-center">
+  <!-- Sfumatura calda di profondità -->
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_15%,rgba(191,40,43,0.045),transparent)]"></div>
+  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-warm-100/40 to-transparent"></div>
+
+  <div class="relative z-10 text-center px-4 max-w-3xl mx-auto w-full hero-enter">
+
+    <!-- Emblema logo -->
+    <div class="mb-7 sm:mb-8 flex justify-center">
       <Image
         src={logo}
-        alt="GB Design — Traslochi Macerata"
-        width={180}
-        height={180}
-        class="rounded-2xl shadow-2xl ring-1 ring-white/10"
+        alt="GB Design — Montaggio Cucine e Mobili Macerata"
+        width={160}
+        height={160}
+        class="rounded-2xl w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 shadow-[0_8px_40px_rgba(26,22,18,0.14)] ring-1 ring-warm-200"
       />
     </div>
 
-    <h1 class="text-white text-5xl sm:text-6xl md:text-7xl font-black tracking-tight mb-3 leading-none">
+    <!-- Titolo principale -->
+    <h1 class="font-display font-black text-ink-900 text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-4 leading-[1.05]">
       {site.name}
     </h1>
 
-    <p class="text-brand text-sm sm:text-base font-bold uppercase tracking-[0.25em] mb-5">
-      {site.tagline}
-    </p>
+    <!-- Divisore decorativo + tagline -->
+    <div class="flex items-center justify-center gap-4 mb-5 sm:mb-6">
+      <div class="h-px w-14 bg-warm-300"></div>
+      <p class="text-brand text-xs sm:text-sm font-bold uppercase tracking-[0.32em]">{site.tagline}</p>
+      <div class="h-px w-14 bg-warm-300"></div>
+    </div>
 
-    <p class="text-gray-400 text-lg leading-relaxed max-w-xl mx-auto mb-10">
+    <!-- Descrizione -->
+    <p class="text-ink-600 text-lg sm:text-xl leading-relaxed max-w-xl mx-auto mb-8 sm:mb-10">
       {site.description}
     </p>
 
-    <div class="flex flex-wrap justify-center gap-10 mb-12 border-y border-white/10 py-8">
-      <div class="text-center">
-        <div class="text-brand text-3xl font-black">{site.stats.anni}+</div>
-        <div class="text-gray-500 text-xs uppercase tracking-wider mt-1">Anni</div>
-      </div>
-      <div class="text-center">
-        <div class="text-brand text-3xl font-black">{site.stats.traslochi}+</div>
-        <div class="text-gray-500 text-xs uppercase tracking-wider mt-1">Traslochi</div>
-      </div>
-      <div class="text-center">
-        <div class="text-brand text-3xl font-black">{site.stats.rating}</div>
-        <div class="text-gray-500 text-xs uppercase tracking-wider mt-1">Voto medio</div>
-      </div>
-      <div class="text-center">
-        <div class="text-brand text-3xl font-black">{site.stats.recensioni}+</div>
-        <div class="text-gray-500 text-xs uppercase tracking-wider mt-1">Recensioni</div>
-      </div>
-    </div>
-
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+    <!-- CTA -->
+    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
       <a
         href={`tel:${site.phone}`}
-        class="bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-lg font-bold text-base transition-colors duration-200"
+        class="bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-lg font-bold text-base transition-all duration-200 shadow-[0_4px_16px_rgba(191,40,43,0.30)] hover:shadow-[0_6px_22px_rgba(191,40,43,0.40)] hover:-translate-y-px"
       >
         Chiama Ora — {site.phoneDisplay}
       </a>
       <a
         href="#contatti"
-        class="border border-white/20 hover:border-white/40 text-white hover:bg-white/5 px-8 py-4 rounded-lg font-bold text-base transition-all duration-200"
+        class="border-2 border-warm-300 hover:border-brand/60 text-ink-700 hover:text-brand bg-white/60 hover:bg-white px-8 py-4 rounded-lg font-bold text-base transition-all duration-200"
       >
         Richiedi Preventivo
       </a>
     </div>
-  </div>
 
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
-    <div class="motion-safe:animate-bounce w-6 h-10 border-2 border-white/20 rounded-full flex items-start justify-center pt-2">
-      <div class="w-1 h-2 bg-brand rounded-full"></div>
-    </div>
   </div>
 </section>

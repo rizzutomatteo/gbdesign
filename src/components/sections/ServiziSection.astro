@@ -1,67 +1,92 @@
 ---
 ---
 
-<section id="servizi" class="py-20 bg-zinc-950">
+<section id="servizi" class="py-14 sm:py-20 md:py-24 bg-warm-100">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-14">
-      <p class="text-brand text-xs font-bold uppercase tracking-[0.2em] mb-3">Cosa facciamo</p>
-      <h2 class="text-white text-3xl sm:text-4xl font-black mb-4">I nostri servizi</h2>
-      <p class="text-gray-400 max-w-xl mx-auto leading-relaxed">
-        Ci occupiamo di tutto: dalla pianificazione al montaggio finale. Scegli il servizio
-        di cui hai bisogno, pensiamo noi al resto.
+
+    <div class="text-center mb-12 sm:mb-16">
+      <p class="text-brand text-xs sm:text-sm font-bold uppercase tracking-[0.3em] mb-3">Cosa facciamo</p>
+      <h2 class="font-display font-bold text-ink-900 text-2xl sm:text-3xl md:text-4xl mb-4 leading-snug">Le nostre divisioni</h2>
+      <p class="text-ink-600 max-w-xl mx-auto leading-relaxed text-base sm:text-lg">
+        Tre aree di specializzazione, un unico standard: lavoro preciso, tempi certi, nessuna sorpresa.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6 mb-14">
-      <div class="border border-white/10 hover:border-brand/50 rounded-2xl p-8 group transition-all duration-300">
-        <div class="w-12 h-12 bg-brand/10 group-hover:bg-brand rounded-xl flex items-center justify-center mb-6 transition-colors duration-300">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand group-hover:text-white transition-colors duration-300" aria-hidden="true">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+
+      <a
+        href="/montaggi"
+        class="group relative bg-white rounded-2xl p-7 sm:p-8 shadow-[0_2px_12px_rgba(26,22,18,0.07)] hover:shadow-[0_10px_36px_rgba(26,22,18,0.13)] border border-warm-200 hover:border-brand/30 transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden"
+      >
+        <span class="absolute top-4 right-5 font-display font-black text-7xl text-warm-200 select-none leading-none pointer-events-none">01</span>
+
+        <div class="w-11 h-11 bg-brand/10 group-hover:bg-brand rounded-xl flex items-center justify-center mb-5 transition-colors duration-300 relative z-10">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand group-hover:text-white transition-colors duration-300" aria-hidden="true">
+            <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+            <path d="M8 21h8M12 17v4"></path>
+          </svg>
+        </div>
+
+        <p class="text-brand text-xs font-bold uppercase tracking-[0.25em] mb-2 relative z-10">Divisione</p>
+        <h3 class="font-display font-bold text-ink-900 text-xl sm:text-2xl mb-3 leading-snug relative z-10">Montaggi</h3>
+        <p class="text-ink-600 leading-relaxed text-base flex-1 relative z-10">
+          Cucine complete, cabine armadio, librerie a parete, arredi su misura. Montaggi di pregio con la cura che meritano.
+        </p>
+        <span class="mt-6 inline-flex items-center gap-2 text-brand font-semibold text-sm group-hover:gap-3 transition-all duration-200 relative z-10">
+          Scopri i lavori
+          <span class="group-hover:translate-x-1 transition-transform duration-200 inline-block">→</span>
+        </span>
+      </a>
+
+      <a
+        href="/progettazione"
+        class="group relative bg-white rounded-2xl p-7 sm:p-8 shadow-[0_2px_12px_rgba(26,22,18,0.07)] hover:shadow-[0_10px_36px_rgba(26,22,18,0.13)] border border-warm-200 hover:border-brand/30 transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden"
+      >
+        <span class="absolute top-4 right-5 font-display font-black text-7xl text-warm-200 select-none leading-none pointer-events-none">02</span>
+
+        <div class="w-11 h-11 bg-brand/10 group-hover:bg-brand rounded-xl flex items-center justify-center mb-5 transition-colors duration-300 relative z-10">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand group-hover:text-white transition-colors duration-300" aria-hidden="true">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+        </div>
+
+        <p class="text-brand text-xs font-bold uppercase tracking-[0.25em] mb-2 relative z-10">Divisione</p>
+        <h3 class="font-display font-bold text-ink-900 text-xl sm:text-2xl mb-3 leading-snug relative z-10">Progettazione</h3>
+        <p class="text-ink-600 leading-relaxed text-base flex-1 relative z-10">
+          Dalla prima consulenza alla consegna chiavi in mano: ogni passo del nostro processo, documentato con foto.
+        </p>
+        <span class="mt-6 inline-flex items-center gap-2 text-brand font-semibold text-sm group-hover:gap-3 transition-all duration-200 relative z-10">
+          Vedi come lavoriamo
+          <span class="group-hover:translate-x-1 transition-transform duration-200 inline-block">→</span>
+        </span>
+      </a>
+
+      <a
+        href="/contract"
+        class="group relative bg-white rounded-2xl p-7 sm:p-8 shadow-[0_2px_12px_rgba(26,22,18,0.07)] hover:shadow-[0_10px_36px_rgba(26,22,18,0.13)] border border-warm-200 hover:border-brand/30 transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden sm:col-span-2 lg:col-span-1"
+      >
+        <span class="absolute top-4 right-5 font-display font-black text-7xl text-warm-200 select-none leading-none pointer-events-none">03</span>
+
+        <div class="w-11 h-11 bg-brand/10 group-hover:bg-brand rounded-xl flex items-center justify-center mb-5 transition-colors duration-300 relative z-10">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand group-hover:text-white transition-colors duration-300" aria-hidden="true">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
             <polyline points="9 22 9 12 15 12 15 22"></polyline>
           </svg>
         </div>
-        <h3 class="text-white text-xl font-bold mb-3">Traslochi Residenziali</h3>
-        <p class="text-gray-400 leading-relaxed text-sm">
-          Ti accompagniamo nel trasferimento della tua casa, con cura per ogni dettaglio:
-          imballaggio professionale, trasporto sicuro, montaggio mobili nella nuova abitazione.
-        </p>
-      </div>
 
-      <div class="border border-white/10 hover:border-brand/50 rounded-2xl p-8 group transition-all duration-300">
-        <div class="w-12 h-12 bg-brand/10 group-hover:bg-brand rounded-xl flex items-center justify-center mb-6 transition-colors duration-300">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand group-hover:text-white transition-colors duration-300" aria-hidden="true">
-            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-          </svg>
-        </div>
-        <h3 class="text-white text-xl font-bold mb-3">Traslochi Aziendali</h3>
-        <p class="text-gray-400 leading-relaxed text-sm">
-          Spostiamo uffici, attività commerciali e magazzini minimizzando i tempi di fermo.
-          Lavoriamo anche nel weekend per non interrompere la tua attività.
+        <p class="text-brand text-xs font-bold uppercase tracking-[0.25em] mb-2 relative z-10">Divisione</p>
+        <h3 class="font-display font-bold text-ink-900 text-xl sm:text-2xl mb-3 leading-snug relative z-10">Contract</h3>
+        <p class="text-ink-600 leading-relaxed text-base flex-1 relative z-10">
+          Arredo completo per hotel, uffici e grandi residenze. Numeri importanti, qualità che non scende mai.
         </p>
-      </div>
-
-      <div class="border border-white/10 hover:border-brand/50 rounded-2xl p-8 group transition-all duration-300">
-        <div class="w-12 h-12 bg-brand/10 group-hover:bg-brand rounded-xl flex items-center justify-center mb-6 transition-colors duration-300">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand group-hover:text-white transition-colors duration-300" aria-hidden="true">
-            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
-          </svg>
-        </div>
-        <h3 class="text-white text-xl font-bold mb-3">Montaggio Mobili</h3>
-        <p class="text-gray-400 leading-relaxed text-sm">
-          Smontaggio e rimontaggio preciso di qualsiasi tipo di mobile: armadi, librerie,
-          cucine, letti. Anche senza trasloco, se ne hai bisogno.
-        </p>
-      </div>
-    </div>
-
-    <div class="text-center">
-      <a
-        href="/servizi"
-        class="inline-flex items-center gap-2 bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-lg font-bold transition-colors duration-200"
-      >
-        Scopri tutti i servizi →
+        <span class="mt-6 inline-flex items-center gap-2 text-brand font-semibold text-sm group-hover:gap-3 transition-all duration-200 relative z-10">
+          Scopri i grandi lavori
+          <span class="group-hover:translate-x-1 transition-transform duration-200 inline-block">→</span>
+        </span>
       </a>
+
     </div>
+
   </div>
 </section>

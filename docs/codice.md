@@ -62,19 +62,23 @@ In `src/styles/global.css`:
 @import "tailwindcss";
 
 @theme {
-  /* Palette brand — sostituire con quella reale del logo GB Design */
-  --color-brand-50: #fff7ed;
-  --color-brand-500: #ea580c;
-  --color-brand-700: #c2410c;
-  --color-brand-900: #7c2d12;
+  /* Palette GB Design: Rosso Acceso, Nero e Bianco */
+  --color-brand-50: #fef2f2;   /* Bianco sporco rosato per sfondi light */
+  --color-brand-500: #e11d48;  /* Il Rosso core: acceso, moderno e "carino" (Rose-Red) */
+  --color-brand-700: #be123c;  /* Rosso scuro per hover e stati attivi */
+  --color-brand-900: #881337;  /* Rosso profondo per contrasti forti */
 
-  --color-ink-900: #0f172a;
-  --color-ink-700: #334155;
-  --color-ink-500: #64748b;
+  /* Inchiostri e Neutri */
+  --color-ink-900: #020617;    /* Nero quasi assoluto (Slate 950) per il testo principale */
+  --color-ink-700: #334155;    /* Grigio molto scuro per testi secondari */
+  --color-ink-500: #64748b;    /* Grigio medio per icone o placeholder */
+
+  --color-white: #ffffff;      /* Bianco puro */
 
   --font-sans: "Inter Variable", system-ui, sans-serif;
   --font-display: "Manrope Variable", system-ui, sans-serif;
 }
+
 ```
 
 Importa in `BaseLayout.astro`:
@@ -114,10 +118,11 @@ import "../styles/global.css";
 ## 5. Git & Conventional Commits
 
 - Branch principale: `main` = sito live
-- Lavorando da soli: commit diretti su `main`, piccoli e frequenti
-- Con collaboratori: feature branch + Pull Request
+- usare feature branch + Pull Request
 
 ### Conventional Commits — formato obbligatorio
+Ogni commit deve seguire lo standard [Conventional Commits](https://conventionalcommits.org).
+Formato: `<tipo>(<ambito>): <descrizione breve>`
 
 ```
 feat: aggiunta sezione recensioni
@@ -134,7 +139,11 @@ refactor: estratto componente Counter
 test: smoke test home con Playwright
 ```
 
-Imperativo presente, sotto i 72 caratteri, dice **cosa cambia**.
+### Micro-Commit Strategy (Professional Workflow)
+
+- **Non accumulare**: Non aspettare la fine dell'attività per fare un unico commit gigante.
+- **Atomicità**: Ogni commit deve rappresentare una singola unità logica di cambiamento. Se una funzione richiede una modifica alla config e poi il codice nuovo, fai due commit separati.
+- **Frequenza**: Esegui un commit ogni volta che un piccolo step è completato e testato.
 
 ### Cosa NON committare mai
 
@@ -159,6 +168,19 @@ Thumbs.db
 playwright-report/
 test-results/
 ```
+
+### Branch Management
+
+- Prima di iniziare ogni nuova attività, crea un branch dedicato.
+- Nomenclatura branch: `<tipo>/<breve-descrizione>` (es. `feat/login-form` o `fix/header-z-index`).
+- Lavora esclusivamente sul branch creato e non su `main` o `master`.
+
+### Messaggi di Commit
+
+- Usa il presente imperativo ("add feature" non "added feature").
+- La prima riga non deve superare i 50 caratteri.
+- Se necessario, aggiungi una riga vuota e una descrizione più dettagliata.
+- commit sempre in inglese
 
 ---
 

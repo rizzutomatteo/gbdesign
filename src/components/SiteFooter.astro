@@ -4,64 +4,72 @@ import logo from '../assets/logo.svg';
 import { site } from '../config/site';
 ---
 
-<footer class="bg-black text-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+<footer class="bg-ink-900 text-white">
+  <!-- Sottile accento brand in cima -->
+  <div class="h-px bg-brand/40"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-      <div class="lg:col-span-2">
-        <a href="/" class="flex items-center gap-3 mb-5">
-          <Image src={logo} alt="GB Design" width={40} height={40} class="rounded-sm object-contain" />
-          <span class="text-white font-bold text-lg">{site.name}</span>
+
+      <!-- Brand -->
+      <div class="sm:col-span-2 lg:col-span-2">
+        <a href="/" class="flex items-center gap-3 mb-5 group">
+          <Image src={logo} alt="GB Design" width={38} height={38} class="rounded object-contain flex-shrink-0" />
+          <span class="font-display font-bold text-lg text-white group-hover:text-brand/90 transition-colors duration-200 tracking-tight">{site.name}</span>
         </a>
-        <p class="text-gray-400 text-sm leading-relaxed max-w-xs">
+        <p class="text-ink-200/70 text-sm leading-relaxed max-w-xs">
           {site.description}
         </p>
       </div>
 
+      <!-- Esplora -->
       <div>
-        <h3 class="text-white font-semibold text-xs uppercase tracking-widest mb-5">Esplora</h3>
+        <h3 class="text-white/50 font-bold text-[10px] uppercase tracking-[0.3em] mb-5">Esplora</h3>
         <ul class="space-y-3">
-          <li><a href="/missione" class="text-gray-400 hover:text-white text-sm transition-colors">Mission</a></li>
-          <li><a href="/storia" class="text-gray-400 hover:text-white text-sm transition-colors">La nostra storia</a></li>
-          <li><a href="/servizi" class="text-gray-400 hover:text-white text-sm transition-colors">Servizi</a></li>
-          <li><a href="#recensioni" class="text-gray-400 hover:text-white text-sm transition-colors">Recensioni</a></li>
-          <li><a href="#contatti" class="text-gray-400 hover:text-white text-sm transition-colors">Contatti</a></li>
+          <li><a href="/missione"   class="text-ink-200/70 hover:text-white text-sm transition-colors duration-200">Mission</a></li>
+          <li><a href="/storia"     class="text-ink-200/70 hover:text-white text-sm transition-colors duration-200">La nostra storia</a></li>
+          <li><a href="/servizi"    class="text-ink-200/70 hover:text-white text-sm transition-colors duration-200">Servizi</a></li>
+          <li><a href="#recensioni" class="text-ink-200/70 hover:text-white text-sm transition-colors duration-200">Recensioni</a></li>
+          <li><a href="#contatti"   class="text-ink-200/70 hover:text-white text-sm transition-colors duration-200">Contatti</a></li>
         </ul>
       </div>
 
+      <!-- Contatti -->
       <div>
-        <h3 class="text-white font-semibold text-xs uppercase tracking-widest mb-5">Contatti</h3>
+        <h3 class="text-white/50 font-bold text-[10px] uppercase tracking-[0.3em] mb-5">Contatti</h3>
         <ul class="space-y-3">
           <li>
-            <a href={`tel:${site.phone}`} class="text-gray-400 hover:text-white text-sm transition-colors">
+            <a href={`tel:${site.phone}`} class="text-ink-200/70 hover:text-white text-sm transition-colors duration-200">
               {site.phoneDisplay}
             </a>
           </li>
           <li>
-            <a href={`mailto:${site.email}`} class="text-gray-400 hover:text-white text-sm transition-colors">
+            <a href={`mailto:${site.email}`} class="text-ink-200/70 hover:text-white text-sm transition-colors duration-200">
               {site.email}
             </a>
           </li>
           <li>
-            <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white text-sm transition-colors">
+            <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" class="text-ink-200/70 hover:text-white text-sm transition-colors duration-200">
               Facebook
             </a>
           </li>
           <li>
-            <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white text-sm transition-colors">
+            <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" class="text-ink-200/70 hover:text-white text-sm transition-colors duration-200">
               Instagram
             </a>
           </li>
         </ul>
       </div>
+
     </div>
 
     <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-      <p class="text-gray-500 text-xs">
+      <p class="text-ink-200/40 text-xs font-light">
         © {new Date().getFullYear()} {site.name} — P.IVA {site.piva} — REA {site.rea}
       </p>
       <div class="flex gap-5">
-        <a href="/privacy" class="text-gray-500 hover:text-gray-300 text-xs transition-colors">Privacy Policy</a>
-        <a href="/cookie" class="text-gray-500 hover:text-gray-300 text-xs transition-colors">Cookie Policy</a>
+        <a href="/privacy" class="text-ink-200/40 hover:text-ink-200/80 text-xs font-light transition-colors duration-200">Privacy Policy</a>
+        <a href="/cookie"  class="text-ink-200/40 hover:text-ink-200/80 text-xs font-light transition-colors duration-200">Cookie Policy</a>
       </div>
     </div>
   </div>

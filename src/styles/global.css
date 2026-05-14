@@ -1,16 +1,59 @@
 @import "tailwindcss";
 
 @theme {
+  /* Brand */
   --color-brand: #bf282b;
   --color-brand-dark: #9a1f22;
+
+  /* Palette calda avorio */
+  --color-warm-50:  #faf8f5;
+  --color-warm-100: #f3efe8;
+  --color-warm-200: #e8e2d9;
+  --color-warm-300: #d4ccc0;
+
+  /* Ink — nero/grigi caldi */
+  --color-ink-900: #1a1612;
+  --color-ink-700: #3d3530;
+  --color-ink-600: #5c5248;
+  --color-ink-400: #8a7f76;
+  --color-ink-200: #c8bfb5;
+
+  /* Tipografia editoriale */
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #faf8f5;
+  color: #1a1612;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* Ingresso scalato per l'hero */
+.hero-enter > * {
+  opacity: 0;
+  animation: fadeInUp 0.65s ease-out forwards;
+}
+.hero-enter > *:nth-child(1) { animation-delay: 0.05s; }
+.hero-enter > *:nth-child(2) { animation-delay: 0.15s; }
+.hero-enter > *:nth-child(3) { animation-delay: 0.25s; }
+.hero-enter > *:nth-child(4) { animation-delay: 0.35s; }
+.hero-enter > *:nth-child(5) { animation-delay: 0.45s; }
+.hero-enter > *:nth-child(6) { animation-delay: 0.55s; }
