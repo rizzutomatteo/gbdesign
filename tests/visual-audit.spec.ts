@@ -1,6 +1,9 @@
 import { test } from '@playwright/test';
 import path from 'path';
 import fs from 'fs';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const viewports = [
   { name: '375x812-iphone-se', width: 375, height: 812 },
