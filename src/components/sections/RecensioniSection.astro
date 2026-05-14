@@ -66,7 +66,7 @@ const reviews = tutte.sort((a, b) => b.data.data.getTime() - a.data.data.getTime
               ))}
             </div>
             <p class="text-ink-700 relative z-10 mb-6 flex-1 text-base leading-relaxed italic">
-              "{r.body.trim()}"
+              "{r.body?.trim()}"
             </p>
             <div class="border-warm-200 relative z-10 border-t pt-4">
               <p class="text-ink-900 text-base font-semibold">{r.data.autore}</p>
