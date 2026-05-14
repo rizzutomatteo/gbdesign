@@ -7,6 +7,8 @@ backend:
   name: git-gateway
   branch: main
 
+publish_mode: editorial_workflow
+
 # In locale: npx decap-server + local_backend: true bypassa Netlify Identity.
 # RIMUOVERE prima del deploy in produzione.
 # local_backend: true
