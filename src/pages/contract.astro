@@ -11,142 +11,254 @@ import { site } from '../config/site';
 >
   <SiteHeader />
   <main class="min-h-screen pt-16">
-
     <!-- Hero -->
-    <section class="py-14 sm:py-20 md:py-24 bg-warm-50">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <a href="/#servizi" class="inline-flex items-center gap-2 text-ink-400 text-sm hover:text-brand transition-colors duration-200 mb-10">
+    <section class="bg-warm-50 py-14 sm:py-20 md:py-24">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <a
+          href="/divisioni"
+          class="text-ink-400 hover:text-brand mb-10 inline-flex items-center gap-2 text-sm transition-colors duration-200"
+        >
           ← Torna alle divisioni
         </a>
-        <p class="text-brand text-xs font-bold uppercase tracking-[0.3em] mb-3">Divisione</p>
-        <h1 class="font-display font-black text-ink-900 text-3xl sm:text-5xl md:text-6xl leading-tight mb-6">Contract</h1>
-        <div class="w-16 h-px bg-warm-300 mb-8"></div>
-        <p class="text-ink-600 text-lg leading-relaxed max-w-xl">
-          Hotel, uffici, showroom, residenze di pregio: lavoriamo su scala, senza perdere la cura del dettaglio.
+        <p class="text-brand mb-3 text-xs font-bold tracking-[0.3em] uppercase">Divisione</p>
+        <h1
+          class="font-display text-ink-900 mb-6 text-3xl leading-tight font-black sm:text-5xl md:text-6xl"
+        >
+          Contract
+        </h1>
+        <div class="bg-warm-300 mb-8 h-px w-16"></div>
+        <p class="text-ink-600 max-w-xl text-lg leading-relaxed">
+          Hotel, uffici, showroom, residenze di pregio: lavoriamo su scala, senza perdere la cura
+          del dettaglio.
         </p>
       </div>
     </section>
 
     <!-- Numeri -->
-    <section class="py-12 sm:py-16 bg-white">
-      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class="text-center mb-10 sm:mb-12">
-          <p class="text-brand text-xs font-bold uppercase tracking-[0.3em] mb-3">I numeri parlano</p>
-          <h2 class="font-display font-bold text-ink-900 text-2xl sm:text-3xl md:text-4xl leading-snug">Scala professionale</h2>
+    <section class="bg-white py-12 sm:py-16">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 text-center sm:mb-12">
+          <p class="text-brand mb-3 text-xs font-bold tracking-[0.3em] uppercase">
+            I numeri parlano
+          </p>
+          <h2
+            class="font-display text-ink-900 text-2xl leading-snug font-bold sm:text-3xl md:text-4xl"
+          >
+            Scala professionale
+          </h2>
         </div>
 
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-
-          <div class="bg-warm-50 rounded-2xl p-6 sm:p-8 text-center border border-warm-200 shadow-[0_2px_12px_rgba(26,22,18,0.07)]">
-            <p class="font-display font-black text-brand text-4xl sm:text-5xl leading-none mb-3">{site.stats.lavori}+</p>
-            <p class="text-ink-600 text-sm sm:text-base font-semibold leading-snug">Lavori completati</p>
+        <div class="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
+          <div
+            class="bg-warm-50 border-warm-200 rounded-2xl border p-6 text-center shadow-[0_2px_12px_rgba(26,22,18,0.07)] sm:p-8"
+          >
+            <p class="font-display text-brand mb-3 text-4xl leading-none font-black sm:text-5xl">
+              {site.stats.lavori}+
+            </p>
+            <p class="text-ink-600 text-sm leading-snug font-semibold sm:text-base">
+              Lavori completati
+            </p>
           </div>
 
-          <div class="bg-warm-50 rounded-2xl p-6 sm:p-8 text-center border border-warm-200 shadow-[0_2px_12px_rgba(26,22,18,0.07)]">
-            <p class="font-display font-black text-brand text-4xl sm:text-5xl leading-none mb-3">50+</p>
-            <p class="text-ink-600 text-sm sm:text-base font-semibold leading-snug">Strutture arredate</p>
+          <div
+            class="bg-warm-50 border-warm-200 rounded-2xl border p-6 text-center shadow-[0_2px_12px_rgba(26,22,18,0.07)] sm:p-8"
+          >
+            <p class="font-display text-brand mb-3 text-4xl leading-none font-black sm:text-5xl">
+              50+
+            </p>
+            <p class="text-ink-600 text-sm leading-snug font-semibold sm:text-base">
+              Strutture arredate
+            </p>
           </div>
 
-          <div class="bg-warm-50 rounded-2xl p-6 sm:p-8 text-center border border-warm-200 shadow-[0_2px_12px_rgba(26,22,18,0.07)]">
-            <p class="font-display font-black text-brand text-4xl sm:text-5xl leading-none mb-3">{site.stats.anni}+</p>
-            <p class="text-ink-600 text-sm sm:text-base font-semibold leading-snug">Anni di esperienza</p>
+          <div
+            class="bg-warm-50 border-warm-200 rounded-2xl border p-6 text-center shadow-[0_2px_12px_rgba(26,22,18,0.07)] sm:p-8"
+          >
+            <p class="font-display text-brand mb-3 text-4xl leading-none font-black sm:text-5xl">
+              {site.stats.anni}+
+            </p>
+            <p class="text-ink-600 text-sm leading-snug font-semibold sm:text-base">
+              Anni di esperienza
+            </p>
           </div>
 
-          <div class="bg-warm-50 rounded-2xl p-6 sm:p-8 text-center border border-warm-200 shadow-[0_2px_12px_rgba(26,22,18,0.07)]">
-            <p class="font-display font-black text-brand text-4xl sm:text-5xl leading-none mb-3">100%</p>
-            <p class="text-ink-600 text-sm sm:text-base font-semibold leading-snug">Puntualità garantita</p>
+          <div
+            class="bg-warm-50 border-warm-200 rounded-2xl border p-6 text-center shadow-[0_2px_12px_rgba(26,22,18,0.07)] sm:p-8"
+          >
+            <p class="font-display text-brand mb-3 text-4xl leading-none font-black sm:text-5xl">
+              100%
+            </p>
+            <p class="text-ink-600 text-sm leading-snug font-semibold sm:text-base">
+              Puntualità garantita
+            </p>
           </div>
-
         </div>
       </div>
     </section>
 
     <!-- Categorie -->
-    <section class="py-12 sm:py-16 bg-warm-100">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class="text-center mb-10 sm:mb-12">
-          <p class="text-brand text-xs font-bold uppercase tracking-[0.3em] mb-3">Dove operiamo</p>
-          <h2 class="font-display font-bold text-ink-900 text-2xl sm:text-3xl md:text-4xl leading-snug">Categorie di intervento</h2>
+    <section class="bg-warm-100 py-12 sm:py-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 text-center sm:mb-12">
+          <p class="text-brand mb-3 text-xs font-bold tracking-[0.3em] uppercase">Dove operiamo</p>
+          <h2
+            class="font-display text-ink-900 text-2xl leading-snug font-bold sm:text-3xl md:text-4xl"
+          >
+            Categorie di intervento
+          </h2>
         </div>
 
-        <div class="grid sm:grid-cols-2 gap-5 sm:gap-6">
-
-          <div class="group bg-white rounded-2xl p-7 sm:p-8 shadow-[0_2px_12px_rgba(26,22,18,0.07)] hover:shadow-[0_10px_36px_rgba(26,22,18,0.12)] border border-warm-200 hover:border-warm-300 transition-all duration-300 hover:-translate-y-0.5">
-            <div class="w-11 h-11 bg-brand/10 group-hover:bg-brand rounded-xl flex items-center justify-center mb-5 transition-colors duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand group-hover:text-white transition-colors duration-300" aria-hidden="true">
+        <div class="grid gap-5 sm:grid-cols-2 sm:gap-6">
+          <div
+            class="group border-warm-200 hover:border-warm-300 rounded-2xl border bg-white p-7 shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_36px_rgba(26,22,18,0.12)] sm:p-8"
+          >
+            <div
+              class="bg-brand/10 group-hover:bg-brand mb-5 flex h-11 w-11 items-center justify-center rounded-xl transition-colors duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-brand transition-colors duration-300 group-hover:text-white"
+                aria-hidden="true"
+              >
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                 <polyline points="9 22 9 12 15 12 15 22"></polyline>
               </svg>
             </div>
-            <h3 class="font-display font-bold text-ink-900 text-lg sm:text-xl mb-3 leading-snug">Hotel &amp; B&amp;B</h3>
-            <p class="text-ink-600 leading-relaxed text-base">
-              Arredo completo di camere, suite, zone comuni e ristoranti. Lavoriamo su più unità in parallelo,
-              rispettando i tempi di apertura stagionale.
+            <h3 class="font-display text-ink-900 mb-3 text-lg leading-snug font-bold sm:text-xl">
+              Hotel &amp; B&amp;B
+            </h3>
+            <p class="text-ink-600 text-base leading-relaxed">
+              Arredo completo di camere, suite, zone comuni e ristoranti. Lavoriamo su più unità in
+              parallelo, rispettando i tempi di apertura stagionale.
             </p>
           </div>
 
-          <div class="group bg-white rounded-2xl p-7 sm:p-8 shadow-[0_2px_12px_rgba(26,22,18,0.07)] hover:shadow-[0_10px_36px_rgba(26,22,18,0.12)] border border-warm-200 hover:border-warm-300 transition-all duration-300 hover:-translate-y-0.5">
-            <div class="w-11 h-11 bg-brand/10 group-hover:bg-brand rounded-xl flex items-center justify-center mb-5 transition-colors duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand group-hover:text-white transition-colors duration-300" aria-hidden="true">
+          <div
+            class="group border-warm-200 hover:border-warm-300 rounded-2xl border bg-white p-7 shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_36px_rgba(26,22,18,0.12)] sm:p-8"
+          >
+            <div
+              class="bg-brand/10 group-hover:bg-brand mb-5 flex h-11 w-11 items-center justify-center rounded-xl transition-colors duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-brand transition-colors duration-300 group-hover:text-white"
+                aria-hidden="true"
+              >
                 <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
                 <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
               </svg>
             </div>
-            <h3 class="font-display font-bold text-ink-900 text-lg sm:text-xl mb-3 leading-snug">Uffici &amp; Spazi lavoro</h3>
-            <p class="text-ink-600 leading-relaxed text-base">
+            <h3 class="font-display text-ink-900 mb-3 text-lg leading-snug font-bold sm:text-xl">
+              Uffici &amp; Spazi lavoro
+            </h3>
+            <p class="text-ink-600 text-base leading-relaxed">
               Postazioni, sale riunioni, reception, archivi: arredo completo di uffici e open space.
               Lavoriamo nel fine settimana per non interrompere l'attività.
             </p>
           </div>
 
-          <div class="group bg-white rounded-2xl p-7 sm:p-8 shadow-[0_2px_12px_rgba(26,22,18,0.07)] hover:shadow-[0_10px_36px_rgba(26,22,18,0.12)] border border-warm-200 hover:border-warm-300 transition-all duration-300 hover:-translate-y-0.5">
-            <div class="w-11 h-11 bg-brand/10 group-hover:bg-brand rounded-xl flex items-center justify-center mb-5 transition-colors duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand group-hover:text-white transition-colors duration-300" aria-hidden="true">
+          <div
+            class="group border-warm-200 hover:border-warm-300 rounded-2xl border bg-white p-7 shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_36px_rgba(26,22,18,0.12)] sm:p-8"
+          >
+            <div
+              class="bg-brand/10 group-hover:bg-brand mb-5 flex h-11 w-11 items-center justify-center rounded-xl transition-colors duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-brand transition-colors duration-300 group-hover:text-white"
+                aria-hidden="true"
+              >
                 <circle cx="9" cy="21" r="1"></circle>
                 <circle cx="20" cy="21" r="1"></circle>
                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
               </svg>
             </div>
-            <h3 class="font-display font-bold text-ink-900 text-lg sm:text-xl mb-3 leading-snug">Retail &amp; Showroom</h3>
-            <p class="text-ink-600 leading-relaxed text-base">
-              Allestimento di negozi, showroom e spazi espositivi. Dalla scaffalatura al corner display,
-              montiamo tutto in tempo per l'apertura.
+            <h3 class="font-display text-ink-900 mb-3 text-lg leading-snug font-bold sm:text-xl">
+              Retail &amp; Showroom
+            </h3>
+            <p class="text-ink-600 text-base leading-relaxed">
+              Allestimento di negozi, showroom e spazi espositivi. Dalla scaffalatura al corner
+              display, montiamo tutto in tempo per l'apertura.
             </p>
           </div>
 
-          <div class="group bg-white rounded-2xl p-7 sm:p-8 shadow-[0_2px_12px_rgba(26,22,18,0.07)] hover:shadow-[0_10px_36px_rgba(26,22,18,0.12)] border border-warm-200 hover:border-warm-300 transition-all duration-300 hover:-translate-y-0.5">
-            <div class="w-11 h-11 bg-brand/10 group-hover:bg-brand rounded-xl flex items-center justify-center mb-5 transition-colors duration-300">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand group-hover:text-white transition-colors duration-300" aria-hidden="true">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          <div
+            class="group border-warm-200 hover:border-warm-300 rounded-2xl border bg-white p-7 shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_36px_rgba(26,22,18,0.12)] sm:p-8"
+          >
+            <div
+              class="bg-brand/10 group-hover:bg-brand mb-5 flex h-11 w-11 items-center justify-center rounded-xl transition-colors duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-brand transition-colors duration-300 group-hover:text-white"
+                aria-hidden="true"
+              >
+                <polygon
+                  points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                ></polygon>
               </svg>
             </div>
-            <h3 class="font-display font-bold text-ink-900 text-lg sm:text-xl mb-3 leading-snug">Residenziale Prestige</h3>
-            <p class="text-ink-600 leading-relaxed text-base">
-              Ville, appartamenti di lusso, seconde case al mare: arredo chiavi in mano per chi vuole
-              trovare tutto pronto all'arrivo.
+            <h3 class="font-display text-ink-900 mb-3 text-lg leading-snug font-bold sm:text-xl">
+              Residenziale Prestige
+            </h3>
+            <p class="text-ink-600 text-base leading-relaxed">
+              Ville, appartamenti di lusso, seconde case al mare: arredo chiavi in mano per chi
+              vuole trovare tutto pronto all'arrivo.
             </p>
           </div>
-
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="py-14 sm:py-20 bg-white">
-      <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="font-display font-bold text-ink-900 text-2xl sm:text-3xl mb-4 leading-snug">Hai un grande progetto?</h2>
-        <p class="text-ink-600 text-lg mb-8 leading-relaxed">Raccontaci cosa devi arredare. Valutiamo insieme tempi e costi.</p>
+    <section class="bg-white py-14 sm:py-20">
+      <div class="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
+        <h2 class="font-display text-ink-900 mb-4 text-2xl leading-snug font-bold sm:text-3xl">
+          Hai un grande progetto?
+        </h2>
+        <p class="text-ink-600 mb-8 text-lg leading-relaxed">
+          Raccontaci cosa devi arredare. Valutiamo insieme tempi e costi.
+        </p>
         <a
           href="/#contatti"
-          class="inline-flex items-center justify-center gap-2 bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-lg font-bold transition-all duration-200 shadow-[0_4px_16px_rgba(191,40,43,0.28)] hover:shadow-[0_6px_22px_rgba(191,40,43,0.38)] hover:-translate-y-px"
+          class="bg-brand hover:bg-brand-dark inline-flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-bold text-white shadow-[0_4px_16px_rgba(191,40,43,0.28)] transition-all duration-200 hover:-translate-y-px hover:shadow-[0_6px_22px_rgba(191,40,43,0.38)]"
         >
           Parla con noi →
         </a>
       </div>
     </section>
-
   </main>
   <SiteFooter />
 </Layout>

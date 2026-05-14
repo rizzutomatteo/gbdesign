@@ -10,130 +10,178 @@ import SiteFooter from '../components/SiteFooter.astro';
 >
   <SiteHeader />
   <main class="min-h-screen pt-16">
-
     <!-- Hero -->
-    <section class="py-14 sm:py-20 md:py-24 bg-warm-50">
-      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <a href="/#servizi" class="inline-flex items-center gap-2 text-ink-400 text-sm hover:text-brand transition-colors duration-200 mb-10">
+    <section class="bg-warm-50 py-14 sm:py-20 md:py-24">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <a
+          href="/divisioni"
+          class="text-ink-400 hover:text-brand mb-10 inline-flex items-center gap-2 text-sm transition-colors duration-200"
+        >
           ← Torna alle divisioni
         </a>
-        <p class="text-brand text-xs font-bold uppercase tracking-[0.3em] mb-3">Divisione</p>
-        <h1 class="font-display font-black text-ink-900 text-3xl sm:text-5xl md:text-6xl leading-tight mb-6">Progettazione</h1>
-        <div class="w-16 h-px bg-warm-300 mb-8"></div>
-        <p class="text-ink-600 text-lg leading-relaxed max-w-xl">
-          Prima ascoltiamo, poi pianifichiamo, poi eseguiamo.
-          Ecco come funziona ogni nostro lavoro, dalla prima telefonata alla consegna.
+        <p class="text-brand mb-3 text-xs font-bold tracking-[0.3em] uppercase">Divisione</p>
+        <h1
+          class="font-display text-ink-900 mb-6 text-3xl leading-tight font-black sm:text-5xl md:text-6xl"
+        >
+          Progettazione
+        </h1>
+        <div class="bg-warm-300 mb-8 h-px w-16"></div>
+        <p class="text-ink-600 max-w-xl text-lg leading-relaxed">
+          Prima ascoltiamo, poi pianifichiamo, poi eseguiamo. Ecco come funziona ogni nostro lavoro,
+          dalla prima telefonata alla consegna.
         </p>
       </div>
     </section>
 
     <!-- Processo -->
-    <section class="py-12 sm:py-16 bg-warm-100">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class="text-center mb-12 sm:mb-14">
-          <p class="text-brand text-xs font-bold uppercase tracking-[0.3em] mb-3">Il nostro metodo</p>
-          <h2 class="font-display font-bold text-ink-900 text-2xl sm:text-3xl md:text-4xl leading-snug">Come lavoriamo</h2>
+    <section class="bg-warm-100 py-12 sm:py-16">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 text-center sm:mb-14">
+          <p class="text-brand mb-3 text-xs font-bold tracking-[0.3em] uppercase">
+            Il nostro metodo
+          </p>
+          <h2
+            class="font-display text-ink-900 text-2xl leading-snug font-bold sm:text-3xl md:text-4xl"
+          >
+            Come lavoriamo
+          </h2>
         </div>
 
         <div class="space-y-5">
-
-          <div class="group bg-white rounded-2xl p-7 sm:p-8 shadow-[0_2px_12px_rgba(26,22,18,0.07)] hover:shadow-[0_8px_32px_rgba(26,22,18,0.11)] border border-warm-200 hover:border-warm-300 transition-all duration-300 flex gap-6 items-start">
-            <div class="w-11 h-11 bg-brand rounded-xl flex items-center justify-center flex-none shadow-[0_2px_10px_rgba(191,40,43,0.2)]">
-              <span class="font-display font-black text-white text-base leading-none">01</span>
+          <div
+            class="group border-warm-200 hover:border-warm-300 flex items-start gap-6 rounded-2xl border bg-white p-7 shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(26,22,18,0.11)] sm:p-8"
+          >
+            <div
+              class="bg-brand flex h-11 w-11 flex-none items-center justify-center rounded-xl shadow-[0_2px_10px_rgba(191,40,43,0.2)]"
+            >
+              <span class="font-display text-base leading-none font-black text-white">01</span>
             </div>
             <div>
-              <h3 class="font-display font-bold text-ink-900 text-lg sm:text-xl mb-2 leading-snug">Prima consulenza</h3>
-              <p class="text-ink-600 leading-relaxed text-base">
-                Ci chiami o ci scrivi. In dieci minuti capiamo cosa ti serve: quale mobile, dove, entro quando.
-                Nessuna burocrazia, nessun modulo da compilare.
+              <h3 class="font-display text-ink-900 mb-2 text-lg leading-snug font-bold sm:text-xl">
+                Prima consulenza
+              </h3>
+              <p class="text-ink-600 text-base leading-relaxed">
+                Ci chiami o ci scrivi. In dieci minuti capiamo cosa ti serve: quale mobile, dove,
+                entro quando. Nessuna burocrazia, nessun modulo da compilare.
               </p>
             </div>
           </div>
 
-          <div class="group bg-white rounded-2xl p-7 sm:p-8 shadow-[0_2px_12px_rgba(26,22,18,0.07)] hover:shadow-[0_8px_32px_rgba(26,22,18,0.11)] border border-warm-200 hover:border-warm-300 transition-all duration-300 flex gap-6 items-start">
-            <div class="w-11 h-11 bg-brand rounded-xl flex items-center justify-center flex-none shadow-[0_2px_10px_rgba(191,40,43,0.2)]">
-              <span class="font-display font-black text-white text-base leading-none">02</span>
+          <div
+            class="group border-warm-200 hover:border-warm-300 flex items-start gap-6 rounded-2xl border bg-white p-7 shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(26,22,18,0.11)] sm:p-8"
+          >
+            <div
+              class="bg-brand flex h-11 w-11 flex-none items-center justify-center rounded-xl shadow-[0_2px_10px_rgba(191,40,43,0.2)]"
+            >
+              <span class="font-display text-base leading-none font-black text-white">02</span>
             </div>
             <div>
-              <h3 class="font-display font-bold text-ink-900 text-lg sm:text-xl mb-2 leading-snug">Sopralluogo</h3>
-              <p class="text-ink-600 leading-relaxed text-base">
-                Per i lavori complessi veniamo a vedere di persona. Misuriamo, valutiamo gli accessi,
-                controlliamo le pareti. Meglio mezz'ora di sopralluogo che una sorpresa il giorno del montaggio.
+              <h3 class="font-display text-ink-900 mb-2 text-lg leading-snug font-bold sm:text-xl">
+                Sopralluogo
+              </h3>
+              <p class="text-ink-600 text-base leading-relaxed">
+                Per i lavori complessi veniamo a vedere di persona. Misuriamo, valutiamo gli
+                accessi, controlliamo le pareti. Meglio mezz'ora di sopralluogo che una sorpresa il
+                giorno del montaggio.
               </p>
             </div>
           </div>
 
-          <div class="group bg-white rounded-2xl p-7 sm:p-8 shadow-[0_2px_12px_rgba(26,22,18,0.07)] hover:shadow-[0_8px_32px_rgba(26,22,18,0.11)] border border-warm-200 hover:border-warm-300 transition-all duration-300 flex gap-6 items-start">
-            <div class="w-11 h-11 bg-brand rounded-xl flex items-center justify-center flex-none shadow-[0_2px_10px_rgba(191,40,43,0.2)]">
-              <span class="font-display font-black text-white text-base leading-none">03</span>
+          <div
+            class="group border-warm-200 hover:border-warm-300 flex items-start gap-6 rounded-2xl border bg-white p-7 shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(26,22,18,0.11)] sm:p-8"
+          >
+            <div
+              class="bg-brand flex h-11 w-11 flex-none items-center justify-center rounded-xl shadow-[0_2px_10px_rgba(191,40,43,0.2)]"
+            >
+              <span class="font-display text-base leading-none font-black text-white">03</span>
             </div>
             <div>
-              <h3 class="font-display font-bold text-ink-900 text-lg sm:text-xl mb-2 leading-snug">Preventivo chiaro</h3>
-              <p class="text-ink-600 leading-relaxed text-base">
-                Ti mandiamo un preventivo scritto, dettagliato, senza voci vaghe. Quello che leggi
-                è quello che paghi. Nessun extra a lavoro finito.
+              <h3 class="font-display text-ink-900 mb-2 text-lg leading-snug font-bold sm:text-xl">
+                Preventivo chiaro
+              </h3>
+              <p class="text-ink-600 text-base leading-relaxed">
+                Ti mandiamo un preventivo scritto, dettagliato, senza voci vaghe. Quello che leggi è
+                quello che paghi. Nessun extra a lavoro finito.
               </p>
             </div>
           </div>
 
-          <div class="group bg-white rounded-2xl p-7 sm:p-8 shadow-[0_2px_12px_rgba(26,22,18,0.07)] hover:shadow-[0_8px_32px_rgba(26,22,18,0.11)] border border-warm-200 hover:border-warm-300 transition-all duration-300 flex gap-6 items-start">
-            <div class="w-11 h-11 bg-brand rounded-xl flex items-center justify-center flex-none shadow-[0_2px_10px_rgba(191,40,43,0.2)]">
-              <span class="font-display font-black text-white text-base leading-none">04</span>
+          <div
+            class="group border-warm-200 hover:border-warm-300 flex items-start gap-6 rounded-2xl border bg-white p-7 shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(26,22,18,0.11)] sm:p-8"
+          >
+            <div
+              class="bg-brand flex h-11 w-11 flex-none items-center justify-center rounded-xl shadow-[0_2px_10px_rgba(191,40,43,0.2)]"
+            >
+              <span class="font-display text-base leading-none font-black text-white">04</span>
             </div>
             <div>
-              <h3 class="font-display font-bold text-ink-900 text-lg sm:text-xl mb-2 leading-snug">Conferma e pianificazione</h3>
-              <p class="text-ink-600 leading-relaxed text-base">
-                Accordiamo una data. Da quel momento è bloccata in agenda. Non ti chiamiamo il giorno
-                prima per spostare: la puntualità è il minimo che ti dobbiamo.
+              <h3 class="font-display text-ink-900 mb-2 text-lg leading-snug font-bold sm:text-xl">
+                Conferma e pianificazione
+              </h3>
+              <p class="text-ink-600 text-base leading-relaxed">
+                Accordiamo una data. Da quel momento è bloccata in agenda. Non ti chiamiamo il
+                giorno prima per spostare: la puntualità è il minimo che ti dobbiamo.
               </p>
             </div>
           </div>
 
-          <div class="group bg-white rounded-2xl p-7 sm:p-8 shadow-[0_2px_12px_rgba(26,22,18,0.07)] hover:shadow-[0_8px_32px_rgba(26,22,18,0.11)] border border-warm-200 hover:border-warm-300 transition-all duration-300 flex gap-6 items-start">
-            <div class="w-11 h-11 bg-brand rounded-xl flex items-center justify-center flex-none shadow-[0_2px_10px_rgba(191,40,43,0.2)]">
-              <span class="font-display font-black text-white text-base leading-none">05</span>
+          <div
+            class="group border-warm-200 hover:border-warm-300 flex items-start gap-6 rounded-2xl border bg-white p-7 shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(26,22,18,0.11)] sm:p-8"
+          >
+            <div
+              class="bg-brand flex h-11 w-11 flex-none items-center justify-center rounded-xl shadow-[0_2px_10px_rgba(191,40,43,0.2)]"
+            >
+              <span class="font-display text-base leading-none font-black text-white">05</span>
             </div>
             <div>
-              <h3 class="font-display font-bold text-ink-900 text-lg sm:text-xl mb-2 leading-snug">Realizzazione</h3>
-              <p class="text-ink-600 leading-relaxed text-base">
+              <h3 class="font-display text-ink-900 mb-2 text-lg leading-snug font-bold sm:text-xl">
+                Realizzazione
+              </h3>
+              <p class="text-ink-600 text-base leading-relaxed">
                 Arriviamo, lavoriamo, sistemiamo. Ogni bullone al posto giusto, ogni anta a piombo,
-                ogni cavo nascosto. Il lavoro finisce quando è perfetto, non quando sono le sei di sera.
+                ogni cavo nascosto. Il lavoro finisce quando è perfetto, non quando sono le sei di
+                sera.
               </p>
             </div>
           </div>
 
-          <div class="group bg-ink-900 rounded-2xl p-7 sm:p-8 flex gap-6 items-start">
-            <div class="w-11 h-11 bg-brand rounded-xl flex items-center justify-center flex-none shadow-[0_2px_10px_rgba(191,40,43,0.3)]">
-              <span class="font-display font-black text-white text-base leading-none">06</span>
+          <div class="group bg-ink-900 flex items-start gap-6 rounded-2xl p-7 sm:p-8">
+            <div
+              class="bg-brand flex h-11 w-11 flex-none items-center justify-center rounded-xl shadow-[0_2px_10px_rgba(191,40,43,0.3)]"
+            >
+              <span class="font-display text-base leading-none font-black text-white">06</span>
             </div>
             <div>
-              <h3 class="font-display font-bold text-white text-lg sm:text-xl mb-2 leading-snug">Consegna e controllo finale</h3>
-              <p class="text-warm-300 leading-relaxed text-base">
-                Ti mostriamo tutto il lavoro fatto. Se c'è qualcosa che non ti convince, lo correggiamo
-                prima di andare via. Usciamo solo quando sei soddisfatto.
+              <h3 class="font-display mb-2 text-lg leading-snug font-bold text-white sm:text-xl">
+                Consegna e controllo finale
+              </h3>
+              <p class="text-warm-300 text-base leading-relaxed">
+                Ti mostriamo tutto il lavoro fatto. Se c'è qualcosa che non ti convince, lo
+                correggiamo prima di andare via. Usciamo solo quando sei soddisfatto.
               </p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
     <!-- CTA -->
-    <section class="py-14 sm:py-20 bg-white">
-      <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="font-display font-bold text-ink-900 text-2xl sm:text-3xl mb-4 leading-snug">Pronto a iniziare?</h2>
-        <p class="text-ink-600 text-lg mb-8 leading-relaxed">Il primo passo è una telefonata. Il resto lo facciamo noi.</p>
+    <section class="bg-white py-14 sm:py-20">
+      <div class="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
+        <h2 class="font-display text-ink-900 mb-4 text-2xl leading-snug font-bold sm:text-3xl">
+          Pronto a iniziare?
+        </h2>
+        <p class="text-ink-600 mb-8 text-lg leading-relaxed">
+          Il primo passo è una telefonata. Il resto lo facciamo noi.
+        </p>
         <a
           href="/#contatti"
-          class="inline-flex items-center justify-center gap-2 bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-lg font-bold transition-all duration-200 shadow-[0_4px_16px_rgba(191,40,43,0.28)] hover:shadow-[0_6px_22px_rgba(191,40,43,0.38)] hover:-translate-y-px"
+          class="bg-brand hover:bg-brand-dark inline-flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-bold text-white shadow-[0_4px_16px_rgba(191,40,43,0.28)] transition-all duration-200 hover:-translate-y-px hover:shadow-[0_6px_22px_rgba(191,40,43,0.38)]"
         >
           Richiedi un preventivo →
         </a>
       </div>
     </section>
-
   </main>
   <SiteFooter />
 </Layout>

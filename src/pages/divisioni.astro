@@ -1,0 +1,218 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+
+<Layout
+  title="Le nostre divisioni — GB Design Macerata"
+  description="Tre aree di specializzazione: Montaggi, Progettazione e Contract. Un unico standard: lavoro preciso, tempi certi, nessuna sorpresa."
+>
+  <SiteHeader />
+  <main class="min-h-screen pt-16">
+    <!-- Hero -->
+    <section class="bg-warm-50 py-14 sm:py-20 md:py-24">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <a
+          href="/"
+          class="text-ink-400 hover:text-brand mb-10 inline-flex items-center gap-2 text-sm transition-colors duration-200"
+        >
+          ← Torna alla home
+        </a>
+        <p class="text-brand mb-3 text-xs font-bold tracking-[0.3em] uppercase">Cosa facciamo</p>
+        <h1
+          class="font-display text-ink-900 mb-6 text-3xl leading-tight font-black sm:text-5xl md:text-6xl"
+        >
+          Le nostre divisioni
+        </h1>
+        <div class="bg-warm-300 mb-8 h-px w-16"></div>
+        <p class="text-ink-600 max-w-xl text-lg leading-relaxed">
+          Tre aree di specializzazione, un unico standard: lavoro preciso, tempi certi, nessuna
+          sorpresa.
+        </p>
+      </div>
+    </section>
+
+    <!-- Divisioni -->
+    <section class="bg-warm-100 py-12 sm:py-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+          <a
+            href="/montaggi"
+            class="group border-warm-200 hover:border-brand/30 relative flex flex-col overflow-hidden rounded-2xl border bg-white p-7 shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_36px_rgba(26,22,18,0.13)] sm:p-8"
+          >
+            <span
+              class="font-display text-warm-200 pointer-events-none absolute top-4 right-5 text-7xl leading-none font-black select-none"
+              >01</span
+            >
+
+            <div
+              class="bg-brand/10 group-hover:bg-brand relative z-10 mb-5 flex h-11 w-11 items-center justify-center rounded-xl transition-colors duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-brand transition-colors duration-300 group-hover:text-white"
+                aria-hidden="true"
+              >
+                <rect x="2" y="3" width="20" height="14" rx="2"></rect>
+                <path d="M8 21h8M12 17v4"></path>
+              </svg>
+            </div>
+
+            <p class="text-brand relative z-10 mb-2 text-xs font-bold tracking-[0.25em] uppercase">
+              Divisione
+            </p>
+            <h2
+              class="font-display text-ink-900 relative z-10 mb-3 text-xl leading-snug font-bold sm:text-2xl"
+            >
+              Montaggi
+            </h2>
+            <p class="text-ink-600 relative z-10 flex-1 text-base leading-relaxed">
+              Cucine complete, cabine armadio, librerie a parete, arredi su misura. Montaggi di
+              pregio con la cura che meritano.
+            </p>
+            <span
+              class="text-brand relative z-10 mt-6 inline-flex items-center gap-2 text-sm font-semibold transition-all duration-200 group-hover:gap-3"
+            >
+              Scopri i lavori
+              <span class="inline-block transition-transform duration-200 group-hover:translate-x-1"
+                >→</span
+              >
+            </span>
+          </a>
+
+          <a
+            href="/progettazione"
+            class="group border-warm-200 hover:border-brand/30 relative flex flex-col overflow-hidden rounded-2xl border bg-white p-7 shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_36px_rgba(26,22,18,0.13)] sm:p-8"
+          >
+            <span
+              class="font-display text-warm-200 pointer-events-none absolute top-4 right-5 text-7xl leading-none font-black select-none"
+              >02</span
+            >
+
+            <div
+              class="bg-brand/10 group-hover:bg-brand relative z-10 mb-5 flex h-11 w-11 items-center justify-center rounded-xl transition-colors duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-brand transition-colors duration-300 group-hover:text-white"
+                aria-hidden="true"
+              >
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+            </div>
+
+            <p class="text-brand relative z-10 mb-2 text-xs font-bold tracking-[0.25em] uppercase">
+              Divisione
+            </p>
+            <h2
+              class="font-display text-ink-900 relative z-10 mb-3 text-xl leading-snug font-bold sm:text-2xl"
+            >
+              Progettazione
+            </h2>
+            <p class="text-ink-600 relative z-10 flex-1 text-base leading-relaxed">
+              Dalla prima consulenza alla consegna chiavi in mano: ogni passo del nostro processo,
+              documentato con foto.
+            </p>
+            <span
+              class="text-brand relative z-10 mt-6 inline-flex items-center gap-2 text-sm font-semibold transition-all duration-200 group-hover:gap-3"
+            >
+              Vedi come lavoriamo
+              <span class="inline-block transition-transform duration-200 group-hover:translate-x-1"
+                >→</span
+              >
+            </span>
+          </a>
+
+          <a
+            href="/contract"
+            class="group border-warm-200 hover:border-brand/30 relative flex flex-col overflow-hidden rounded-2xl border bg-white p-7 shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_36px_rgba(26,22,18,0.13)] sm:col-span-2 sm:p-8 lg:col-span-1"
+          >
+            <span
+              class="font-display text-warm-200 pointer-events-none absolute top-4 right-5 text-7xl leading-none font-black select-none"
+              >03</span
+            >
+
+            <div
+              class="bg-brand/10 group-hover:bg-brand relative z-10 mb-5 flex h-11 w-11 items-center justify-center rounded-xl transition-colors duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-brand transition-colors duration-300 group-hover:text-white"
+                aria-hidden="true"
+              >
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            </div>
+
+            <p class="text-brand relative z-10 mb-2 text-xs font-bold tracking-[0.25em] uppercase">
+              Divisione
+            </p>
+            <h2
+              class="font-display text-ink-900 relative z-10 mb-3 text-xl leading-snug font-bold sm:text-2xl"
+            >
+              Contract
+            </h2>
+            <p class="text-ink-600 relative z-10 flex-1 text-base leading-relaxed">
+              Arredo completo per hotel, uffici e grandi residenze. Numeri importanti, qualità che
+              non scende mai.
+            </p>
+            <span
+              class="text-brand relative z-10 mt-6 inline-flex items-center gap-2 text-sm font-semibold transition-all duration-200 group-hover:gap-3"
+            >
+              Scopri i grandi lavori
+              <span class="inline-block transition-transform duration-200 group-hover:translate-x-1"
+                >→</span
+              >
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-white py-14 sm:py-20">
+      <div class="mx-auto max-w-2xl px-4 text-center sm:px-6 lg:px-8">
+        <h2 class="font-display text-ink-900 mb-4 text-2xl leading-snug font-bold sm:text-3xl">
+          Hai un progetto in mente?
+        </h2>
+        <p class="text-ink-600 mb-8 text-lg leading-relaxed">
+          Chiamaci o scrivici: preventivo in giornata.
+        </p>
+        <a
+          href="/#contatti"
+          class="bg-brand hover:bg-brand-dark inline-flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-bold text-white shadow-[0_4px_16px_rgba(191,40,43,0.28)] transition-all duration-200 hover:-translate-y-px hover:shadow-[0_6px_22px_rgba(191,40,43,0.38)]"
+        >
+          Richiedi un preventivo →
+        </a>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</Layout>
