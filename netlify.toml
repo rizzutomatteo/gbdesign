@@ -41,7 +41,7 @@
 
 # Redirect www → root (o viceversa: scegline UNA)
 [[redirects]]
-  from = "https://www.tuosito.com/*"
-  to = "https://tuosito.com/:splat"
+  from = "https://gbdesign.netlify.app/*"
+  to = "https://gbdesign.netlify.app/:splat"
   status = 301
   force = true
