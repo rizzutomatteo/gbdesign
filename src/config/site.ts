@@ -1,8 +1,8 @@
 export const site = {
   name: 'GB Design',
-  tagline: 'Traslochi & Montaggio Mobili',
+  tagline: 'Montaggio Cucine & Mobili',
   description:
-    'Traslochi residenziali e aziendali in tutta la provincia di Macerata. Puntuali, professionali, affidabili.',
+    'Montiamo cucine, armadi, librerie e qualsiasi mobile nella provincia di Macerata. Precisi, puntuali, senza stress.',
   phone: '+390000000000',
   phoneDisplay: '000 000 0000',
   whatsapp: '390000000000',
@@ -16,13 +16,13 @@ export const site = {
     zip: '62100',
   },
   social: {
-    facebook: 'https://www.facebook.com/gbdesigntraslochi',
-    instagram: 'https://www.instagram.com/gbdesigntraslochi',
+    facebook: 'https://www.facebook.com/gbdesignmobili',
+    instagram: 'https://www.instagram.com/gbdesignmobili',
   },
   googleReviews: 'https://g.page/r/gbdesign/review',
   stats: {
     anni: 15,
-    traslochi: 2500,
+    lavori: 2500,
     rating: '4,9',
     recensioni: 120,
   },
