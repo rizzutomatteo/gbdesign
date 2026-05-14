@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { site } from '../config/site';
+---
+
+<Layout
+  title="Pagina non trovata — GB Design Macerata"
+  description="La pagina che cerchi non esiste o è stata spostata."
+>
+  <SiteHeader />
+  <main class="min-h-screen pt-16">
+
+    <section class="py-14 sm:py-24 md:py-32 bg-warm-50 relative overflow-hidden">
+      <div class="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-warm-100 to-transparent pointer-events-none"></div>
+      <div class="absolute right-8 top-1/2 -translate-y-1/2 font-display font-black text-[10rem] sm:text-[16rem] text-warm-200/70 leading-none select-none pointer-events-none hidden md:block">
+        404
+      </div>
+
+      <div class="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-brand text-xs font-bold uppercase tracking-[0.3em] mb-3">Errore 404</p>
+        <h1 class="font-display font-black text-ink-900 text-3xl sm:text-5xl leading-tight mb-5">
+          Pagina non trovata
+        </h1>
+        <div class="w-16 h-px bg-warm-300 mb-8"></div>
+        <p class="text-ink-600 text-lg leading-relaxed mb-4">
+          La pagina che cerchi non esiste o è stata spostata.
+        </p>
+        <p class="text-ink-400 text-base leading-relaxed mb-10">
+          Torna alla home e riparti da lì — nel dubbio, siamo sempre raggiungibili per telefono o WhatsApp.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="/"
+            class="inline-flex items-center justify-center gap-2 bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-lg font-bold transition-all duration-200 shadow-[0_4px_16px_rgba(191,40,43,0.28)] hover:shadow-[0_6px_22px_rgba(191,40,43,0.38)] hover:-translate-y-px"
+          >
+            ← Torna alla home
+          </a>
+          <a
+            href={`https://wa.me/${site.whatsapp}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 bg-white hover:bg-warm-100 text-ink-700 px-8 py-4 rounded-lg font-semibold border border-warm-200 hover:border-warm-300 transition-all duration-200"
+          >
+            Scrivici su WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <SiteFooter />
+</Layout>
