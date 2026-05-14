@@ -5,6 +5,7 @@ import cms from '../data/impostazioni.json';
 // vanno aggiornati qui dal developer prima del go-live.
 export const site = {
   ...cms,
+  url: 'https://www.gbdesign.it',
   piva: '01234567891',
   rea: 'MC-123456',
   address: {
