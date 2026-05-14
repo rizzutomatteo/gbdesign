@@ -1,0 +1,380 @@
+# ─────────────────────────────────────────────────────────────
+# Decap CMS — GB Design
+# Configurazione completa in italiano per utente non tecnico
+# ─────────────────────────────────────────────────────────────
+
+backend:
+  name: git-gateway
+  branch: main
+
+# In locale: npx decap-server + local_backend: true bypassa Netlify Identity.
+# RIMUOVERE prima del deploy in produzione.
+# local_backend: true
+
+# Cartella dove vengono salvate le foto caricate dal pannello
+media_folder: 'public/images/cms'
+public_folder: '/images/cms'
+
+# Disabilita i link di anteprima (semplifica l'interfaccia)
+show_preview_links: false
+
+# ═══════════════════════════════════════════════════════════════
+# COLLEZIONI
+# ═══════════════════════════════════════════════════════════════
+
+collections:
+  # ─────────────────────────────────────────────────────────────
+  # ⭐ RECENSIONI
+  # ─────────────────────────────────────────────────────────────
+  - name: 'recensioni'
+    label: '⭐ Recensioni'
+    label_singular: 'Recensione'
+    description: >
+      Aggiungi, modifica o rimuovi le testimonianze dei clienti
+      mostrate nella sezione "Le recensioni dei clienti".
+    folder: 'src/content/recensioni'
+    create: true
+    delete: true
+    slug: '{{autore | slugify}}'
+    summary: '{{autore}} — {{citta}} ({{rating}}/5)'
+    editor:
+      preview: false
+    sortable_fields:
+      fields: ['data', 'autore', 'rating']
+      default:
+        field: data
+        direction: Descending
+    view_filters:
+      - label: 'Solo in evidenza'
+        field: in_evidenza
+        pattern: true
+    fields:
+      - label: 'Nome del cliente'
+        name: autore
+        widget: string
+        hint: >
+          Es. "Marco R." oppure "Maria Grazia T." — usa solo
+          l'iniziale del cognome per proteggere la privacy.
+
+      - label: 'Città'
+        name: citta
+        widget: string
+        required: false
+        hint: 'Facoltativo. Es. «Macerata», «Civitanova Marche», «Porto Recanati».'
+
+      - label: 'Voto'
+        name: rating
+        widget: select
+        options:
+          - { label: '⭐⭐⭐⭐⭐  5 stelle — eccellente', value: 5 }
+          - { label: '⭐⭐⭐⭐  4 stelle — molto buono', value: 4 }
+          - { label: '⭐⭐⭐  3 stelle — nella media', value: 3 }
+        default: 5
+        hint: 'Il voto dato dal cliente.'
+
+      - label: 'Data della recensione'
+        name: data
+        widget: datetime
+        format: 'YYYY-MM-DD'
+        date_format: 'DD/MM/YYYY'
+        time_format: false
+        hint: 'La data in cui il cliente ha scritto la recensione.'
+
+      - label: 'Metti in evidenza'
+        name: in_evidenza
+        widget: boolean
+        default: true
+        hint: >
+          Se attivato, questa recensione appare tra le prime
+          nella pagina. Usalo per le più significative.
+
+      - label: 'Testo della recensione'
+        name: body
+        widget: markdown
+        minimal: true
+        hint: 'Scrivi qui le parole esatte del cliente.'
+
+  # ─────────────────────────────────────────────────────────────
+  # 📷 I NOSTRI LAVORI
+  # ─────────────────────────────────────────────────────────────
+  - name: 'lavori'
+    label: '📷 I nostri lavori'
+    label_singular: 'Lavoro'
+    description: >
+      Gestisci le foto dei lavori eseguiti che appaiono
+      nella galleria del sito.
+    folder: 'src/content/lavori'
+    create: true
+    delete: true
+    slug: '{{titolo | slugify}}'
+    summary: '{{titolo}} — {{data}}'
+    editor:
+      preview: false
+    sortable_fields:
+      fields: ['data', 'titolo']
+      default:
+        field: data
+        direction: Descending
+    view_filters:
+      - label: 'Solo in evidenza'
+        field: in_evidenza
+        pattern: true
+    fields:
+      - label: 'Titolo del lavoro'
+        name: titolo
+        widget: string
+        hint: >
+          Es. «Cucina in arte povera a Macerata» oppure
+          «Montaggio armadio scorrevole a Civitanova».
+
+      - label: 'Descrizione breve'
+        name: descrizione
+        widget: text
+        required: false
+        hint: '1-2 frasi che descrivono il lavoro. Facoltativo.'
+
+      - label: 'Foto'
+        name: foto
+        widget: image
+        hint: >
+          Carica la foto del lavoro finito.
+          Usa immagini orizzontali di buona qualità (almeno 800px di larghezza).
+
+      - label: 'Metti in evidenza'
+        name: in_evidenza
+        widget: boolean
+        default: false
+        hint: 'Se attivato, questa foto appare nelle prime posizioni della galleria.'
+
+      - label: 'Data del lavoro'
+        name: data
+        widget: datetime
+        format: 'YYYY-MM-DD'
+        date_format: 'DD/MM/YYYY'
+        time_format: false
+        hint: "Il mese e l'anno in cui è stato completato il lavoro."
+
+  # ─────────────────────────────────────────────────────────────
+  # 📅 LA NOSTRA STORIA
+  # ─────────────────────────────────────────────────────────────
+  - name: 'tappe-storia'
+    label: '📅 La nostra storia'
+    label_singular: 'Tappa'
+    description: >
+      I momenti importanti nella storia dell'azienda,
+      mostrati nella timeline della pagina «Storia».
+    folder: 'src/content/tappe-storia'
+    create: true
+    delete: true
+    slug: '{{anno}}-{{titolo | slugify}}'
+    summary: '{{anno}} — {{titolo}}'
+    editor:
+      preview: false
+    sortable_fields:
+      fields: ['anno']
+      default:
+        field: anno
+        direction: Ascending
+    fields:
+      - label: 'Anno'
+        name: anno
+        widget: number
+        value_type: int
+        min: 1990
+        max: 2100
+        hint: "L'anno in cui è avvenuto questo evento. Es. 2008."
+
+      - label: 'Titolo'
+        name: titolo
+        widget: string
+        hint: >
+          Una frase breve che descrive il momento.
+          Es. «Apertura della prima sede» oppure «Raggiungiamo 1000 clienti».
+
+      - label: 'Descrizione'
+        name: descrizione
+        widget: text
+        hint: "2-3 frasi che raccontano questo momento dell'azienda."
+
+  # ─────────────────────────────────────────────────────────────
+  # 🔧 COME LAVORIAMO
+  # ─────────────────────────────────────────────────────────────
+  - name: 'passaggi'
+    label: '🔧 Come lavoriamo'
+    label_singular: 'Passaggio'
+    description: >
+      I passi del processo di lavoro mostrati nella sezione
+      «Come lavoriamo». Modificali con cautela: cambiano
+      il modo in cui presentiamo il nostro metodo ai clienti.
+    folder: 'src/content/passaggi'
+    create: true
+    delete: true
+    slug: '{{ordine}}-{{titolo | slugify}}'
+    summary: 'Passo {{ordine}} — {{titolo}}'
+    editor:
+      preview: false
+    sortable_fields:
+      fields: ['ordine']
+      default:
+        field: ordine
+        direction: Ascending
+    fields:
+      - label: "Numero d'ordine"
+        name: ordine
+        widget: number
+        value_type: int
+        min: 1
+        max: 20
+        hint: 'La posizione di questo passo. 1 = primo, 2 = secondo, ecc.'
+
+      - label: 'Titolo del passo'
+        name: titolo
+        widget: string
+        hint: 'Es. «Sopralluogo gratuito» oppure «Imballaggio professionale».'
+
+      - label: 'Descrizione'
+        name: descrizione
+        widget: text
+        hint: 'Spiega in 2-3 frasi cosa succede in questa fase del lavoro.'
+
+      - label: 'Icona'
+        name: icona
+        widget: select
+        hint: "L'icona che rappresenta visivamente questo passo."
+        options:
+          - { label: '📞 Telefono / Primo contatto', value: 'phone' }
+          - { label: '🔍 Sopralluogo / Misurazioni', value: 'search' }
+          - { label: '📋 Preventivo / Documenti', value: 'clipboard' }
+          - { label: '📦 Imballaggio / Protezione', value: 'archive-box' }
+          - { label: '🚚 Trasporto / Consegna', value: 'truck' }
+          - { label: '🔧 Montaggio / Installazione', value: 'wrench' }
+          - { label: '🏠 Sistemazione in casa', value: 'home' }
+          - { label: '✅ Lavoro completato', value: 'check-circle' }
+          - { label: '⭐ Qualità / Cura', value: 'star' }
+          - { label: '🛡️ Garanzia / Sicurezza', value: 'shield-check' }
+
+      - label: 'Foto illustrativa (facoltativa)'
+        name: foto
+        widget: image
+        required: false
+        hint: 'Immagine opzionale che mostra questo passo del processo.'
+
+  # ─────────────────────────────────────────────────────────────
+  # ⚙️ IMPOSTAZIONI SITO
+  # ─────────────────────────────────────────────────────────────
+  - name: 'impostazioni'
+    label: '⚙️ Impostazioni sito'
+    description: >
+      Modifica i dati di contatto, lo slogan e le statistiche
+      che appaiono in tutto il sito. Attenzione: le modifiche
+      saranno visibili online dopo qualche minuto.
+    editor:
+      preview: false
+    files:
+      - name: 'generale'
+        label: 'Dati aziendali e contatti'
+        file: 'src/data/impostazioni.json'
+        fields:
+          - label: 'Nome azienda'
+            name: name
+            widget: string
+            hint: 'Il nome visualizzato nel sito. Es. «GB Design».'
+
+          - label: 'Slogan'
+            name: tagline
+            widget: string
+            hint: >
+              La frase breve sotto il nome. Deve essere concisa e
+              descrivere il core business. Es. «Montaggio Cucine & Mobili».
+
+          - label: 'Descrizione per i motori di ricerca'
+            name: description
+            widget: text
+            hint: >
+              Questo testo appare su Google sotto il titolo del sito.
+              Descrivi l'attività in 1-2 frasi (max 160 caratteri).
+
+          - label: 'Numero di telefono'
+            name: phone
+            widget: string
+            hint: >
+              Formato internazionale senza spazi.
+              Es. +390733123456 (prefisso 39 = Italia, poi il numero senza lo 0 iniziale).
+
+          - label: 'Numero di telefono (come appare nel sito)'
+            name: phoneDisplay
+            widget: string
+            hint: 'Il numero nel formato leggibile. Es. «0733 123 456».'
+
+          - label: 'Numero WhatsApp'
+            name: whatsapp
+            widget: string
+            hint: >
+              Solo cifre, senza il + iniziale.
+              Es. 390733123456 (39 = prefisso Italia, poi il numero senza lo 0).
+
+          - label: 'Indirizzo email'
+            name: email
+            widget: string
+            hint: 'Es. info@gbdesign.it'
+
+          - label: 'Link pagina Google per le recensioni'
+            name: googleReviews
+            widget: string
+            hint: >
+              L'URL dove i clienti possono lasciare recensioni su Google.
+              Lo trovi nel pannello Google Business Profile del tuo account.
+
+          - label: 'Statistiche'
+            name: stats
+            widget: object
+            summary: 'Anni: {{fields.anni}} · Lavori: {{fields.lavori}} · Voto: {{fields.rating}}'
+            fields:
+              - label: 'Anni di esperienza'
+                name: anni
+                widget: number
+                value_type: int
+                hint: "Quanti anni di attività ha l'azienda."
+
+              - label: 'Lavori completati'
+                name: lavori
+                widget: number
+                value_type: int
+                hint: 'Numero totale di cucine e mobili montati fino ad oggi.'
+
+              - label: 'Voto medio Google'
+                name: rating
+                widget: string
+                pattern:
+                  - '^[0-9],[0-9]$'
+                  - 'Usa il formato con la virgola, es. 4,9'
+                hint: 'Il voto medio su Google. Usa la virgola come separatore. Es. «4,9».'
+
+              - label: 'Numero di recensioni Google'
+                name: recensioni
+                widget: number
+                value_type: int
+                hint: 'Il conteggio totale delle recensioni ricevute su Google.'
+
+          - label: 'Social media'
+            name: social
+            widget: object
+            summary: 'Facebook · Instagram'
+            fields:
+              - label: 'Pagina Facebook'
+                name: facebook
+                widget: string
+                required: false
+                hint: >
+                  URL completo della pagina Facebook.
+                  Es. https://www.facebook.com/gbdesignmobili
+                  Lascia vuoto se non hai la pagina.
+
+              - label: 'Profilo Instagram'
+                name: instagram
+                widget: string
+                required: false
+                hint: >
+                  URL completo del profilo Instagram.
+                  Es. https://www.instagram.com/gbdesignmobili
+                  Lascia vuoto se non hai il profilo.

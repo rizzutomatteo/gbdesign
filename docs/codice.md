@@ -20,7 +20,7 @@ interface Props {
   ctaLabel?: string;
 }
 
-const { titolo, descrizione, ctaLabel = "Richiedi preventivo" } = Astro.props;
+const { titolo, descrizione, ctaLabel = 'Richiedi preventivo' } = Astro.props;
 ---
 ```
 
@@ -47,11 +47,11 @@ const { titolo, descrizione, ctaLabel = "Richiedi preventivo" } = Astro.props;
 In `astro.config.mjs`:
 
 ```js
-import { defineConfig } from "astro/config";
-import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from 'astro/config';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: "https://gbdesign-traslochi.it",
+  site: 'https://gbdesign-traslochi.it',
   vite: { plugins: [tailwindcss()] },
 });
 ```
@@ -59,33 +59,32 @@ export default defineConfig({
 In `src/styles/global.css`:
 
 ```css
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   /* Palette GB Design: Rosso Acceso, Nero e Bianco */
-  --color-brand-50: #fef2f2;   /* Bianco sporco rosato per sfondi light */
-  --color-brand-500: #e11d48;  /* Il Rosso core: acceso, moderno e "carino" (Rose-Red) */
-  --color-brand-700: #be123c;  /* Rosso scuro per hover e stati attivi */
-  --color-brand-900: #881337;  /* Rosso profondo per contrasti forti */
+  --color-brand-50: #fef2f2; /* Bianco sporco rosato per sfondi light */
+  --color-brand-500: #e11d48; /* Il Rosso core: acceso, moderno e "carino" (Rose-Red) */
+  --color-brand-700: #be123c; /* Rosso scuro per hover e stati attivi */
+  --color-brand-900: #881337; /* Rosso profondo per contrasti forti */
 
   /* Inchiostri e Neutri */
-  --color-ink-900: #020617;    /* Nero quasi assoluto (Slate 950) per il testo principale */
-  --color-ink-700: #334155;    /* Grigio molto scuro per testi secondari */
-  --color-ink-500: #64748b;    /* Grigio medio per icone o placeholder */
+  --color-ink-900: #020617; /* Nero quasi assoluto (Slate 950) per il testo principale */
+  --color-ink-700: #334155; /* Grigio molto scuro per testi secondari */
+  --color-ink-500: #64748b; /* Grigio medio per icone o placeholder */
 
-  --color-white: #ffffff;      /* Bianco puro */
+  --color-white: #ffffff; /* Bianco puro */
 
-  --font-sans: "Inter Variable", system-ui, sans-serif;
-  --font-display: "Manrope Variable", system-ui, sans-serif;
+  --font-sans: 'Inter Variable', system-ui, sans-serif;
+  --font-display: 'Manrope Variable', system-ui, sans-serif;
 }
-
 ```
 
 Importa in `BaseLayout.astro`:
 
 ```astro
 ---
-import "../styles/global.css";
+import '../styles/global.css';
 ---
 ```
 
@@ -101,16 +100,16 @@ import "../styles/global.css";
 
 ## 4. Naming
 
-| Tipo | Convenzione | Esempio |
-|---|---|---|
-| Componenti Astro | PascalCase | `PreventivoForm.astro` |
-| Pagine | kebab-case | `chi-siamo.astro` |
-| Slug URL | kebab-case minuscolo | `/contatti` |
-| File content | kebab-case | `laura-macerata.md` |
-| Variabili TS | camelCase | `numeriChiave` |
-| Tipi / interfacce | PascalCase | `Sede`, `Recensione` |
-| Classi CSS custom | kebab-case | `hero-grid` |
-| CSS variables | kebab-case con prefisso | `--color-brand-500` |
+| Tipo                   | Convenzione                   | Esempio                   |
+| ---------------------- | ----------------------------- | ------------------------- |
+| Componenti Astro       | PascalCase                    | `PreventivoForm.astro`    |
+| Pagine                 | kebab-case                    | `chi-siamo.astro`         |
+| Slug URL               | kebab-case minuscolo          | `/contatti`               |
+| File content           | kebab-case                    | `laura-macerata.md`       |
+| Variabili TS           | camelCase                     | `numeriChiave`            |
+| Tipi / interfacce      | PascalCase                    | `Sede`, `Recensione`      |
+| Classi CSS custom      | kebab-case                    | `hero-grid`               |
+| CSS variables          | kebab-case con prefisso       | `--color-brand-500`       |
 | Costanti env pubbliche | `PUBLIC_SCREAMING_SNAKE_CASE` | `PUBLIC_PLAUSIBLE_DOMAIN` |
 
 ---
@@ -121,6 +120,7 @@ import "../styles/global.css";
 - usare feature branch + Pull Request
 
 ### Conventional Commits — formato obbligatorio
+
 Ogni commit deve seguire lo standard [Conventional Commits](https://conventionalcommits.org).
 Formato: `<tipo>(<ambito>): <descrizione breve>`
 
@@ -218,13 +218,15 @@ Il form è secondario rispetto a telefono/WhatsApp. Tienilo **corto**.
 ### Campi
 
 Obbligatori:
-- Nome*
-- Telefono*
-- Email*
-- Messaggio*
-- Consenso privacy*
+
+- Nome\*
+- Telefono\*
+- Email\*
+- Messaggio\*
+- Consenso privacy\*
 
 Opzionali:
+
 - Tipo di trasloco (radio: casa / ufficio / montaggio mobili)
 - Data indicativa
 
@@ -353,32 +355,43 @@ Ad ogni push GitHub esegue questi controlli **prima** che Netlify pubblichi.
 `tests/smoke.spec.ts`:
 
 ```ts
-import { test, expect } from "@playwright/test";
+import { test, expect } from '@playwright/test';
 
-test("la home carica con titolo corretto", async ({ page }) => {
-  await page.goto("/");
+test('la home carica con titolo corretto', async ({ page }) => {
+  await page.goto('/');
   await expect(page).toHaveTitle(/GB Design/);
-  await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
 });
 
-test("le sezioni principali sono presenti", async ({ page }) => {
-  await page.goto("/");
-  for (const section of ["mission", "numeri", "come-lavoriamo", "lavori", "recensioni", "storia", "sedi", "contatti"]) {
+test('le sezioni principali sono presenti', async ({ page }) => {
+  await page.goto('/');
+  for (const section of [
+    'mission',
+    'numeri',
+    'come-lavoriamo',
+    'lavori',
+    'recensioni',
+    'storia',
+    'sedi',
+    'contatti',
+  ]) {
     await expect(page.locator(`#${section}`)).toBeVisible();
   }
 });
 
-test("nessun errore console su home", async ({ page }) => {
+test('nessun errore console su home', async ({ page }) => {
   const errors: string[] = [];
-  page.on("pageerror", (e) => errors.push(e.message));
-  page.on("console", (msg) => { if (msg.type() === "error") errors.push(msg.text()); });
-  await page.goto("/");
+  page.on('pageerror', (e) => errors.push(e.message));
+  page.on('console', (msg) => {
+    if (msg.type() === 'error') errors.push(msg.text());
+  });
+  await page.goto('/');
   expect(errors).toEqual([]);
 });
 
-test("il form contatti ha tutti i campi obbligatori", async ({ page }) => {
-  await page.goto("/#contatti");
-  for (const field of ["Nome", "Telefono", "Email", "Messaggio"]) {
+test('il form contatti ha tutti i campi obbligatori', async ({ page }) => {
+  await page.goto('/#contatti');
+  for (const field of ['Nome', 'Telefono', 'Email', 'Messaggio']) {
     await expect(page.getByLabel(field)).toBeVisible();
   }
 });
@@ -386,4 +399,4 @@ test("il form contatti ha tutti i campi obbligatori", async ({ page }) => {
 
 ---
 
-*Aggiornato: 12 maggio 2026.*
+_Aggiornato: 12 maggio 2026._

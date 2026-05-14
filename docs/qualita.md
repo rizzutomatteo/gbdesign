@@ -21,18 +21,18 @@ Il sito ha **una pagina che conta**: la home. Regole semplici e ferree.
 
 ### Heading
 
-- **Un solo `<h1>`** sulla home, nell'Hero (es. *"Traslochi a Macerata, fatti come si deve"*)
+- **Un solo `<h1>`** sulla home, nell'Hero (es. _"Traslochi a Macerata, fatti come si deve"_)
 - Ogni sezione successiva inizia con un `<h2>`
 - Sotto-elementi in `<h3>` (tappe della storia, recensioni, sedi)
 - Mai saltare livelli di heading
 
 ### Keyword da inserire naturalmente
 
-- *traslochi Macerata*, *trasloco Macerata*
-- *impresa di traslochi Macerata*, *ditta traslochi provincia di Macerata*
-- *traslochi aziendali Macerata*, *traslochi uffici Macerata*
-- *montaggio mobili Macerata*
-- *traslochi Civitanova Marche* (sede operativa)
+- _traslochi Macerata_, _trasloco Macerata_
+- _impresa di traslochi Macerata_, _ditta traslochi provincia di Macerata_
+- _traslochi aziendali Macerata_, _traslochi uffici Macerata_
+- _montaggio mobili Macerata_
+- _traslochi Civitanova Marche_ (sede operativa)
 
 Una occorrenza in ogni punto chiave (title, H1, primo paragrafo, alt text immagine hero) **basta**. Google nel 2026 non premia il keyword stuffing.
 
@@ -81,20 +81,31 @@ In `src/components/seo/SchemaMovingCompany.astro`:
     {
       "@type": "Place",
       "name": "GB Design — Sede principale Macerata",
-      "address": { "@type": "PostalAddress", "streetAddress": "Contrada Piediripa 25", "addressLocality": "Macerata", "postalCode": "62100", "addressRegion": "MC", "addressCountry": "IT" },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Contrada Piediripa 25",
+        "addressLocality": "Macerata",
+        "postalCode": "62100",
+        "addressRegion": "MC",
+        "addressCountry": "IT"
+      },
       "geo": { "@type": "GeoCoordinates", "latitude": 43.2812, "longitude": 13.4536 }
     },
     {
       "@type": "Place",
       "name": "GB Design — Sede operativa Civitanova Marche",
-      "address": { "@type": "PostalAddress", "streetAddress": "Via Adriatica 100", "addressLocality": "Civitanova Marche", "postalCode": "62012", "addressRegion": "MC", "addressCountry": "IT" },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Adriatica 100",
+        "addressLocality": "Civitanova Marche",
+        "postalCode": "62012",
+        "addressRegion": "MC",
+        "addressCountry": "IT"
+      },
       "geo": { "@type": "GeoCoordinates", "latitude": 43.3072, "longitude": 13.7228 }
     }
   ],
-  "sameAs": [
-    "https://instagram.com/gbdesign.traslochi",
-    "https://facebook.com/GBDesignTraslochi"
-  ],
+  "sameAs": ["https://instagram.com/gbdesign.traslochi", "https://facebook.com/GBDesignTraslochi"],
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
@@ -113,8 +124,8 @@ Registrare **due schede GBP**, una per sede (Macerata e Civitanova Marche). Sono
 
 - Telefono e orari coerenti con `site.ts`
 - Foto delle sedi (almeno 5 per scheda)
-- Categoria primaria: *Servizio di trasloco*
-- Categoria secondaria: *Servizio di montaggio mobili*
+- Categoria primaria: _Servizio di trasloco_
+- Categoria secondaria: _Servizio di montaggio mobili_
 
 ---
 
@@ -145,7 +156,9 @@ Obbligatorio per legge UE dal giugno 2025 e fattore di ranking Google.
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -185,15 +198,15 @@ Un one-pager **deve volare**.
 
 ### Target
 
-| Metrica | Obiettivo |
-|---|---|
-| LCP | < 2,0 s |
-| CLS | < 0,05 |
-| INP | < 200 ms |
-| JS totale | < 30 KB |
-| Lighthouse Performance | ≥ 95 mobile |
-| Lighthouse SEO | ≥ 95 |
-| Lighthouse Accessibility | ≥ 95 |
+| Metrica                  | Obiettivo   |
+| ------------------------ | ----------- |
+| LCP                      | < 2,0 s     |
+| CLS                      | < 0,05      |
+| INP                      | < 200 ms    |
+| JS totale                | < 30 KB     |
+| Lighthouse Performance   | ≥ 95 mobile |
+| Lighthouse SEO           | ≥ 95        |
+| Lighthouse Accessibility | ≥ 95        |
 
 ### Immagini
 
@@ -210,6 +223,7 @@ Esempio:
 import { Image } from 'astro:assets';
 import hero from '../assets/hero.jpg';
 ---
+
 <Image
   src={hero}
   alt="Squadra GB Design davanti al furgone, Macerata"
@@ -298,4 +312,4 @@ Una task è "finita" SOLO se:
 
 ---
 
-*Aggiornato: 12 maggio 2026.*
+_Aggiornato: 12 maggio 2026._

@@ -1,0 +1,15 @@
+pre-commit:
+  parallel: true
+  commands:
+    prettier:
+      glob: '*.{js,ts,astro,css,json,md,yml}'
+      run: npx prettier --write {staged_files}
+      stage_fixed: true
+
+pre-push:
+  parallel: true
+  commands:
+    check:
+      run: npm run check
+    build:
+      run: npm run build

@@ -23,7 +23,17 @@ const {
     <meta name="description" content={description} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Redirect per link invito/recupero password da Netlify Identity -->
+    <script is:inline>
+      var h = window.location.hash;
+      if (h.indexOf('invite_token') !== -1 || h.indexOf('recovery_token') !== -1) {
+        window.location.replace('/admin' + h);
+      }
+    </script>
   </head>
   <body class="antialiased">
     <slot />

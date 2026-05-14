@@ -14,6 +14,7 @@
 **Obiettivo**: presentare l'azienda con serietà e portare contatti via **telefono, WhatsApp, email, form**. Il telefono è la conversione principale: il form è solo un'opzione in più.
 
 **Pubblico**:
+
 - **Privati** del maceratese (30-60 anni), valorizzano serietà e contatto umano.
 - **Aziende**: PMI, uffici, attività commerciali che spostano sede.
 
@@ -27,7 +28,7 @@
 
 Telefono, email, indirizzi delle sedi, P. IVA, social, numeri chiave (anni, traslochi completati, recensioni) sono **lì e solo lì**. Nessun componente hardcoda questi valori: si importa sempre dalla config.
 
-Quando il cliente dice *"cambia il telefono"* o *"aggiorniamo il numero di traslochi a 3000"* → si modifica solo `src/config/site.ts`.
+Quando il cliente dice _"cambia il telefono"_ o _"aggiorniamo il numero di traslochi a 3000"_ → si modifica solo `src/config/site.ts`.
 
 ---
 
@@ -56,17 +57,19 @@ Pagine separate dalla home: `/privacy`, `/cookie`, `/404`. Eventualmente `/conta
 
 **Amichevole, rassicurante, umano**. Il trasloco è uno dei momenti più stressanti della vita: il sito abbassa la tensione, non parla come una multinazionale.
 
-- **Tu** ai privati. **Voi** alle aziende quando il contesto lo richiede. Mai *"Lei"*.
+- **Tu** ai privati. **Voi** alle aziende quando il contesto lo richiede. Mai _"Lei"_.
 - Frasi corte. Verbi attivi. Concretezza.
 - Prima **cosa risolviamo**, poi **cosa facciamo**.
-- CTA chiare e ripetute: *"Chiamaci"*, *"Scrivici su WhatsApp"*, *"Richiedi un preventivo"*.
+- CTA chiare e ripetute: _"Chiamaci"_, _"Scrivici su WhatsApp"_, _"Richiedi un preventivo"_.
 
 Esempi giusti:
+
 > Traslocare stanca. Ce ne occupiamo noi: imballiamo, carichiamo, montiamo i mobili nella tua nuova casa. Tu pensi solo a rilassarti.
 
 > Devi spostare l'ufficio senza fermare l'attività? Veniamo nel weekend, lunedì sei operativo.
 
 Esempi da evitare:
+
 > ❌ Soluzioni di mobility integrate per il vostro relocation aziendale.
 > ❌ Il sottoscritto è lieto di offrire la massima professionalità.
 
@@ -82,7 +85,7 @@ Esempi da evitare:
 - Mai componenti monolitici > 200 righe: spezza
 - Mai committare senza prima formattare con Prettier
 - Mai rimuovere `lang="it"` da `<html>`
-- Mai usare *"Lei"* nel copy
+- Mai usare _"Lei"_ nel copy
 - Mai animazioni senza rispettare `prefers-reduced-motion`
 - Mai pubblicare immagini senza alt text (eccetto le decorative con `alt=""`)
 - Mai caricare iframe mappe al `load` della home (uccide LCP): vanno dietro un click
@@ -93,22 +96,23 @@ Esempi da evitare:
 ## 6. Come Claude approccia le task
 
 **All'inizio di una sessione**:
+
 1. Leggi questo `CLAUDE.md` per intero
 2. Apri `src/config/site.ts` per allinearti sui dati correnti
 3. Esplora il codice rilevante prima di modificarlo
 4. Per task complesse: **Plan Mode**, mostra il piano, attendi conferma
 
-**Granularità**: una richiesta = una cosa. Meglio 5 commit piccoli che 1 gigante. Se l'utente dice *"crea l'intera home"*, proponi di farla **per sezioni** (Hero, poi Mission, poi Numeri…) con revisione visiva tra una e l'altra.
+**Granularità**: una richiesta = una cosa. Meglio 5 commit piccoli che 1 gigante. Se l'utente dice _"crea l'intera home"_, proponi di farla **per sezioni** (Hero, poi Mission, poi Numeri…) con revisione visiva tra una e l'altra.
 
 **Quando la richiesta è ambigua**: chiedi chiarimenti prima di scrivere codice.
 
-> *"Aggiungi le recensioni."*
-> → *"Tre cose prima di partire: 1) content collection Markdown o tre fisse nel componente? 2) Con stelle o solo testo + nome + città? 3) Carosello o griglia?"*
+> _"Aggiungi le recensioni."_
+> → _"Tre cose prima di partire: 1) content collection Markdown o tre fisse nel componente? 2) Con stelle o solo testo + nome + città? 3) Carosello o griglia?"_
 
 **Quando la richiesta entra in conflitto col CLAUDE.md o coi `docs/`**: segnala il conflitto, non eseguire silenziosamente.
 
-> *"Aggiungi Google Analytics."*
-> → *"Il §5 vieta tracker invasivi senza conferma. GA4 richiede cookie banner. Posso configurare Plausible (già nello stack) in 5 minuti — va bene?"*
+> _"Aggiungi Google Analytics."_
+> → _"Il §5 vieta tracker invasivi senza conferma. GA4 richiede cookie banner. Posso configurare Plausible (già nello stack) in 5 minuti — va bene?"_
 
 **Aggiornare la documentazione**: se durante una task emerge una convenzione nuova o ne viene contraddetta una scritta, chiedi all'utente di aggiornare il file corretto **prima** di andare avanti. La memoria del progetto vive in questi file.
 
@@ -118,20 +122,18 @@ Esempi da evitare:
 
 Quando lavori su un'area specifica, **leggi anche il file dedicato**. Sono in `docs/`.
 
-| Quando lavori su… | Leggi anche |
-|---|---|
-| File tree, sezioni, stack tecnico, content collections | [`docs/architettura.md`](docs/architettura.md) |
-| SEO, Schema.org, accessibilità, performance, Definition of Done | [`docs/qualita.md`](docs/qualita.md) |
-| TypeScript, Astro, Tailwind, naming, Git, comandi, form Netlify | [`docs/codice.md`](docs/codice.md) |
+| Quando lavori su…                                               | Leggi anche                                    |
+| --------------------------------------------------------------- | ---------------------------------------------- |
+| File tree, sezioni, stack tecnico, content collections          | [`docs/architettura.md`](docs/architettura.md) |
+| SEO, Schema.org, accessibilità, performance, Definition of Done | [`docs/qualita.md`](docs/qualita.md)           |
+| TypeScript, Astro, Tailwind, naming, Git, comandi, form Netlify | [`docs/codice.md`](docs/codice.md)             |
 
 **Regola operativa**: non aprire i `docs/` "per scrupolo" se la task è banale (es. cambiare un testo). Aprili solo quando lavori sull'area che coprono. Risparmi contesto.
 
 ---
 
-## 8.  github
-
+## 8. github
 
 ---
 
-*Ultima revisione: 12 maggio 2026.*
-
+_Ultima revisione: 12 maggio 2026._
