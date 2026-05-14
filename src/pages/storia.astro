@@ -1,7 +1,11 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+
+const tappe = await getCollection('tappe-storia');
+const tappeOrdinate = tappe.sort((a, b) => a.data.anno - b.data.anno);
 ---
 
 <Layout
@@ -10,14 +14,34 @@ import SiteFooter from '../components/SiteFooter.astro';
 >
   <SiteHeader />
   <main class="min-h-screen pt-16">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <p class="text-brand text-xs font-bold uppercase tracking-[0.2em] mb-3">La nostra storia</p>
-      <h1 class="text-gray-900 text-4xl sm:text-5xl font-black mb-6">Dal 2008 ad oggi</h1>
-      <div class="w-16 h-1 bg-brand mb-8 rounded-full"></div>
-      <p class="text-gray-500 text-lg leading-relaxed">
-        Contenuto in arrivo. Questa pagina sarà presto aggiornata con la storia di GB Design.
-      </p>
-      <a href="/" class="mt-10 inline-flex items-center gap-2 text-brand font-semibold hover:underline">
+    <div class="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8">
+      <p class="text-brand mb-3 text-xs font-bold tracking-[0.2em] uppercase">La nostra storia</p>
+      <h1 class="font-display text-ink-900 mb-6 text-4xl font-black sm:text-5xl">
+        Dal 2008 ad oggi
+      </h1>
+      <div class="bg-brand mb-12 h-1 w-16 rounded-full"></div>
+
+      <ol class="border-warm-200 relative border-l">
+        {
+          tappeOrdinate.map((tappa) => (
+            <li class="mb-10 ml-8 last:mb-0">
+              <span class="bg-brand ring-warm-50 absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full ring-4">
+                <span class="sr-only">Anno {tappa.data.anno}</span>
+              </span>
+              <p class="text-brand mb-1 text-xs font-bold tracking-[0.2em] uppercase">
+                {tappa.data.anno}
+              </p>
+              <h2 class="font-display text-ink-900 mb-2 text-xl font-bold">{tappa.data.titolo}</h2>
+              <p class="text-ink-600 text-base leading-relaxed">{tappa.data.descrizione}</p>
+            </li>
+          ))
+        }
+      </ol>
+
+      <a
+        href="/"
+        class="text-brand mt-12 inline-flex items-center gap-2 font-semibold hover:underline"
+      >
         ← Torna alla home
       </a>
     </div>
