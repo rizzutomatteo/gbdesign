@@ -39,11 +39,7 @@ collections:
     summary: '{{autore}} — {{citta}} ({{rating}}/5)'
     editor:
       preview: false
-    sortable_fields:
-      fields: ['data', 'autore', 'rating']
-      default:
-        field: data
-        direction: Descending
+    sortable_fields: ['data', 'autore', 'rating']
     view_filters:
       - label: 'Solo in evidenza'
         field: in_evidenza
@@ -110,11 +106,7 @@ collections:
     summary: '{{titolo}} — {{data}}'
     editor:
       preview: false
-    sortable_fields:
-      fields: ['data', 'titolo']
-      default:
-        field: data
-        direction: Descending
+    sortable_fields: ['data', 'titolo']
     view_filters:
       - label: 'Solo in evidenza'
         field: in_evidenza
@@ -170,11 +162,7 @@ collections:
     summary: '{{anno}} — {{titolo}}'
     editor:
       preview: false
-    sortable_fields:
-      fields: ['anno']
-      default:
-        field: anno
-        direction: Ascending
+    sortable_fields: ['anno']
     fields:
       - label: 'Anno'
         name: anno
@@ -213,11 +201,7 @@ collections:
     summary: 'Passo {{ordine}} — {{titolo}}'
     editor:
       preview: false
-    sortable_fields:
-      fields: ['ordine']
-      default:
-        field: ordine
-        direction: Ascending
+    sortable_fields: ['ordine']
     fields:
       - label: "Numero d'ordine"
         name: ordine
