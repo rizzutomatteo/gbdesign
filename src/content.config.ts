@@ -13,14 +13,16 @@ const recensioni = defineCollection({
   }),
 });
 
-const lavori = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/lavori' }),
+const montaggi = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/montaggi' }),
   schema: z.object({
     titolo: z.string(),
-    descrizione: z.string().optional(),
-    foto: z.string(),
+    luogo: z.string(),
+    descrizione: z.string(),
+    categoria: z.enum(['montaggio-di-pregio', 'trasloco']),
     in_evidenza: z.boolean().default(false),
     data: z.coerce.date(),
+    foto: z.string().optional(),
   }),
 });
 
@@ -46,7 +48,7 @@ const passaggi = defineCollection({
 
 export const collections = {
   recensioni,
-  lavori,
+  montaggi,
   'tappe-storia': tappeStoria,
   passaggi,
 };
