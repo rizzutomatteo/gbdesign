@@ -1,7 +1,11 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+
+const tuttiPassaggi = await getCollection('passaggi');
+const passaggi = tuttiPassaggi.sort((a, b) => a.data.ordine - b.data.ordine);
 ---
 
 <Layout
@@ -48,119 +52,38 @@ import SiteFooter from '../components/SiteFooter.astro';
         </div>
 
         <div class="space-y-5">
-          <div
-            class="group border-warm-200 hover:border-warm-300 flex items-start gap-6 rounded-2xl border bg-white p-7 shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(26,22,18,0.11)] sm:p-8"
-          >
-            <div
-              class="bg-brand flex h-11 w-11 flex-none items-center justify-center rounded-xl shadow-[0_2px_10px_rgba(191,40,43,0.2)]"
-            >
-              <span class="font-display text-base leading-none font-black text-white">01</span>
-            </div>
-            <div>
-              <h3 class="font-display text-ink-900 mb-2 text-lg leading-snug font-bold sm:text-xl">
-                Prima consulenza
-              </h3>
-              <p class="text-ink-600 text-base leading-relaxed">
-                Ci chiami o ci scrivi. In dieci minuti capiamo cosa ti serve: quale mobile, dove,
-                entro quando. Nessuna burocrazia, nessun modulo da compilare.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="group border-warm-200 hover:border-warm-300 flex items-start gap-6 rounded-2xl border bg-white p-7 shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(26,22,18,0.11)] sm:p-8"
-          >
-            <div
-              class="bg-brand flex h-11 w-11 flex-none items-center justify-center rounded-xl shadow-[0_2px_10px_rgba(191,40,43,0.2)]"
-            >
-              <span class="font-display text-base leading-none font-black text-white">02</span>
-            </div>
-            <div>
-              <h3 class="font-display text-ink-900 mb-2 text-lg leading-snug font-bold sm:text-xl">
-                Sopralluogo
-              </h3>
-              <p class="text-ink-600 text-base leading-relaxed">
-                Per i lavori complessi veniamo a vedere di persona. Misuriamo, valutiamo gli
-                accessi, controlliamo le pareti. Meglio mezz'ora di sopralluogo che una sorpresa il
-                giorno del montaggio.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="group border-warm-200 hover:border-warm-300 flex items-start gap-6 rounded-2xl border bg-white p-7 shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(26,22,18,0.11)] sm:p-8"
-          >
-            <div
-              class="bg-brand flex h-11 w-11 flex-none items-center justify-center rounded-xl shadow-[0_2px_10px_rgba(191,40,43,0.2)]"
-            >
-              <span class="font-display text-base leading-none font-black text-white">03</span>
-            </div>
-            <div>
-              <h3 class="font-display text-ink-900 mb-2 text-lg leading-snug font-bold sm:text-xl">
-                Preventivo chiaro
-              </h3>
-              <p class="text-ink-600 text-base leading-relaxed">
-                Ti mandiamo un preventivo scritto, dettagliato, senza voci vaghe. Quello che leggi è
-                quello che paghi. Nessun extra a lavoro finito.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="group border-warm-200 hover:border-warm-300 flex items-start gap-6 rounded-2xl border bg-white p-7 shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(26,22,18,0.11)] sm:p-8"
-          >
-            <div
-              class="bg-brand flex h-11 w-11 flex-none items-center justify-center rounded-xl shadow-[0_2px_10px_rgba(191,40,43,0.2)]"
-            >
-              <span class="font-display text-base leading-none font-black text-white">04</span>
-            </div>
-            <div>
-              <h3 class="font-display text-ink-900 mb-2 text-lg leading-snug font-bold sm:text-xl">
-                Conferma e pianificazione
-              </h3>
-              <p class="text-ink-600 text-base leading-relaxed">
-                Accordiamo una data. Da quel momento è bloccata in agenda. Non ti chiamiamo il
-                giorno prima per spostare: la puntualità è il minimo che ti dobbiamo.
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="group border-warm-200 hover:border-warm-300 flex items-start gap-6 rounded-2xl border bg-white p-7 shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(26,22,18,0.11)] sm:p-8"
-          >
-            <div
-              class="bg-brand flex h-11 w-11 flex-none items-center justify-center rounded-xl shadow-[0_2px_10px_rgba(191,40,43,0.2)]"
-            >
-              <span class="font-display text-base leading-none font-black text-white">05</span>
-            </div>
-            <div>
-              <h3 class="font-display text-ink-900 mb-2 text-lg leading-snug font-bold sm:text-xl">
-                Realizzazione
-              </h3>
-              <p class="text-ink-600 text-base leading-relaxed">
-                Arriviamo, lavoriamo, sistemiamo. Ogni bullone al posto giusto, ogni anta a piombo,
-                ogni cavo nascosto. Il lavoro finisce quando è perfetto, non quando sono le sei di
-                sera.
-              </p>
-            </div>
-          </div>
-
-          <div class="group bg-ink-900 flex items-start gap-6 rounded-2xl p-7 sm:p-8">
-            <div
-              class="bg-brand flex h-11 w-11 flex-none items-center justify-center rounded-xl shadow-[0_2px_10px_rgba(191,40,43,0.3)]"
-            >
-              <span class="font-display text-base leading-none font-black text-white">06</span>
-            </div>
-            <div>
-              <h3 class="font-display mb-2 text-lg leading-snug font-bold text-white sm:text-xl">
-                Consegna e controllo finale
-              </h3>
-              <p class="text-warm-300 text-base leading-relaxed">
-                Ti mostriamo tutto il lavoro fatto. Se c'è qualcosa che non ti convince, lo
-                correggiamo prima di andare via. Usciamo solo quando sei soddisfatto.
-              </p>
-            </div>
-          </div>
+          {
+            passaggi.map((p, i) => {
+              const isLast = i === passaggi.length - 1;
+              return (
+                <div
+                  class={
+                    isLast
+                      ? 'group bg-ink-900 flex items-start gap-6 rounded-2xl p-7 sm:p-8'
+                      : 'group border-warm-200 hover:border-warm-300 flex items-start gap-6 rounded-2xl border bg-white p-7 shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:shadow-[0_8px_32px_rgba(26,22,18,0.11)] sm:p-8'
+                  }
+                >
+                  <div class="bg-brand flex h-11 w-11 flex-none items-center justify-center rounded-xl shadow-[0_2px_10px_rgba(191,40,43,0.2)]">
+                    <span class="font-display text-base leading-none font-black text-white">
+                      {String(p.data.ordine).padStart(2, '0')}
+                    </span>
+                  </div>
+                  <div>
+                    <h3
+                      class={`font-display mb-2 text-lg leading-snug font-bold sm:text-xl ${isLast ? 'text-white' : 'text-ink-900'}`}
+                    >
+                      {p.data.titolo}
+                    </h3>
+                    <p
+                      class={`text-base leading-relaxed ${isLast ? 'text-warm-300' : 'text-ink-600'}`}
+                    >
+                      {p.data.descrizione}
+                    </p>
+                  </div>
+                </div>
+              );
+            })
+          }
         </div>
       </div>
     </section>
