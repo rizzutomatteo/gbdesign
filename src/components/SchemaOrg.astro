@@ -23,7 +23,7 @@ const schema = {
     bestRating: '5',
     worstRating: '1',
   },
-  sameAs: [site.social.facebook, site.social.instagram],
+  sameAs: [site.social.facebook, site.social.instagram].filter(Boolean),
 };
 ---
 
