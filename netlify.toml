@@ -1,6 +1,9 @@
 [build]
   command = "npm run build"
   publish = "dist"
+  # Salta il build per i commit del CMS (Decap scrive "Create …" / "Update …" / "Delete …").
+  # I build hook (pulsante "Manda in produzione") ignorano questo campo e buildano sempre.
+  ignore = "node -e \"const m=require('child_process').execSync('git log -1 --pretty=%B').toString().trim(); process.exit(/^(Create|Update|Delete|Upload) /.test(m) ? 0 : 1);\""
 
 [build.environment]
   NODE_VERSION = "22"
