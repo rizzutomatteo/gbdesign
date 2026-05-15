@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://gbdesign.netlify.app/',
+  site: 'https://www.gbdesign.it',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
