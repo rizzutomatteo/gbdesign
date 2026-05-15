@@ -5,8 +5,8 @@ const CmsSchema = z.object({
   googleReviews: z.url(),
   name: z.string(),
   social: z.object({
-    facebook: z.string().url().or(z.literal('')).optional(),
-    instagram: z.string().url().or(z.literal('')).optional(),
+    facebook: z.url().or(z.literal('')).optional(),
+    instagram: z.url().or(z.literal('')).optional(),
   }),
   phone: z.string(),
   tagline: z.string(),
