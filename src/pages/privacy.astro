@@ -1,0 +1,249 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { site } from '../config/site';
+---
+
+<Layout
+  title="Informativa Privacy — GB Design"
+  description="Informativa sul trattamento dei dati personali ai sensi dell'art. 13 del Regolamento UE 2016/679 (GDPR) per il sito di GB Design."
+>
+  <SiteHeader />
+  <main class="min-h-screen pt-16">
+    <div class="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8">
+      <p class="text-brand mb-3 text-xs font-bold tracking-[0.2em] uppercase">Documenti legali</p>
+      <h1 class="text-ink-900 font-display mb-6 text-4xl font-black sm:text-5xl">
+        Informativa Privacy
+      </h1>
+      <div class="bg-brand mb-6 h-1 w-16 rounded-full"></div>
+      <p class="text-ink-400 mb-12 text-sm">
+        Ai sensi dell'art. 13 del Regolamento (UE) 2016/679 («GDPR») — Ultimo aggiornamento: 15
+        maggio 2026
+      </p>
+
+      <div class="space-y-10 text-base leading-relaxed">
+        <!-- 1 -->
+        <section>
+          <h2 class="text-ink-900 font-display mb-4 text-2xl font-bold">
+            1. Titolare del trattamento
+          </h2>
+          <p class="text-ink-700">
+            <strong>{site.name}</strong><br />
+            {site.address.street}, {site.address.zip}
+            {site.address.city} ({site.address.province})<br />
+            P.IVA {site.piva} — REA {site.rea}<br />
+            E-mail:
+            <a
+              href={`mailto:${site.email}`}
+              class="text-brand hover:text-brand-dark underline underline-offset-2 transition-colors"
+              >{site.email}</a
+            ><br />
+            Tel.:
+            <a
+              href={`tel:${site.phone}`}
+              class="text-brand hover:text-brand-dark underline underline-offset-2 transition-colors"
+              >{site.phoneDisplay}</a
+            >
+          </p>
+        </section>
+
+        <!-- 2 -->
+        <section>
+          <h2 class="text-ink-900 font-display mb-4 text-2xl font-bold">
+            2. Responsabile della protezione dei dati (DPO)
+          </h2>
+          <p class="text-ink-700">
+            Ai sensi dell'art. 37 GDPR, {site.name} non è tenuta a nominare un Responsabile della protezione
+            dei dati in quanto microimpresa che non effettua trattamenti su larga scala di categorie particolari
+            di dati né trattamenti sistematici su larga scala.
+          </p>
+        </section>
+
+        <!-- 3 -->
+        <section>
+          <h2 class="text-ink-900 font-display mb-4 text-2xl font-bold">
+            3. Dati trattati, finalità e basi giuridiche
+          </h2>
+
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-ink-900 mb-2 text-lg font-semibold">3.1 Modulo di contatto</h3>
+              <p class="text-ink-700">
+                Compilando il modulo di contatto presente sul sito, l'utente fornisce
+                volontariamente nome, indirizzo e-mail, numero di telefono e testo del messaggio. I
+                dati sono trattati per rispondere alla richiesta e, se del caso, per elaborare un
+                preventivo.
+              </p>
+              <p class="text-ink-700 mt-2">
+                <strong>Base giuridica:</strong> art. 6, par. 1, lett. b) GDPR (esecuzione di misure precontrattuali
+                su richiesta dell'interessato) e art. 6, par. 1, lett. f) GDPR (legittimo interesse del
+                titolare a rispondere alle richieste ricevute).
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-ink-900 mb-2 text-lg font-semibold">3.2 Dati di navigazione</h3>
+              <p class="text-ink-700">
+                I sistemi informatici alla base del sito acquisiscono automaticamente, nel normale
+                esercizio, alcuni dati la cui trasmissione è implicita nei protocolli di Internet
+                (indirizzo IP, tipo di browser, sistema operativo, pagina visitata, ora della
+                richiesta). Questi dati sono trattati unicamente per finalità di sicurezza e
+                diagnostica tecnica.
+              </p>
+              <p class="text-ink-700 mt-2">
+                <strong>Base giuridica:</strong> art. 6, par. 1, lett. f) GDPR (legittimo interesse a
+                garantire la sicurezza e il corretto funzionamento del sito).
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-ink-900 mb-2 text-lg font-semibold">
+                3.3 Statistiche di utilizzo aggregate
+              </h3>
+              <p class="text-ink-700">
+                Il sito utilizza <strong>Plausible Analytics</strong>, uno strumento di analisi
+                rispettoso della privacy. Plausible non utilizza cookie, non raccoglie dati
+                personali identificabili e non traccia gli utenti tra siti diversi. I dati elaborati
+                sono esclusivamente aggregati e anonimi; pertanto questo trattamento non rientra
+                nell'ambito di applicazione del GDPR.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4 -->
+        <section>
+          <h2 class="text-ink-900 font-display mb-4 text-2xl font-bold">
+            4. Periodo di conservazione
+          </h2>
+          <ul class="text-ink-700 list-disc space-y-2 pl-5">
+            <li>
+              <strong>Dati del modulo di contatto:</strong> massimo 12 mesi dalla ricezione del messaggio.
+            </li>
+            <li><strong>Log del server:</strong> massimo 30 giorni.</li>
+            <li>
+              <strong>Statistiche Plausible:</strong> dati aggregati e anonimi — nessuna scadenza applicabile
+              al trattamento di dati personali.
+            </li>
+          </ul>
+        </section>
+
+        <!-- 5 -->
+        <section>
+          <h2 class="text-ink-900 font-display mb-4 text-2xl font-bold">5. Destinatari dei dati</h2>
+          <p class="text-ink-700 mb-3">
+            I dati personali non sono venduti né ceduti a terzi per finalità di marketing. Possono
+            essere comunicati a:
+          </p>
+          <ul class="text-ink-700 list-disc space-y-3 pl-5">
+            <li>
+              <strong>Netlify, Inc.</strong> (San Francisco, CA, USA) — fornitore del servizio di hosting
+              e di raccolta moduli. Agisce in qualità di responsabile del trattamento ai sensi dell'art.
+              28 GDPR. Il trasferimento dei dati verso gli USA avviene sulla base delle Clausole Contrattuali
+              Standard (SCC) approvate dalla Commissione Europea con Decisione 2021/914.
+            </li>
+            <li>
+              <strong>Plausible Analytics OÜ</strong> (Tallinn, Estonia — UE) — fornitore del servizio
+              di analisi aggregata. Non tratta dati personali identificabili.
+            </li>
+          </ul>
+        </section>
+
+        <!-- 6 -->
+        <section>
+          <h2 class="text-ink-900 font-display mb-4 text-2xl font-bold">
+            6. Trasferimento di dati extra-UE
+          </h2>
+          <p class="text-ink-700">
+            Il trasferimento verso Netlify, Inc. (USA) è regolato dalle Clausole Contrattuali
+            Standard (SCC) adottate con Decisione della Commissione Europea 2021/914. Nessun altro
+            trasferimento di dati verso Paesi terzi rispetto all'UE/SEE è effettuato.
+          </p>
+        </section>
+
+        <!-- 7 -->
+        <section>
+          <h2 class="text-ink-900 font-display mb-4 text-2xl font-bold">
+            7. Diritti dell'interessato
+          </h2>
+          <p class="text-ink-700 mb-3">
+            Ai sensi degli artt. 15–22 GDPR, l'interessato ha il diritto di:
+          </p>
+          <ul class="text-ink-700 list-disc space-y-2 pl-5">
+            <li>
+              <strong>Accesso</strong> (art. 15): ottenere conferma del trattamento e copia dei propri
+              dati;
+            </li>
+            <li>
+              <strong>Rettifica</strong> (art. 16): ottenere la correzione di dati inesatti o incompleti;
+            </li>
+            <li>
+              <strong>Cancellazione</strong> (art. 17): ottenere la cancellazione dei dati («diritto all'oblio»),
+              ove ne ricorrano i presupposti di legge;
+            </li>
+            <li>
+              <strong>Limitazione del trattamento</strong> (art. 18): chiedere che il trattamento sia
+              temporaneamente sospeso;
+            </li>
+            <li>
+              <strong>Portabilità</strong> (art. 20): ricevere i propri dati in un formato strutturato
+              e leggibile da macchina;
+            </li>
+            <li>
+              <strong>Opposizione</strong> (art. 21): opporsi al trattamento fondato su legittimo interesse;
+            </li>
+            <li>
+              <strong>Revoca del consenso</strong>: ove il trattamento sia fondato sul consenso,
+              revocarlo in qualsiasi momento senza pregiudicare la liceità del trattamento anteriore
+              alla revoca.
+            </li>
+          </ul>
+          <p class="text-ink-700 mt-4">
+            Per esercitare questi diritti, scrivere a:
+            <a
+              href={`mailto:${site.email}`}
+              class="text-brand hover:text-brand-dark underline underline-offset-2 transition-colors"
+              >{site.email}</a
+            >. Il titolare risponde entro 30 giorni dalla ricezione della richiesta.
+          </p>
+        </section>
+
+        <!-- 8 -->
+        <section>
+          <h2 class="text-ink-900 font-display mb-4 text-2xl font-bold">8. Diritto di reclamo</h2>
+          <p class="text-ink-700">
+            L'interessato ha il diritto di proporre reclamo al Garante per la protezione dei dati
+            personali —
+            <a
+              href="https://www.garanteprivacy.it"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-brand hover:text-brand-dark underline underline-offset-2 transition-colors"
+              >www.garanteprivacy.it</a
+            >, Piazza Venezia 11, 00187 Roma — oppure all'autorità di controllo dello Stato membro
+            UE in cui risiede o lavora abitualmente.
+          </p>
+        </section>
+
+        <!-- 9 -->
+        <section>
+          <h2 class="text-ink-900 font-display mb-4 text-2xl font-bold">9. Aggiornamenti</h2>
+          <p class="text-ink-700">
+            La presente informativa può essere aggiornata a seguito di modifiche normative o
+            tecniche. La data indicata in cima al documento riflette l'ultima revisione. Si
+            consiglia di consultarla periodicamente.
+          </p>
+        </section>
+      </div>
+
+      <a
+        href="/"
+        class="text-brand hover:text-brand-dark mt-14 inline-flex items-center gap-2 font-semibold transition-colors"
+      >
+        ← Torna alla home
+      </a>
+    </div>
+  </main>
+  <SiteFooter />
+</Layout>

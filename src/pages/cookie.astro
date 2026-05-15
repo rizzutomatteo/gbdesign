@@ -1,0 +1,194 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { site } from '../config/site';
+---
+
+<Layout
+  title="Cookie Policy — GB Design"
+  description="Cookie Policy del sito GB Design: quali cookie vengono usati, perché e come gestirli."
+>
+  <SiteHeader />
+  <main class="min-h-screen pt-16">
+    <div class="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8">
+      <p class="text-brand mb-3 text-xs font-bold tracking-[0.2em] uppercase">Documenti legali</p>
+      <h1 class="text-ink-900 font-display mb-6 text-4xl font-black sm:text-5xl">Cookie Policy</h1>
+      <div class="bg-brand mb-6 h-1 w-16 rounded-full"></div>
+      <p class="text-ink-400 mb-12 text-sm">
+        Ai sensi del Provvedimento del Garante per la protezione dei dati personali del 10 giugno
+        2021 — Ultimo aggiornamento: 15 maggio 2026
+      </p>
+
+      <div class="space-y-10 text-base leading-relaxed">
+        <!-- 1 -->
+        <section>
+          <h2 class="text-ink-900 font-display mb-4 text-2xl font-bold">1. Cosa sono i cookie</h2>
+          <p class="text-ink-700">
+            I cookie sono piccoli file di testo che un sito web memorizza sul dispositivo
+            dell'utente (computer, tablet, smartphone) durante la navigazione. Permettono al sito di
+            ricordare informazioni sulla visita, come lo stato di autenticazione o le preferenze di
+            utilizzo.
+          </p>
+        </section>
+
+        <!-- 2 -->
+        <section>
+          <h2 class="text-ink-900 font-display mb-4 text-2xl font-bold">
+            2. Cookie utilizzati da questo sito
+          </h2>
+
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-ink-900 mb-2 text-lg font-semibold">Cookie tecnici</h3>
+              <p class="text-ink-700">
+                Per la navigazione pubblica ordinaria del sito non è impostato alcun cookie. L'unica
+                eccezione riguarda l'area di gestione riservata (CMS), accessibile esclusivamente
+                dal titolare o da collaboratori autorizzati: in tale contesto il servizio Netlify
+                Identity imposta cookie di sessione strettamente necessari al mantenimento dello
+                stato di autenticazione. Questi cookie non riguardano in alcun modo i visitatori del
+                sito.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-ink-900 mb-2 text-lg font-semibold">Cookie analitici</h3>
+              <p class="text-ink-700">
+                Il sito utilizza <strong>Plausible Analytics</strong>, un sistema di misurazione
+                dell'audience che <em>non impiega cookie</em> e non raccoglie dati personali identificabili.
+                Le statistiche prodotte sono esclusivamente aggregate e anonime. Per questa ragione non
+                è richiesto il consenso dell'utente.
+              </p>
+            </div>
+
+            <div>
+              <h3 class="text-ink-900 mb-2 text-lg font-semibold">
+                Cookie di profilazione e marketing
+              </h3>
+              <p class="text-ink-700">
+                Questo sito <strong>non utilizza cookie di profilazione o di marketing</strong> di alcun
+                tipo.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3 -->
+        <section>
+          <h2 class="text-ink-900 font-display mb-4 text-2xl font-bold">
+            3. Cookie di terze parti
+          </h2>
+          <p class="text-ink-700">
+            Il sito non incorpora widget di social network, player video o altri elementi di terze
+            parti che impostino cookie sul dispositivo dell'utente. I link ai profili social di
+            {site.name} (Facebook, Instagram) aprono il relativo sito in una nuova scheda senza trasmettere
+            dati al sito di provenienza.
+          </p>
+        </section>
+
+        <!-- 4 -->
+        <section>
+          <h2 class="text-ink-900 font-display mb-4 text-2xl font-bold">
+            4. Perché non è presente il banner di consenso
+          </h2>
+          <p class="text-ink-700">
+            Il Provvedimento del Garante del 10 giugno 2021 e le Linee guida dell'EDPB prevedono
+            l'obbligo del banner di consenso solo in presenza di cookie non tecnici (analitici con
+            identificazione, di profilazione, di marketing). Poiché questo sito non utilizza tali
+            cookie, <strong>il banner di consenso non è richiesto e non viene mostrato</strong>.
+          </p>
+        </section>
+
+        <!-- 5 -->
+        <section>
+          <h2 class="text-ink-900 font-display mb-4 text-2xl font-bold">
+            5. Come gestire i cookie
+          </h2>
+          <p class="text-ink-700 mb-3">
+            Anche in assenza di cookie non tecnici, l'utente può in qualsiasi momento visualizzare,
+            modificare o eliminare i cookie memorizzati nel proprio browser seguendo le istruzioni
+            ufficiali:
+          </p>
+          <ul class="text-ink-700 list-disc space-y-2 pl-5">
+            <li>
+              <a
+                href="https://support.google.com/chrome/answer/95647"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-brand hover:text-brand-dark underline underline-offset-2 transition-colors"
+                >Google Chrome</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://support.mozilla.org/it/kb/protezione-antitracciamento-avanzata-firefox-desktop"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-brand hover:text-brand-dark underline underline-offset-2 transition-colors"
+                >Mozilla Firefox</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://support.apple.com/it-it/guide/safari/sfri11471/mac"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-brand hover:text-brand-dark underline underline-offset-2 transition-colors"
+                >Apple Safari</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://support.microsoft.com/it-it/microsoft-edge/eliminare-i-cookie-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-brand hover:text-brand-dark underline underline-offset-2 transition-colors"
+                >Microsoft Edge</a
+              >
+            </li>
+          </ul>
+          <p class="text-ink-600 mt-4 text-sm">
+            La disabilitazione dei cookie tecnici potrebbe compromettere alcune funzionalità del
+            sito (es. area admin).
+          </p>
+        </section>
+
+        <!-- 6 -->
+        <section>
+          <h2 class="text-ink-900 font-display mb-4 text-2xl font-bold">6. Aggiornamenti</h2>
+          <p class="text-ink-700">
+            La presente Cookie Policy può essere aggiornata a seguito di modifiche tecniche,
+            normative o alla struttura del sito. La data indicata in cima al documento riflette
+            l'ultima revisione.
+          </p>
+        </section>
+
+        <!-- 7 -->
+        <section>
+          <h2 class="text-ink-900 font-display mb-4 text-2xl font-bold">7. Contatti</h2>
+          <p class="text-ink-700">
+            Per qualsiasi domanda relativa ai cookie o alla privacy, scrivi a:
+            <a
+              href={`mailto:${site.email}`}
+              class="text-brand hover:text-brand-dark underline underline-offset-2 transition-colors"
+              >{site.email}</a
+            >. Per informazioni più ampie sul trattamento dei dati personali, consulta la nostra
+            <a
+              href="/privacy"
+              class="text-brand hover:text-brand-dark underline underline-offset-2 transition-colors"
+              >Informativa Privacy</a
+            >.
+          </p>
+        </section>
+      </div>
+
+      <a
+        href="/"
+        class="text-brand hover:text-brand-dark mt-14 inline-flex items-center gap-2 font-semibold transition-colors"
+      >
+        ← Torna alla home
+      </a>
+    </div>
+  </main>
+  <SiteFooter />
+</Layout>
