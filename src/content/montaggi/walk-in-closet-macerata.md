@@ -5,4 +5,5 @@ descrizione: 'Cabina armadio su tre lati con specchi scorrevoli, cassettiere e r
 categoria: montaggio-di-pregio
 in_evidenza: true
 dataLavoro: '2026-03-22'
+foto: '/images/cms/walk-in-closet.svg'
 ---

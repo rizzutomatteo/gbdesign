@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F7F2EB"/>
+      <stop offset="100%" stop-color="#E6D9C8"/>
+    </linearGradient>
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1" fill="#9B6F3A" fill-opacity="0.12"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="450" fill="url(#g)"/>
+  <rect width="800" height="450" fill="url(#dots)"/>
+  <circle cx="400" cy="195" r="64" fill="#9B6F3A" fill-opacity="0.12"/>
+  <g transform="translate(364 159) scale(3)" stroke="#9B6F3A" stroke-width="1.5" fill="none">
+    <rect x="2" y="2" width="9" height="7" rx="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="13" y="2" width="9" height="7" rx="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="2" y="10" width="20" height="2" rx="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="2" y="13" width="9" height="9" rx="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="13" y="13" width="9" height="9" rx="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path stroke-linecap="round" stroke-linejoin="round" d="M5.5 5.5h2M15.5 5.5h2M5.5 17.5h2M15.5 17.5h2"/>
+  </g>
+  <text x="400" y="306" font-family="Georgia, serif" font-size="22" font-weight="600"
+        fill="#9B6F3A" fill-opacity="0.7" text-anchor="middle" letter-spacing="0.5">
+    Cucina a isola
+  </text>
+  <rect x="370" y="320" width="60" height="2" rx="1" fill="#9B6F3A" fill-opacity="0.3"/>
+</svg>

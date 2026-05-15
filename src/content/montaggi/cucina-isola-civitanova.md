@@ -5,4 +5,5 @@ descrizione: 'Cucina completa con isola centrale, pensili a tutta altezza e colo
 categoria: montaggio-di-pregio
 in_evidenza: true
 dataLavoro: '2026-04-10'
+foto: '/images/cms/cucina-isola.svg'
 ---

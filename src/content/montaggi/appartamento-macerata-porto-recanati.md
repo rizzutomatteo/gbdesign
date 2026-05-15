@@ -5,4 +5,5 @@ descrizione: 'Smontaggio completo, trasporto e rimontaggio in un giorno. Cucina,
 categoria: trasloco
 in_evidenza: true
 dataLavoro: '2026-04-05'
+foto: '/images/cms/trasloco-appartamento.svg'
 ---

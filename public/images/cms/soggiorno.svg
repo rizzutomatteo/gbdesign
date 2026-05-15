@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F2EEF5"/>
+      <stop offset="100%" stop-color="#DDD4E8"/>
+    </linearGradient>
+    <!-- subtle dot pattern -->
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1" fill="#6A5080" fill-opacity="0.12"/>
+    </pattern>
+  </defs>
+  <!-- background -->
+  <rect width="800" height="450" fill="url(#g)"/>
+  <rect width="800" height="450" fill="url(#dots)"/>
+  <!-- icon container -->
+  <circle cx="400" cy="195" r="64" fill="#6A5080" fill-opacity="0.12"/>
+  <!-- icon (24x24 → scaled 3x = 72x72, centered at 400,195) -->
+  <g transform="translate(364 159) scale(3)" stroke="#6A5080" stroke-width="1.5" fill="none">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/>
+  </g>
+  <!-- label -->
+  <text x="400" y="306" font-family="Georgia, serif" font-size="22" font-weight="600"
+        fill="#6A5080" fill-opacity="0.7" text-anchor="middle" letter-spacing="0.5">
+    Soggiorno completo
+  </text>
+  <!-- decorative line -->
+  <rect x="370" y="320" width="60" height="2" rx="1" fill="#6A5080" fill-opacity="0.3"/>
+</svg>

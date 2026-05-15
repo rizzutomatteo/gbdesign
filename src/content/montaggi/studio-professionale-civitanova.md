@@ -5,4 +5,5 @@ descrizione: "Spostamento di uno studio medico senza interruzione dell'attività
 categoria: trasloco
 in_evidenza: false
 dataLavoro: '2026-02-25'
+foto: '/images/cms/studio.svg'
 ---

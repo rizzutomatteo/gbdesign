@@ -5,4 +5,5 @@ descrizione: 'Top in quarzo, cappa a isola a soffitto e forno da incasso in colo
 categoria: montaggio-di-pregio
 in_evidenza: false
 dataLavoro: '2026-02-18'
+foto: '/images/cms/cucina-lineare.svg'
 ---

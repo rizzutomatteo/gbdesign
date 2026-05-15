@@ -5,4 +5,5 @@ descrizione: 'Smontaggio e rimontaggio di arredi da bar: bancone, scaffalature, 
 categoria: trasloco
 in_evidenza: false
 dataLavoro: '2026-01-28'
+foto: '/images/cms/trasloco-bar.svg'
 ---

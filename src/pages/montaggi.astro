@@ -56,6 +56,16 @@ const traslochi = tutti
           {
             montaggiDiPregio.map((m) => (
               <div class="group border-warm-200 hover:border-warm-300 rounded-2xl border bg-white p-7 shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_36px_rgba(26,22,18,0.12)] sm:p-8">
+                {m.data.foto && (
+                  <img
+                    src={m.data.foto}
+                    alt={m.data.titolo}
+                    width="400"
+                    height="200"
+                    class="mb-5 h-44 w-full rounded-xl object-cover"
+                    loading="lazy"
+                  />
+                )}
                 <div class="bg-brand/10 group-hover:bg-brand mb-5 flex h-11 w-11 items-center justify-center rounded-xl transition-colors duration-300">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -99,6 +109,16 @@ const traslochi = tutti
           {
             traslochi.map((m) => (
               <div class="group bg-warm-50 border-warm-200 hover:border-warm-300 rounded-2xl border p-7 shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_36px_rgba(26,22,18,0.12)] sm:p-8">
+                {m.data.foto && (
+                  <img
+                    src={m.data.foto}
+                    alt={m.data.titolo}
+                    width="400"
+                    height="200"
+                    class="mb-5 h-44 w-full rounded-xl object-cover"
+                    loading="lazy"
+                  />
+                )}
                 <div class="bg-brand/10 group-hover:bg-brand mb-5 flex h-11 w-11 items-center justify-center rounded-xl transition-colors duration-300">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
