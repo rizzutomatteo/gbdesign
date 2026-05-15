@@ -1,5 +1,5 @@
 ---
-autore: Laura C.
+autore: Laura V.
 citta: Civitanova Marche
 rating: 5
 dataRecensione: 2026-02-20
