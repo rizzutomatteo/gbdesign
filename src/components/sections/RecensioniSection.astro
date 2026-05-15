@@ -1,6 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
 import { site } from '../../config/site';
+import StarRating from '../StarRating.astro';
+
+interface Props {
+  limit?: number;
+}
 
 const tutte = await getCollection('recensioni');
 const reviews = tutte.sort(
@@ -20,21 +25,7 @@ const reviews = tutte.sort(
         Le recensioni dei clienti
       </h2>
       <div class="flex flex-wrap items-center justify-center gap-1">
-        {
-          Array.from({ length: 5 }).map(() => (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="#bf282b"
-              stroke="none"
-              aria-hidden="true"
-            >
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-            </svg>
-          ))
-        }
+        <StarRating rating={5} size={18} />
         <span class="text-ink-900 ml-2 text-lg font-bold">{site.stats.rating}</span>
         <span class="text-ink-400 ml-1 text-sm"
           >su Google ({site.stats.recensioni}+ recensioni)</span
@@ -52,24 +43,12 @@ const reviews = tutte.sort(
             >
               "
             </div>
-            <div class="relative z-10 mb-4 flex gap-0.5">
-              {Array.from({ length: r.data.rating }).map(() => (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="#bf282b"
-                  stroke="none"
-                  aria-hidden="true"
-                >
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                </svg>
-              ))}
+            <div class="relative z-10 mb-4">
+              <StarRating rating={r.data.rating} size={14} />
             </div>
-            <p class="text-ink-700 relative z-10 mb-6 flex-1 text-base leading-relaxed italic">
-              "{r.body?.trim()}"
-            </p>
+            <blockquote class="text-ink-700 relative z-10 mb-6 flex-1 text-base leading-relaxed italic">
+              <p>"{r.body?.trim()}"</p>
+            </blockquote>
             <div class="border-warm-200 relative z-10 border-t pt-4">
               <p class="text-ink-900 text-base font-semibold">{r.data.autore}</p>
               <p class="text-ink-400 mt-0.5 text-sm">{r.data.citta}</p>
