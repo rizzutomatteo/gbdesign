@@ -2,61 +2,73 @@
 import { Image } from 'astro:assets';
 import logo from '../../assets/logo.svg';
 import { site } from '../../config/site';
+
+interface Props {}
 ---
 
-<section class="min-h-screen bg-warm-50 flex flex-col items-center justify-center relative overflow-hidden pt-24 pb-20">
+<section
+  class="bg-warm-50 relative flex min-h-screen flex-col items-center justify-center overflow-hidden pt-24 pb-20"
+>
   <!-- Accento brand superiore -->
-  <div class="absolute top-0 left-0 right-0 h-1 bg-brand"></div>
+  <div class="bg-brand absolute top-0 right-0 left-0 h-1"></div>
 
   <!-- Sfumatura calda di profondità -->
-  <div class="absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_15%,rgba(191,40,43,0.045),transparent)]"></div>
-  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-warm-100/40 to-transparent"></div>
+  <div
+    class="absolute inset-0 bg-[radial-gradient(ellipse_70%_55%_at_50%_15%,rgba(191,40,43,0.045),transparent)]"
+  >
+  </div>
+  <div
+    class="from-warm-100/40 absolute right-0 bottom-0 left-0 h-32 bg-gradient-to-t to-transparent"
+  >
+  </div>
 
-  <div class="relative z-10 text-center px-4 max-w-3xl mx-auto w-full hero-enter">
-
+  <div class="hero-enter relative z-10 mx-auto w-full max-w-3xl px-4 text-center">
     <!-- Emblema logo -->
-    <div class="mb-7 sm:mb-8 flex justify-center">
+    <div class="mb-7 flex justify-center sm:mb-8">
       <Image
         src={logo}
         alt="GB Design — Montaggio Cucine e Mobili Macerata"
         width={160}
         height={160}
-        class="rounded-2xl w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 shadow-[0_8px_40px_rgba(26,22,18,0.14)] ring-1 ring-warm-200"
+        class="ring-warm-200 h-24 w-24 rounded-2xl shadow-[0_8px_40px_rgba(26,22,18,0.14)] ring-1 sm:h-32 sm:w-32 md:h-40 md:w-40"
       />
     </div>
 
     <!-- Titolo principale -->
-    <h1 class="font-display font-black text-ink-900 text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-4 leading-[1.05]">
+    <h1
+      class="font-display text-ink-900 mb-4 text-4xl leading-[1.05] font-black tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
+    >
       {site.name}
     </h1>
 
     <!-- Divisore decorativo + tagline -->
-    <div class="flex items-center justify-center gap-4 mb-5 sm:mb-6">
-      <div class="h-px w-14 bg-warm-300"></div>
-      <p class="text-brand text-xs sm:text-sm font-bold uppercase tracking-[0.32em]">{site.tagline}</p>
-      <div class="h-px w-14 bg-warm-300"></div>
+    <div class="mb-5 flex items-center justify-center gap-4 sm:mb-6">
+      <div class="bg-warm-300 h-px w-14"></div>
+      <p class="text-brand text-xs font-bold tracking-[0.32em] uppercase sm:text-sm">
+        {site.tagline}
+      </p>
+      <div class="bg-warm-300 h-px w-14"></div>
     </div>
 
     <!-- Descrizione -->
-    <p class="text-ink-600 text-lg sm:text-xl leading-relaxed max-w-xl mx-auto mb-8 sm:mb-10">
+    <p class="text-ink-600 mx-auto mb-8 max-w-xl text-lg leading-relaxed sm:mb-10 sm:text-xl">
       {site.description}
     </p>
 
     <!-- CTA -->
-    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+    <div class="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
       <a
         href={`tel:${site.phone}`}
-        class="bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-lg font-bold text-base transition-all duration-200 shadow-[0_4px_16px_rgba(191,40,43,0.30)] hover:shadow-[0_6px_22px_rgba(191,40,43,0.40)] hover:-translate-y-px"
+        class="bg-brand hover:bg-brand-dark rounded-lg px-8 py-4 text-base font-bold text-white shadow-[0_4px_16px_rgba(191,40,43,0.30)] transition-all duration-200 hover:-translate-y-px hover:shadow-[0_6px_22px_rgba(191,40,43,0.40)]"
       >
         Chiama Ora — {site.phoneDisplay}
       </a>
       <a
         href="#contatti"
-        class="border-2 border-warm-300 hover:border-brand/60 text-ink-700 hover:text-brand bg-white/60 hover:bg-white px-8 py-4 rounded-lg font-bold text-base transition-all duration-200"
+        class="border-warm-300 hover:border-brand/60 text-ink-700 hover:text-brand rounded-lg border-2 bg-white/60 px-8 py-4 text-base font-bold transition-all duration-200 hover:bg-white"
       >
         Richiedi Preventivo
       </a>
     </div>
-
   </div>
 </section>
