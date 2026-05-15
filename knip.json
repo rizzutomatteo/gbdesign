@@ -1,0 +1,6 @@
+{
+  "ignore": ["public/identity-redirect.js"],
+  "netlify": {
+    "functions": ["netlify/functions/**/*.js"]
+  }
+}

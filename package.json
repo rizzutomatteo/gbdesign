@@ -19,8 +19,8 @@
     "@astrojs/sitemap": "^3.7.2",
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.3.1",
-    "decap-cms-app": "^3.12.2",
-    "tailwindcss": "^4.3.0"
+    "tailwindcss": "^4.3.0",
+    "zod": "^4.4.3"
   },
   "overrides": {
     "vite": "^7",

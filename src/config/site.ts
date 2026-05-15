@@ -40,8 +40,6 @@ export const site = {
   },
 };
 
-export type Site = typeof site;
-
 export type NavItem = {
   href: string;
   label: string;
