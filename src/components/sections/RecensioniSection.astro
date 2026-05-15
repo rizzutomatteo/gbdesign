@@ -3,7 +3,9 @@ import { getCollection } from 'astro:content';
 import { site } from '../../config/site';
 
 const tutte = await getCollection('recensioni');
-const reviews = tutte.sort((a, b) => b.data.data.getTime() - a.data.data.getTime());
+const reviews = tutte.sort(
+  (a, b) => b.data.dataRecensione.getTime() - a.data.dataRecensione.getTime()
+);
 ---
 
 <section id="recensioni" class="bg-white py-14 sm:py-20 md:py-24">

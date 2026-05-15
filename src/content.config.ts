@@ -8,7 +8,7 @@ const recensioni = defineCollection({
     autore: z.string(),
     citta: z.string().optional(),
     rating: z.number().min(1).max(5),
-    data: z.coerce.date(),
+    dataRecensione: z.coerce.date(),
     in_evidenza: z.boolean().default(false),
   }),
 });
@@ -21,7 +21,7 @@ const montaggi = defineCollection({
     descrizione: z.string(),
     categoria: z.enum(['montaggio-di-pregio', 'trasloco']),
     in_evidenza: z.boolean().default(false),
-    data: z.coerce.date(),
+    dataLavoro: z.coerce.date(),
     foto: z.string().optional(),
   }),
 });

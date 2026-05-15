@@ -2,7 +2,7 @@
 autore: 'Azienda Rossi Srl'
 citta: 'Porto Recanati'
 rating: 5
-data: 2026-01-15
+dataRecensione: '2026-01-15'
 in_evidenza: false
 ---
 

@@ -2,7 +2,7 @@
 autore: 'Laura V.'
 citta: 'Civitanova Marche'
 rating: 5
-data: 2026-02-20
+dataRecensione: '2026-02-20'
 in_evidenza: true
 ---
 

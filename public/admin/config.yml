@@ -35,11 +35,12 @@ collections:
     folder: 'src/content/recensioni'
     create: true
     delete: true
+    format: frontmatter
     slug: '{{autore | slugify}}'
     summary: '{{autore}} — {{citta}} ({{rating}}/5)'
     editor:
       preview: false
-    sortable_fields: ['data', 'autore', 'rating']
+    sortable_fields: ['dataRecensione', 'autore', 'rating']
     view_filters:
       - label: 'Solo in evidenza'
         field: in_evidenza
@@ -69,7 +70,7 @@ collections:
         hint: 'Il voto dato dal cliente.'
 
       - label: 'Data della recensione'
-        name: data
+        name: dataRecensione
         widget: datetime
         format: 'YYYY-MM-DD'
         date_format: 'DD/MM/YYYY'
@@ -107,7 +108,7 @@ collections:
     summary: '{{titolo}} — {{luogo}} ({{categoria}})'
     editor:
       preview: false
-    sortable_fields: ['data', 'titolo', 'categoria']
+    sortable_fields: ['dataLavoro', 'titolo', 'categoria']
     view_filters:
       - label: 'Montaggi di pregio'
         field: categoria
@@ -152,7 +153,7 @@ collections:
         hint: 'Se attivato, questo lavoro appare tra i primi.'
 
       - label: 'Data del lavoro'
-        name: data
+        name: dataLavoro
         widget: datetime
         format: 'YYYY-MM-DD'
         date_format: 'DD/MM/YYYY'
