@@ -2,17 +2,17 @@ import { z } from 'zod';
 import cmsRaw from '../data/impostazioni.json';
 
 const CmsSchema = z.object({
-  googleReviews: z.string().url(),
+  googleReviews: z.url(),
   name: z.string(),
   social: z.object({
-    facebook: z.string().url(),
-    instagram: z.string().url(),
+    facebook: z.url(),
+    instagram: z.url(),
   }),
   phone: z.string(),
   tagline: z.string(),
   whatsapp: z.string(),
   phoneDisplay: z.string(),
-  email: z.string().email(),
+  email: z.email(),
   description: z.string(),
   stats: z.object({
     anni: z.number(),
