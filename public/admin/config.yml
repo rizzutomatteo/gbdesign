@@ -21,8 +21,8 @@ public_folder: '/images/cms'
 media_library:
   name: cloudinary
   config:
-    cloud_name: YOUR_CLOUDINARY_CLOUD_NAME
-    api_key: YOUR_CLOUDINARY_API_KEY
+    cloud_name: dxz6mw2yj
+    api_key: 234136384547171
 
 # Disabilita i link di anteprima (semplifica l'interfaccia)
 show_preview_links: false
