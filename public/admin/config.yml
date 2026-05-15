@@ -15,6 +15,15 @@ backend:
 media_folder: 'public/images/cms'
 public_folder: '/images/cms'
 
+# Cloudinary — media library con crop intelligente e CDN automatica.
+# ⚠️  Sostituisci i due placeholder con le credenziali del tuo account
+#     cloudinary.com → Dashboard → API Keys → Cloud name + API Key
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: YOUR_CLOUDINARY_CLOUD_NAME
+    api_key: YOUR_CLOUDINARY_API_KEY
+
 # Disabilita i link di anteprima (semplifica l'interfaccia)
 show_preview_links: false
 
@@ -164,9 +173,19 @@ collections:
         name: foto
         widget: image
         required: false
+        media_library:
+          config:
+            default_transformations:
+              - - width: 800
+                  height: 400
+                  crop: fill
+                  gravity: auto
+                  quality: auto
+                  format: auto
         hint: >
-          Carica la foto del lavoro finito.
-          Usa immagini orizzontali di buona qualità (almeno 800px di larghezza).
+          Carica la foto del lavoro finito. L'immagine viene ritagliata
+          automaticamente in formato orizzontale (2:1). Per scegliere tu
+          la zona, clicca "Edit" nel pannello Cloudinary prima di confermare.
 
   # ─────────────────────────────────────────────────────────────
   # 📅 LA NOSTRA STORIA
