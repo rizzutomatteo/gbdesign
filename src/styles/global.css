@@ -45,6 +45,12 @@ body {
   }
 }
 
+*:focus-visible {
+  outline: 3px solid var(--color-brand);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;

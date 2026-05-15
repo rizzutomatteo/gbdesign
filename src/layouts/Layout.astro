@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import SEO from '../components/SEO.astro';
+import SchemaOrg from '../components/SchemaOrg.astro';
 
 interface Props {
   title?: string;
@@ -35,6 +36,7 @@ const {
       noindex={noindex}
       type={type}
     />
+    <SchemaOrg />
     <link rel="icon" href="/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -51,6 +53,14 @@ const {
     </script>
   </head>
   <body class="antialiased">
-    <slot />
+    <a
+      href="#main-content"
+      class="focus:border-brand focus:text-brand sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:rounded focus:border-2 focus:bg-white focus:px-4 focus:py-2 focus:font-semibold focus:shadow-md"
+    >
+      Vai al contenuto principale
+    </a>
+    <div id="main-content">
+      <slot />
+    </div>
   </body>
 </html>

@@ -1,0 +1,30 @@
+---
+import { site } from '../config/site';
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'MovingCompany',
+  name: site.name,
+  url: site.url,
+  telephone: site.phone,
+  email: site.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.address.street,
+    addressLocality: site.address.city,
+    postalCode: site.address.zip,
+    addressRegion: site.address.province,
+    addressCountry: 'IT',
+  },
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: site.stats.rating.replace(',', '.'),
+    reviewCount: site.stats.recensioni,
+    bestRating: '5',
+    worstRating: '1',
+  },
+  sameAs: [site.social.facebook, site.social.instagram],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
