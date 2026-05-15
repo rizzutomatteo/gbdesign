@@ -17,7 +17,7 @@ import { site } from '../config/site';
       <div class="bg-brand mb-6 h-1 w-16 rounded-full"></div>
       <p class="text-ink-400 mb-12 text-sm">
         Ai sensi del Provvedimento del Garante per la protezione dei dati personali del 10 giugno
-        2021 — Ultimo aggiornamento: 15 maggio 2026
+        2021 — Ultimo aggiornamento: 16 maggio 2026
       </p>
 
       <div class="space-y-10 text-base leading-relaxed">
@@ -29,6 +29,11 @@ import { site } from '../config/site';
             dell'utente (computer, tablet, smartphone) durante la navigazione. Permettono al sito di
             ricordare informazioni sulla visita, come lo stato di autenticazione o le preferenze di
             utilizzo.
+          </p>
+          <p class="text-ink-700 mt-3">
+            Questo sito non utilizza tecnologie di tracciamento analoghe ai cookie (es. web beacon,
+            pixel di tracciamento, fingerprinting del dispositivo o local storage per fini
+            analitici).
           </p>
         </section>
 
@@ -45,9 +50,9 @@ import { site } from '../config/site';
                 Per la navigazione pubblica ordinaria del sito non è impostato alcun cookie. L'unica
                 eccezione riguarda l'area di gestione riservata (CMS), accessibile esclusivamente
                 dal titolare o da collaboratori autorizzati: in tale contesto il servizio Netlify
-                Identity imposta cookie di sessione strettamente necessari al mantenimento dello
-                stato di autenticazione. Questi cookie non riguardano in alcun modo i visitatori del
-                sito.
+                Identity imposta cookie tecnici di autenticazione strettamente necessari al
+                mantenimento dello stato di accesso. Questi cookie non riguardano in alcun modo i
+                visitatori del sito.
               </p>
             </div>
 
@@ -55,9 +60,11 @@ import { site } from '../config/site';
               <h3 class="text-ink-900 mb-2 text-lg font-semibold">Cookie analitici</h3>
               <p class="text-ink-700">
                 Il sito utilizza <strong>Plausible Analytics</strong>, un sistema di misurazione
-                dell'audience che <em>non impiega cookie</em> e non raccoglie dati personali identificabili.
-                Le statistiche prodotte sono esclusivamente aggregate e anonime. Per questa ragione non
-                è richiesto il consenso dell'utente.
+                dell'audience che <em>non impiega cookie</em>. Plausible calcola il numero univoco
+                di visitatori usando un hash temporaneo (valido 24 ore) dell'indirizzo IP, elaborato
+                server-side senza essere salvato in forma individuale. Non raccoglie dati personali
+                identificabili e non traccia gli utenti tra siti diversi. Il consenso ai cookie non
+                è richiesto poiché non vengono impostati cookie di alcun tipo.
               </p>
             </div>
 
@@ -70,6 +77,39 @@ import { site } from '../config/site';
                 tipo.
               </p>
             </div>
+          </div>
+
+          <div class="mt-8">
+            <h3 class="text-ink-900 mb-3 text-lg font-semibold">
+              Inventario dei cookie (Provvedimento Garante 10/06/2021)
+            </h3>
+            <div class="overflow-x-auto">
+              <table class="text-ink-700 w-full border-collapse text-sm">
+                <thead>
+                  <tr class="border-ink-200 border-b text-left">
+                    <th class="pr-6 pb-2 font-semibold">Nome</th>
+                    <th class="pr-6 pb-2 font-semibold">Finalità</th>
+                    <th class="pr-6 pb-2 font-semibold">Durata</th>
+                    <th class="pb-2 font-semibold">Tipo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-ink-200/40 border-b">
+                    <td class="py-3 pr-6 font-mono text-xs">nf_jwt</td>
+                    <td class="py-3 pr-6"
+                      >Autenticazione area admin CMS (solo per gestori autorizzati, non per
+                      visitatori del sito)</td
+                    >
+                    <td class="py-3 pr-6">~60 min (rinnovabile)</td>
+                    <td class="py-3">First party, tecnico</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="text-ink-400 mt-2 text-xs">
+              I cookie tecnici di autenticazione sono impostati esclusivamente durante l'accesso
+              all'area admin. I visitatori ordinari del sito non ricevono alcun cookie.
+            </p>
           </div>
         </section>
 
@@ -121,7 +161,7 @@ import { site } from '../config/site';
             </li>
             <li>
               <a
-                href="https://support.mozilla.org/it/kb/protezione-antitracciamento-avanzata-firefox-desktop"
+                href="https://support.mozilla.org/it/kb/cancellare-cookie-firefox-rimuovere-dati-siti"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-brand hover:text-brand-dark underline underline-offset-2 transition-colors"

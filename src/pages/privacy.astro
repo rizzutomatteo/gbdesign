@@ -18,8 +18,8 @@ import { site } from '../config/site';
       </h1>
       <div class="bg-brand mb-6 h-1 w-16 rounded-full"></div>
       <p class="text-ink-400 mb-12 text-sm">
-        Ai sensi dell'art. 13 del Regolamento (UE) 2016/679 («GDPR») — Ultimo aggiornamento: 15
-        maggio 2026
+        Ai sensi dell'art. 13 del Regolamento (UE) 2016/679 («GDPR») e del D.Lgs. 196/2003 — Ultimo
+        aggiornamento: 16 maggio 2026
       </p>
 
       <div class="space-y-10 text-base leading-relaxed">
@@ -77,8 +77,9 @@ import { site } from '../config/site';
               </p>
               <p class="text-ink-700 mt-2">
                 <strong>Base giuridica:</strong> art. 6, par. 1, lett. b) GDPR (esecuzione di misure precontrattuali
-                su richiesta dell'interessato) e art. 6, par. 1, lett. f) GDPR (legittimo interesse del
-                titolare a rispondere alle richieste ricevute).
+                su richiesta dell'interessato) per le richieste finalizzate a ottenere un preventivo;
+                art. 6, par. 1, lett. f) GDPR (legittimo interesse del titolare a rispondere alle comunicazioni
+                ricevute) per le richieste di carattere generale.
               </p>
             </div>
 
@@ -103,10 +104,13 @@ import { site } from '../config/site';
               </h3>
               <p class="text-ink-700">
                 Il sito utilizza <strong>Plausible Analytics</strong>, uno strumento di analisi
-                rispettoso della privacy. Plausible non utilizza cookie, non raccoglie dati
-                personali identificabili e non traccia gli utenti tra siti diversi. I dati elaborati
-                sono esclusivamente aggregati e anonimi; pertanto questo trattamento non rientra
-                nell'ambito di applicazione del GDPR.
+                rispettoso della privacy. Plausible non utilizza cookie e non conserva dati
+                personali identificabili: l'indirizzo IP è elaborato server-side in forma
+                anonimizzata per calcolare il numero univoco di visitatori (hash temporaneo valido
+                24 ore, poi scartato) senza essere salvato in forma individuale. Il trattamento è
+                fondato sul legittimo interesse del titolare (art. 6, par. 1, lett. f) GDPR) a
+                comprendere l'utilizzo del sito, bilanciato dall'impatto minimo sui diritti degli
+                interessati data l'assenza di profilazione e la immediata anonimizzazione del dato.
               </p>
             </div>
           </div>
@@ -138,10 +142,19 @@ import { site } from '../config/site';
           </p>
           <ul class="text-ink-700 list-disc space-y-3 pl-5">
             <li>
-              <strong>Netlify, Inc.</strong> (San Francisco, CA, USA) — fornitore del servizio di hosting
-              e di raccolta moduli. Agisce in qualità di responsabile del trattamento ai sensi dell'art.
-              28 GDPR. Il trasferimento dei dati verso gli USA avviene sulla base delle Clausole Contrattuali
-              Standard (SCC) approvate dalla Commissione Europea con Decisione 2021/914.
+              <strong>Netlify, Inc.</strong> (San Francisco, CA, USA) — fornitore di hosting e CDN. Per
+              i log di accesso ai propri server (dati di navigazione), Netlify agisce come titolare autonomo
+              del trattamento ai sensi della propria
+              <a
+                href="https://www.netlify.com/privacy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-brand hover:text-brand-dark underline underline-offset-2 transition-colors"
+                >informativa privacy</a
+              >. Per i dati trasmessi tramite il modulo di contatto, Netlify agisce come
+              responsabile del trattamento (art. 28 GDPR); il trasferimento verso gli USA avviene
+              sulla base delle Clausole Contrattuali Standard (SCC) approvate dalla Commissione
+              Europea con Decisione 2021/914.
             </li>
             <li>
               <strong>Plausible Analytics OÜ</strong> (Tallinn, Estonia — UE) — fornitore del servizio
@@ -194,9 +207,17 @@ import { site } from '../config/site';
               <strong>Opposizione</strong> (art. 21): opporsi al trattamento fondato su legittimo interesse;
             </li>
             <li>
-              <strong>Revoca del consenso</strong>: ove il trattamento sia fondato sul consenso,
-              revocarlo in qualsiasi momento senza pregiudicare la liceità del trattamento anteriore
-              alla revoca.
+              <strong>Revoca del consenso</strong> (art. 7, par. 3): qualora in futuro alcuni trattamenti
+              fossero fondati sul consenso (art. 6, par. 1, lett. a) GDPR), l'interessato potrà revocarlo
+              in qualsiasi momento senza pregiudicare la liceità del trattamento effettuato prima della
+              revoca. Si precisa che i trattamenti descritti nella presente informativa non si basano
+              attualmente sul consenso.
+            </li>
+            <li>
+              <strong>Decisioni automatizzate e profilazione</strong> (art. 13, par. 2, lett. f, e art.
+              22 GDPR): si informa che il titolare non effettua decisioni basate unicamente su trattamenti
+              automatizzati, né profilazione che produca effetti giuridici o incida in modo analogo significativamente
+              sull'interessato.
             </li>
           </ul>
           <p class="text-ink-700 mt-4">
