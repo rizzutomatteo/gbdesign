@@ -27,7 +27,6 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content={Astro.generator} />
     <SEO
       title={title}
       description={description}
@@ -45,12 +44,7 @@ const {
       rel="stylesheet"
     />
     <!-- Redirect per link invito/recupero password da Netlify Identity -->
-    <script is:inline>
-      var h = window.location.hash;
-      if (h.indexOf('invite_token') !== -1 || h.indexOf('recovery_token') !== -1) {
-        window.location.replace('/admin' + h);
-      }
-    </script>
+    <script src="/identity-redirect.js"></script>
   </head>
   <body class="antialiased">
     <a

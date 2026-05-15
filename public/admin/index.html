@@ -80,16 +80,25 @@
     </div>
 
     <script>
-      var GB_HOOK = 'https://api.netlify.com/build_hooks/6a06ce6c541c01aa3ccd607e';
-
       function gbMandaInProduzione() {
         var btn = document.getElementById('gb-deploy-btn');
         var msg = document.getElementById('gb-deploy-msg');
+
+        var currentUser = window.netlifyIdentity && window.netlifyIdentity.currentUser();
+        var token = currentUser && currentUser.token && currentUser.token.access_token;
+        if (!token) {
+          alert('Devi essere autenticato per avviare il deploy.');
+          return;
+        }
+
         btn.disabled = true;
         btn.textContent = '⏳ Avvio in corso…';
         msg.style.display = 'none';
 
-        fetch(GB_HOOK, { method: 'POST' })
+        fetch('/.netlify/functions/deploy', {
+          method: 'POST',
+          headers: { Authorization: 'Bearer ' + token },
+        })
           .then(function (res) {
             if (res.ok) {
               btn.textContent = '✅ Deploy avviato!';
