@@ -7,6 +7,20 @@ backend:
   name: git-gateway
   branch: main
 
+# ─────────────────────────────────────────────────────────────
+# WORKFLOW: le modifiche vengono salvate come bozze (nessuna
+# build automatica). Usa il pulsante "Manda in produzione" nel
+# pannello per pubblicare tutto in una volta con una sola build.
+#
+# ATTENZIONE — setup una-tantum su Netlify:
+#   1. Vai su app.netlify.com → sito gbdesign
+#   2. Site configuration → Build & deploy → Continuous deployment
+#   3. Clicca "Stop auto publishing" (così le bozze non scatenano build)
+#   4. Build hooks → crea hook "CMS deploy" → copia il link
+#   5. Al primo clic del pulsante nel pannello ti verrà chiesto di incollarlo
+# ─────────────────────────────────────────────────────────────
+publish_mode: editorial_workflow
+
 # In locale: npx decap-server + local_backend: true bypassa Netlify Identity.
 # RIMUOVERE prima del deploy in produzione.
 # local_backend: true
