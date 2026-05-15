@@ -5,7 +5,13 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://www.gbdesign.it',
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) =>
+        page !== 'https://www.gbdesign.it/missione/' &&
+        page !== 'https://www.gbdesign.it/servizi/',
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },

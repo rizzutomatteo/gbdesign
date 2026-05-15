@@ -73,26 +73,34 @@ import { site, nav } from '../config/site';
               {site.email}
             </a>
           </li>
-          <li>
-            <a
-              href={site.social.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-ink-200/70 text-sm transition-colors duration-200 hover:text-white"
-            >
-              Facebook
-            </a>
-          </li>
-          <li>
-            <a
-              href={site.social.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-ink-200/70 text-sm transition-colors duration-200 hover:text-white"
-            >
-              Instagram
-            </a>
-          </li>
+          {
+            site.social.facebook && (
+              <li>
+                <a
+                  href={site.social.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-ink-200/70 text-sm transition-colors duration-200 hover:text-white"
+                >
+                  Facebook
+                </a>
+              </li>
+            )
+          }
+          {
+            site.social.instagram && (
+              <li>
+                <a
+                  href={site.social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-ink-200/70 text-sm transition-colors duration-200 hover:text-white"
+                >
+                  Instagram
+                </a>
+              </li>
+            )
+          }
         </ul>
       </div>
     </div>

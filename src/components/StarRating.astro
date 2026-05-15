@@ -7,14 +7,14 @@ interface Props {
 const { rating, max = 5, size = 14 } = Astro.props;
 ---
 
-<div class="flex gap-0.5" role="img" aria-label={`${rating} su ${max} stelle`}>
+<div class="text-brand flex gap-0.5" role="img" aria-label={`${rating} su ${max} stelle`}>
   {
     Array.from({ length: rating }).map(() => (
       <svg
         width={size}
         height={size}
         viewBox="0 0 24 24"
-        fill="#bf282b"
+        fill="currentColor"
         stroke="none"
         aria-hidden="true"
       >

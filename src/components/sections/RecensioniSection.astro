@@ -7,7 +7,7 @@ interface Props {
   limit?: number;
 }
 
-const { limit } = Astro.props;
+const { limit = 3 } = Astro.props;
 const tutte = await getCollection('recensioni');
 const reviews = tutte
   .sort((a, b) => b.data.dataRecensione.getTime() - a.data.dataRecensione.getTime())
