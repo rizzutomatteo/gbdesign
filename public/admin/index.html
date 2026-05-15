@@ -17,7 +17,7 @@
         right: 24px;
         z-index: 99999;
         font-family: system-ui, -apple-system, sans-serif;
-        display: flex;
+        display: none;
         flex-direction: column;
         align-items: flex-end;
         gap: 8px;
@@ -80,6 +80,16 @@
     </div>
 
     <script>
+      (function () {
+        var widget = document.getElementById('gb-deploy-widget');
+        function mostra() { widget.style.display = 'flex'; }
+        function nascondi() { widget.style.display = 'none'; }
+
+        window.netlifyIdentity.on('login', mostra);
+        window.netlifyIdentity.on('logout', nascondi);
+        if (window.netlifyIdentity.currentUser()) mostra();
+      })();
+
       function gbMandaInProduzione() {
         var btn = document.getElementById('gb-deploy-btn');
         var msg = document.getElementById('gb-deploy-msg');
