@@ -1,8 +1,8 @@
 ---
-autore: 'Laura V.'
-citta: 'Civitanova Marche'
+autore: Laura C.
+citta: Civitanova Marche
 rating: 5
-dataRecensione: '2026-02-20'
+dataRecensione: 2026-02-20
 in_evidenza: true
 ---
 
