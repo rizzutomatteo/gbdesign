@@ -128,9 +128,11 @@ import { site } from '../config/site';
           </h2>
           <p class="text-ink-700">
             Il sito non incorpora widget di social network, player video o altri elementi di terze
-            parti che impostino cookie sul dispositivo dell'utente. I link ai profili social di
-            {site.name} (Facebook, Instagram) aprono il relativo sito in una nuova scheda senza trasmettere
-            dati al sito di provenienza.
+            parti che impostino cookie o trasmettano dati al momento del caricamento della pagina. I
+            link ai profili social di {site.name} (Facebook, Instagram) aprono il relativo sito in una
+            nuova scheda; eventuali informazioni di navigazione trasmesse al momento del click (es. pagina
+            di provenienza via header HTTP) sono gestite dalle rispettive politiche sulla privacy delle
+            piattaforme social.
           </p>
         </section>
 
@@ -195,7 +197,17 @@ import { site } from '../config/site';
               >
             </li>
           </ul>
-          <p class="text-ink-600 mt-4 text-sm">
+          <p class="text-ink-700 mt-4 text-sm">
+            Per informazioni generali sui cookie e sui tuoi diritti consulta anche la pagina
+            dedicata del <a
+              href="https://www.garanteprivacy.it/cookie"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-brand hover:text-brand-dark underline underline-offset-2 transition-colors"
+              >Garante per la protezione dei dati personali</a
+            >.
+          </p>
+          <p class="text-ink-600 mt-3 text-sm">
             La disabilitazione dei cookie tecnici potrebbe compromettere alcune funzionalità del
             sito (es. area admin).
           </p>
