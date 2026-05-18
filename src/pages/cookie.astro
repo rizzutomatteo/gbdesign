@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import { site } from '../config/site';
+
+const { legalUpdatedAt } = site;
 ---
 
 <Layout
@@ -17,7 +19,7 @@ import { site } from '../config/site';
       <div class="bg-brand mb-6 h-1 w-16 rounded-full"></div>
       <p class="text-ink-400 mb-12 text-sm">
         Ai sensi del Provvedimento del Garante per la protezione dei dati personali del 10 giugno
-        2021 — Ultimo aggiornamento: 16 maggio 2026
+        2021 — Ultimo aggiornamento: {legalUpdatedAt}
       </p>
 
       <div class="space-y-10 text-base leading-relaxed">

@@ -11,43 +11,46 @@ import { site } from '../config/site';
 >
   <SiteHeader />
   <main class="min-h-screen pt-16">
-
-    <section class="py-14 sm:py-24 md:py-32 bg-warm-50 relative overflow-hidden">
-      <div class="absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l from-warm-100 to-transparent pointer-events-none"></div>
-      <div class="absolute right-8 top-1/2 -translate-y-1/2 font-display font-black text-[10rem] sm:text-[16rem] text-warm-200/70 leading-none select-none pointer-events-none hidden md:block">
+    <section class="bg-warm-50 relative overflow-hidden py-14 sm:py-24 md:py-32">
+      <div
+        class="from-warm-100 pointer-events-none absolute inset-y-0 right-0 w-1/2 bg-gradient-to-l to-transparent"
+      >
+      </div>
+      <div
+        class="font-display text-warm-200/70 pointer-events-none absolute top-1/2 right-8 hidden -translate-y-1/2 text-[10rem] leading-none font-black select-none sm:text-[16rem] md:block"
+      >
         500
       </div>
 
-      <div class="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p class="text-brand text-xs font-bold uppercase tracking-[0.3em] mb-3">Errore 500</p>
-        <h1 class="font-display font-black text-ink-900 text-3xl sm:text-5xl leading-tight mb-5">
+      <div class="relative z-10 mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+        <p class="text-brand mb-3 text-xs font-bold tracking-[0.3em] uppercase">Errore 500</p>
+        <h1 class="font-display text-ink-900 mb-5 text-3xl leading-tight font-black sm:text-5xl">
           Qualcosa è andato storto
         </h1>
-        <div class="w-16 h-px bg-warm-300 mb-8"></div>
-        <p class="text-ink-600 text-lg leading-relaxed mb-4">
+        <div class="bg-warm-300 mb-8 h-px w-16"></div>
+        <p class="text-ink-600 mb-4 text-lg leading-relaxed">
           Si è verificato un errore inaspettato. Non dipende da te.
         </p>
-        <p class="text-ink-400 text-base leading-relaxed mb-10">
-          Riprova tra qualche istante. Se il problema persiste, contattaci direttamente:
-          siamo sempre disponibili per telefono o WhatsApp.
+        <p class="text-ink-400 mb-10 text-base leading-relaxed">
+          Riprova tra qualche istante. Se il problema persiste, contattaci direttamente: siamo
+          sempre disponibili per telefono o WhatsApp.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4">
+        <div class="flex flex-col gap-4 sm:flex-row">
           <a
             href="/"
-            class="inline-flex items-center justify-center gap-2 bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-lg font-bold transition-all duration-200 shadow-[0_4px_16px_rgba(191,40,43,0.28)] hover:shadow-[0_6px_22px_rgba(191,40,43,0.38)] hover:-translate-y-px"
+            class="bg-brand hover:bg-brand-dark inline-flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-bold text-white shadow-[0_4px_16px_rgba(191,40,43,0.28)] transition-all duration-200 hover:-translate-y-px hover:shadow-[0_6px_22px_rgba(191,40,43,0.38)]"
           >
             ← Torna alla home
           </a>
           <a
             href={`tel:${site.phone}`}
-            class="inline-flex items-center justify-center gap-2 bg-white hover:bg-warm-100 text-ink-700 px-8 py-4 rounded-lg font-semibold border border-warm-200 hover:border-warm-300 transition-all duration-200"
+            class="hover:bg-warm-100 text-ink-700 border-warm-200 hover:border-warm-300 inline-flex items-center justify-center gap-2 rounded-lg border bg-white px-8 py-4 font-semibold transition-all duration-200"
           >
             Chiamaci
           </a>
         </div>
       </div>
     </section>
-
   </main>
   <SiteFooter />
 </Layout>

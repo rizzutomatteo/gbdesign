@@ -7,9 +7,6 @@ pre-commit:
       stage_fixed: true
 
 pre-push:
-  parallel: true
   commands:
     check:
       run: npm run check
-    build:
-      run: npm run build

@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { site } from '../config/site';
+---
+
+<Layout
+  title="Messaggio ricevuto — GB Design"
+  description="Abbiamo ricevuto il tuo messaggio. Ti risponderemo al più presto."
+  noindex={true}
+>
+  <SiteHeader />
+  <main class="flex min-h-screen items-center pt-16">
+    <div class="mx-auto max-w-2xl px-4 py-24 text-center sm:px-6 lg:px-8">
+      <div class="bg-brand/10 mx-auto mb-8 flex h-20 w-20 items-center justify-center rounded-full">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="40"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="text-brand"
+          aria-hidden="true"
+        >
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+
+      <p class="text-brand mb-3 text-xs font-bold tracking-[0.3em] uppercase">Messaggio inviato</p>
+      <h1 class="font-display text-ink-900 mb-5 text-3xl font-black sm:text-4xl">
+        Grazie, abbiamo ricevuto la tua richiesta!
+      </h1>
+      <p class="text-ink-600 mx-auto mb-10 max-w-lg text-base leading-relaxed sm:text-lg">
+        Ti risponderemo entro 24 ore. Se hai bisogno di una risposta immediata, chiamaci o scrivici
+        su WhatsApp.
+      </p>
+
+      <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a
+          href={`tel:${site.phone}`}
+          class="bg-brand hover:bg-brand-dark inline-flex w-full items-center justify-center gap-2 rounded-lg px-8 py-4 text-base font-bold text-white shadow-[0_4px_16px_rgba(191,40,43,0.30)] transition-all duration-200 hover:-translate-y-px sm:w-auto"
+        >
+          Chiamaci ora
+        </a>
+        <a
+          href="/"
+          class="border-warm-300 hover:border-brand text-ink-700 hover:text-brand inline-flex w-full items-center justify-center gap-2 rounded-lg border-2 px-8 py-4 text-base font-bold transition-all duration-200 sm:w-auto"
+        >
+          ← Torna alla home
+        </a>
+      </div>
+    </div>
+  </main>
+  <SiteFooter />
+</Layout>

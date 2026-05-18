@@ -27,7 +27,9 @@ const reviews = tutte
       </h2>
       <div class="flex flex-wrap items-center justify-center gap-1">
         <StarRating rating={5} size={18} />
-        <span class="text-ink-900 ml-2 text-lg font-bold">{site.stats.rating}</span>
+        <span class="text-ink-900 ml-2 text-lg font-bold"
+          >{site.stats.rating.toLocaleString('it-IT')}</span
+        >
         <span class="text-ink-400 ml-1 text-sm"
           >su Google ({site.stats.recensioni}+ recensioni)</span
         >
@@ -49,8 +51,12 @@ const reviews = tutte
             </div>
             <blockquote class="text-ink-700 relative z-10 mb-6 flex-1 text-base leading-relaxed italic">
               <p>"{r.body?.trim()}"</p>
+              <cite class="sr-only">
+                {r.data.autore}
+                {r.data.citta ? `, ${r.data.citta}` : ''}
+              </cite>
             </blockquote>
-            <div class="border-warm-200 relative z-10 border-t pt-4">
+            <div class="border-warm-200 relative z-10 border-t pt-4" aria-hidden="true">
               <p class="text-ink-900 text-base font-semibold">{r.data.autore}</p>
               <p class="text-ink-400 mt-0.5 text-sm">{r.data.citta}</p>
             </div>

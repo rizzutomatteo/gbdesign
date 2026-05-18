@@ -99,5 +99,13 @@ for (const vp of viewports) {
         console.log(`  ${o.selector}  right=${o.right}px (limit=${o.docWidth}px)`)
       );
     }
+
+    // Fallisce il test se c'è overflow orizzontale
+    if (overflowInfo.hasOverflow && overflowInfo.offenders.length > 0) {
+      const offenderList = overflowInfo.offenders
+        .map((o) => `${o.selector} (right=${o.right}px)`)
+        .join(', ');
+      throw new Error(`Overflow orizzontale a ${vp.width}px: ${offenderList}`);
+    }
   });
 }

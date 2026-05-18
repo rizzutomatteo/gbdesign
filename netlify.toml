@@ -1,10 +1,16 @@
 [[redirects]]
+  from = "https://gbdesign.it/*"
+  to = "https://www.gbdesign.it/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/api/deploy"
   to = "/.netlify/functions/deploy"
   status = 200
 
 [build]
-  command = "npm run build"
+  command = "node scripts/inject-cms-config.mjs && npm run build"
   publish = "dist"
   # Salta il build per i commit del CMS (Decap scrive "Create …" / "Update …" / "Delete …").
   # I build hook (pulsante "Manda in produzione") ignorano questo campo e buildano sempre.
@@ -24,6 +30,17 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# HTML: cache breve per aggiornamenti frequenti
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
 # Headers di sicurezza per tutte le pagine
 [[headers]]
   for = "/*"
@@ -33,7 +50,7 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' https://plausible.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://plausible.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://*.netlify.com"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://plausible.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' data: https://fonts.gstatic.com; connect-src 'self' https://plausible.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://*.netlify.com; upgrade-insecure-requests"
 
 # Pannello CMS admin — CSP permissiva (Decap CMS + Netlify Identity CDN)
 # DEVE stare DOPO /* perché su Netlify vince l'ultima regola che fa match sullo stesso header

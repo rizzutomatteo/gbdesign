@@ -32,24 +32,43 @@ Quando il cliente dice _"cambia il telefono"_ o _"aggiorniamo il numero di trasl
 
 ---
 
-## 3. Sezioni della home (ordine canonico)
+## 3. Struttura delle pagine
 
-L'identità del sito è la sequenza di sezioni. Ognuna ha il suo componente in `src/components/sections/`.
+### Home (`/`) — sezioni in componenti `src/components/sections/`
 
-1. **Header** sticky — logo + nav anchor + telefono + CTA preventivo
-2. **Hero** — claim + sottoclaim + due CTA + foto mezzo/squadra
-3. **Mission** — 3-4 righe, chi siamo e cosa promettiamo
-4. **I numeri** — counter animati (anni, traslochi, clienti, voto medio)
-5. **Come lavoriamo** — 4-5 step del processo con icona e foto
-6. **I nostri lavori** — gallery 6-9 foto con lightbox
-7. **Recensioni** — 3-6 testimonianze + badge Google se presente
-8. **Storia** — timeline 4-6 tappe dal 2008 ad oggi
-9. **Sedi** — card per sede con indirizzo, orari, mappa (lazy)
-10. **Social** — link Instagram, Facebook, ecc.
-11. **Contatti** — form breve + telefono + WhatsApp
-12. **Footer** — P. IVA, REA, link legali, copyright
+| Componente             | ID anchor     | Cosa contiene                                   |
+| ---------------------- | ------------- | ----------------------------------------------- |
+| `SiteHeader`           | —             | Logo, nav, telefono, CTA preventivo             |
+| `HeroSection`          | —             | Claim, sottoclaim, CTA, immagine                |
+| `MissionStoriaSection` | —             | Mission (sinistra) + Storia condensata (destra) |
+| `ServiziSection`       | —             | Presentazione servizi offerti                   |
+| `RecensioniSection`    | `#recensioni` | Testimonianze + rating Google                   |
+| `LavoriSection`        | `#lavori`     | Gallery portfolio montaggi/traslochi            |
+| `ContattiSection`      | `#contatti`   | Telefono, WhatsApp, email, sede                 |
+| `SiteFooter`           | —             | P. IVA, REA, link legali, copyright             |
 
-Pagine separate dalla home: `/privacy`, `/cookie`, `/404`. Eventualmente `/contatti` e `/grazie` (post-form).
+### Pagine di approfondimento (multi-page)
+
+| Pagina           | File                            | Contenuto                                  |
+| ---------------- | ------------------------------- | ------------------------------------------ |
+| `/missione`      | `src/pages/missione.astro`      | Mission aziendale estesa                   |
+| `/storia`        | `src/pages/storia.astro`        | Timeline tappe-storia (content collection) |
+| `/servizi`       | `src/pages/servizi.astro`       | Dettaglio servizi                          |
+| `/progettazione` | `src/pages/progettazione.astro` | Passaggi del processo (content collection) |
+| `/montaggi`      | `src/pages/montaggi.astro`      | Portfolio montaggi (content collection)    |
+| `/divisioni`     | `src/pages/divisioni.astro`     | Divisioni aziendali                        |
+
+### Pagine legali e di sistema
+
+| Pagina      | Nota                                             |
+| ----------- | ------------------------------------------------ |
+| `/privacy`  | Informativa GDPR — data in `site.legalUpdatedAt` |
+| `/cookie`   | Cookie Policy — data in `site.legalUpdatedAt`    |
+| `/contract` | Condizioni contrattuali                          |
+| `/termini`  | Termini d'uso                                    |
+| `/grazie`   | Post-form, `noindex`                             |
+| `/404`      | Not found                                        |
+| `/500`      | Server error                                     |
 
 ---
 
@@ -136,4 +155,4 @@ Quando lavori su un'area specifica, **leggi anche il file dedicato**. Sono in `d
 
 ---
 
-_Ultima revisione: 12 maggio 2026._
+_Ultima revisione: 18 maggio 2026._

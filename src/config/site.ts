@@ -17,7 +17,7 @@ const CmsSchema = z.object({
   stats: z.object({
     anni: z.number(),
     lavori: z.number(),
-    rating: z.string(),
+    rating: z.number(),
     recensioni: z.number(),
   }),
 });
@@ -30,6 +30,7 @@ const cms = CmsSchema.parse(cmsRaw);
 export const site = {
   ...cms,
   url: 'https://www.gbdesign.it',
+  // TODO: sostituire con P.IVA e REA reali prima del go-live
   piva: '01234567891',
   rea: 'MC-123456',
   address: {
@@ -38,6 +39,7 @@ export const site = {
     province: 'MC',
     zip: '62100',
   },
+  legalUpdatedAt: '16 maggio 2026',
 };
 
 export type NavItem = {

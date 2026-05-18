@@ -21,7 +21,7 @@ const tappeOrdinate = tappe.sort((a, b) => a.data.anno - b.data.anno);
       </h1>
       <div class="bg-brand mb-12 h-1 w-16 rounded-full"></div>
 
-      <ol class="border-warm-200 relative border-l">
+      <ol class="border-warm-200 relative border-l" aria-label="Timeline della storia di GB Design">
         {
           tappeOrdinate.map((tappa) => (
             <li class="mb-10 ml-8 last:mb-0">

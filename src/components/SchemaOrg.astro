@@ -18,7 +18,7 @@ const schema = {
   },
   aggregateRating: {
     '@type': 'AggregateRating',
-    ratingValue: site.stats.rating.replace(',', '.'),
+    ratingValue: String(site.stats.rating),
     reviewCount: site.stats.recensioni,
     bestRating: '5',
     worstRating: '1',

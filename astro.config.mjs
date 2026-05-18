@@ -17,8 +17,7 @@ export default defineConfig({
   integrations: [
     sitemap({
       filter: (page) =>
-        page !== 'https://www.gbdesign.it/missione/' &&
-        page !== 'https://www.gbdesign.it/servizi/',
+        page !== 'https://www.gbdesign.it/missione/' && page !== 'https://www.gbdesign.it/servizi/',
     }),
   ],
   vite: {

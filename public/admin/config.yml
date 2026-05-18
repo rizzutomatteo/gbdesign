@@ -18,11 +18,13 @@ public_folder: '/images/cms'
 # Cloudinary — media library con crop intelligente e CDN automatica.
 # ⚠️  Sostituisci i due placeholder con le credenziali del tuo account
 #     cloudinary.com → Dashboard → API Keys → Cloud name + API Key
+# Credenziali Cloudinary iniettate a build time da scripts/inject-cms-config.mjs.
+# Imposta CLOUDINARY_CLOUD_NAME e CLOUDINARY_API_KEY nelle env vars di Netlify.
 media_library:
   name: cloudinary
   config:
-    cloud_name: dxz6mw2yj
-    api_key: 234136384547171
+    cloud_name: __CLOUDINARY_CLOUD_NAME__
+    api_key: __CLOUDINARY_API_KEY__
 
 # Disabilita i link di anteprima (semplifica l'interfaccia)
 show_preview_links: false
@@ -371,11 +373,12 @@ collections:
 
               - label: 'Voto medio Google'
                 name: rating
-                widget: string
-                pattern:
-                  - '^[0-9],[0-9]$'
-                  - 'Usa il formato con la virgola, es. 4,9'
-                hint: 'Il voto medio su Google. Usa la virgola come separatore. Es. «4,9».'
+                widget: number
+                value_type: float
+                step: 0.1
+                min: 0
+                max: 5
+                hint: 'Il voto medio su Google. Es. 4.9'
 
               - label: 'Numero di recensioni Google'
                 name: recensioni
