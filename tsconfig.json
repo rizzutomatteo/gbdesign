@@ -4,7 +4,6 @@
   "exclude": ["dist"],
   "compilerOptions": {
     "resolveJsonModule": true,
-    "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],
