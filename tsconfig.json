@@ -5,9 +5,9 @@
   "compilerOptions": {
     "resolveJsonModule": true,
     "paths": {
-      "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"],
-      "@config": ["src/config/site.ts"]
+      "@components/*": ["./src/components/*"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@config": ["./src/config/site.ts"]
     }
   }
 }
