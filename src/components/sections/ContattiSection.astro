@@ -144,5 +144,103 @@ interface Props {}
         Chiamaci ora — è gratis
       </a>
     </div>
+
+    <!-- Form di contatto -->
+    <div class="border-warm-200 mt-14 border-t pt-14 sm:mt-16 sm:pt-16">
+      <div class="mx-auto max-w-2xl">
+        <div class="mb-8 text-center">
+          <p class="text-brand mb-2 text-xs font-bold tracking-[0.3em] uppercase">
+            Oppure scrivici
+          </p>
+          <h3 class="font-display text-ink-900 text-xl leading-snug font-bold sm:text-2xl">
+            Inviaci un messaggio
+          </h3>
+          <p class="text-ink-500 mt-2 text-sm">Ti risponderemo entro 24 ore.</p>
+        </div>
+
+        <form
+          name="contatto"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/grazie"
+          class="space-y-4"
+        >
+          <input type="hidden" name="form-name" value="contatto" />
+          <p class="hidden">
+            <label>
+              Non compilare questo campo se sei umano:
+              <input name="bot-field" />
+            </label>
+          </p>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label for="nome" class="text-ink-700 mb-1.5 block text-sm font-semibold">
+                Nome e cognome <span class="text-brand" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="text"
+                id="nome"
+                name="nome"
+                required
+                autocomplete="name"
+                placeholder="Mario Rossi"
+                class="border-warm-300 focus:border-brand text-ink-900 placeholder:text-ink-400 w-full rounded-lg border bg-white px-4 py-3 text-base transition-colors focus:ring-0 focus:outline-none"
+              />
+            </div>
+            <div>
+              <label for="telefono" class="text-ink-700 mb-1.5 block text-sm font-semibold">
+                Telefono
+              </label>
+              <input
+                type="tel"
+                id="telefono"
+                name="telefono"
+                autocomplete="tel"
+                placeholder="0733 123 456"
+                class="border-warm-300 focus:border-brand text-ink-900 placeholder:text-ink-400 w-full rounded-lg border bg-white px-4 py-3 text-base transition-colors focus:ring-0 focus:outline-none"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="email" class="text-ink-700 mb-1.5 block text-sm font-semibold">
+              Email <span class="text-brand" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="mario@email.it"
+              class="border-warm-300 focus:border-brand text-ink-900 placeholder:text-ink-400 w-full rounded-lg border bg-white px-4 py-3 text-base transition-colors focus:ring-0 focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label for="messaggio" class="text-ink-700 mb-1.5 block text-sm font-semibold">
+              Messaggio <span class="text-brand" aria-hidden="true">*</span>
+            </label>
+            <textarea
+              id="messaggio"
+              name="messaggio"
+              required
+              rows="4"
+              placeholder="Descrivi brevemente cosa devi spostare o montare, e indicaci la zona di intervento."
+              class="border-warm-300 focus:border-brand text-ink-900 placeholder:text-ink-400 w-full resize-none rounded-lg border bg-white px-4 py-3 text-base transition-colors focus:ring-0 focus:outline-none"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="bg-brand hover:bg-brand-dark w-full rounded-lg px-8 py-4 text-base font-bold text-white shadow-[0_4px_16px_rgba(191,40,43,0.28)] transition-all duration-200 hover:-translate-y-px hover:shadow-[0_6px_22px_rgba(191,40,43,0.38)] sm:w-auto"
+          >
+            Invia messaggio
+          </button>
+        </form>
+      </div>
+    </div>
   </div>
 </section>

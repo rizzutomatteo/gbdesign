@@ -16,8 +16,16 @@ export default defineConfig({
   prefetch: true,
   integrations: [
     sitemap({
-      filter: (page) =>
-        page !== 'https://www.gbdesign.it/missione/' && page !== 'https://www.gbdesign.it/servizi/',
+      filter: (page) => {
+        const excluded = [
+          'https://www.gbdesign.it/missione/',
+          'https://www.gbdesign.it/servizi/',
+          'https://www.gbdesign.it/grazie/',
+          'https://www.gbdesign.it/404/',
+          'https://www.gbdesign.it/500/',
+        ];
+        return !excluded.includes(page);
+      },
     }),
   ],
   vite: {

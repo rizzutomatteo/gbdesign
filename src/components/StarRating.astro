@@ -5,17 +5,54 @@ interface Props {
   size?: number;
 }
 const { rating, max = 5, size = 14 } = Astro.props;
+
+const filled = Math.floor(rating);
+const hasHalf = rating - filled >= 0.5;
+const empty = max - filled - (hasHalf ? 1 : 0);
 ---
 
 <div class="text-brand flex gap-0.5" role="img" aria-label={`${rating} su ${max} stelle`}>
   {
-    Array.from({ length: rating }).map(() => (
+    Array.from({ length: filled }).map(() => (
       <svg
         width={size}
         height={size}
         viewBox="0 0 24 24"
         fill="currentColor"
         stroke="none"
+        aria-hidden="true"
+      >
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+      </svg>
+    ))
+  }
+  {
+    hasHalf && (
+      <svg width={size} height={size} viewBox="0 0 24 24" aria-hidden="true">
+        <defs>
+          <linearGradient id="half-star">
+            <stop offset="50%" stop-color="currentColor" />
+            <stop offset="50%" stop-color="transparent" stop-opacity="1" />
+          </linearGradient>
+        </defs>
+        <polygon
+          points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+          fill="url(#half-star)"
+          stroke="currentColor"
+          stroke-width="1"
+        />
+      </svg>
+    )
+  }
+  {
+    Array.from({ length: empty }).map(() => (
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
         aria-hidden="true"
       >
         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />

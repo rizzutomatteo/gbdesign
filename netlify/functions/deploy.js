@@ -1,7 +1,7 @@
 // Netlify Function: trigger build solo per utenti autenticati con Netlify Identity.
 // Netlify verifica il JWT dall'header Authorization e popola context.clientContext.user.
 // L'URL del build hook va impostato come env var NETLIFY_BUILD_HOOK_URL nel dashboard Netlify.
-exports.handler = async function (event, context) {
+export const handler = async function (event, context) {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }

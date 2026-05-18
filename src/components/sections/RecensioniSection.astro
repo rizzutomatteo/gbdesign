@@ -26,7 +26,7 @@ const reviews = tutte
         Le recensioni dei clienti
       </h2>
       <div class="flex flex-wrap items-center justify-center gap-1">
-        <StarRating rating={5} size={18} />
+        <StarRating rating={site.stats.rating} size={18} />
         <span class="text-ink-900 ml-2 text-lg font-bold"
           >{site.stats.rating.toLocaleString('it-IT')}</span
         >

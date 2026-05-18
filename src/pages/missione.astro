@@ -2,28 +2,119 @@
 import Layout from '../layouts/Layout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import { site } from '../config/site';
 ---
 
 <Layout
-  title="Mission — GB Design Montaggio Cucine e Mobili Macerata"
-  description="La mission di GB Design: montaggio cucine e mobili professionale nella provincia di Macerata."
-  noindex={true}
+  title="La nostra mission — GB Design Macerata"
+  description="Montiamo ogni cucina e ogni mobile come se fosse a casa nostra. Scopri la mission di GB Design: precisione, rispetto dei tempi, zero sorprese."
 >
   <SiteHeader />
   <main class="min-h-screen pt-16">
     <div class="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8">
       <p class="text-brand mb-3 text-xs font-bold tracking-[0.2em] uppercase">Chi siamo</p>
-      <h1 class="text-ink-900 mb-6 text-4xl font-black sm:text-5xl">La nostra mission</h1>
-      <div class="bg-brand mb-8 h-1 w-16 rounded-full"></div>
-      <p class="text-ink-600 text-lg leading-relaxed">
-        Contenuto in arrivo. Questa pagina sarà presto aggiornata con la mission di GB Design.
-      </p>
-      <a
-        href="/"
-        class="text-brand mt-10 inline-flex items-center gap-2 font-semibold hover:underline"
-      >
-        ← Torna alla home
-      </a>
+      <h1 class="font-display text-ink-900 mb-6 text-4xl font-black sm:text-5xl">
+        La nostra mission
+      </h1>
+      <div class="bg-brand mb-12 h-1 w-16 rounded-full"></div>
+
+      <div class="space-y-10 text-base leading-relaxed">
+        <section>
+          <h2 class="font-display text-ink-900 mb-4 text-2xl font-bold">
+            Fare le cose per bene, senza scorciatoie
+          </h2>
+          <p class="text-ink-700 text-lg leading-relaxed">
+            Montare una cucina non è solo avvitare bulloni. È un lavoro di precisione che fa la
+            differenza tra un mobile che regge vent'anni e uno che scricchiola dopo sei mesi. Da
+            quando abbiamo iniziato, {site.stats.anni} anni fa, ci siamo dati una regola: ogni lavoro
+            viene trattato come se fosse a casa nostra.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="font-display text-ink-900 mb-4 text-2xl font-bold">
+            Il tuo stress è il nostro lavoro
+          </h2>
+          <p class="text-ink-700 leading-relaxed">
+            Traslocare o riallestire casa è uno dei momenti più impegnativi della vita. C'è da
+            smontare, imballare, trasportare, rimontare — e tutto deve tornare al suo posto,
+            preciso, senza graffi e senza ritardi. Il nostro compito è toglierti questo peso dalle
+            spalle.
+          </p>
+          <p class="text-ink-700 mt-4 leading-relaxed">
+            Non promettiamo l'impossibile. Promettiamo puntualità, cura e trasparenza: se c'è un
+            problema, lo diciamo subito. Se ci vuole più tempo, lo diciamo prima di iniziare.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="font-display text-ink-900 mb-4 text-2xl font-bold">I nostri valori</h2>
+          <ul class="text-ink-700 space-y-4">
+            <li class="flex items-start gap-4">
+              <span
+                class="bg-brand/10 text-brand mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg text-sm font-bold"
+                >01</span
+              >
+              <div>
+                <strong class="text-ink-900">Precisione.</strong> Ogni vite al suo posto. Ogni anta in
+                bolla. Non consegniamo un lavoro finché non è fatto come si deve.
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span
+                class="bg-brand/10 text-brand mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg text-sm font-bold"
+                >02</span
+              >
+              <div>
+                <strong class="text-ink-900">Puntualità.</strong> Rispettiamo gli orari concordati. Sappiamo
+                che il tuo tempo vale e che stai aspettando per riconsegnare le chiavi o riaprire l'attività.
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span
+                class="bg-brand/10 text-brand mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg text-sm font-bold"
+                >03</span
+              >
+              <div>
+                <strong class="text-ink-900">Rispetto.</strong> Dei tuoi spazi, dei tuoi oggetti, della
+                tua casa. Arriviamo, lavoriamo e lasciamo tutto in ordine.
+              </div>
+            </li>
+            <li class="flex items-start gap-4">
+              <span
+                class="bg-brand/10 text-brand mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg text-sm font-bold"
+                >04</span
+              >
+              <div>
+                <strong class="text-ink-900">Trasparenza.</strong> Il preventivo che ricevi è quello che
+                paghi. Nessuna sorpresa in fattura.
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="bg-warm-50 border-warm-200 rounded-2xl border p-8">
+          <p class="text-ink-700 text-lg leading-relaxed italic">
+            «Traslocare stanca. Ce ne occupiamo noi: imballiamo, carichiamo, montiamo i mobili nella
+            tua nuova casa. Tu pensi solo a rilassarti.»
+          </p>
+        </section>
+      </div>
+
+      <div class="mt-14 flex flex-col gap-4 sm:flex-row">
+        <a
+          href={`tel:${site.phone}`}
+          class="bg-brand hover:bg-brand-dark inline-flex items-center justify-center gap-2 rounded-lg px-8 py-4 font-bold text-white shadow-[0_4px_16px_rgba(191,40,43,0.28)] transition-all duration-200 hover:-translate-y-px"
+        >
+          Chiama per un preventivo
+        </a>
+        <a
+          href="/storia"
+          class="border-warm-300 hover:border-brand text-ink-700 hover:text-brand inline-flex items-center justify-center gap-2 rounded-lg border-2 px-8 py-4 font-bold transition-all duration-200"
+        >
+          Leggi la nostra storia →
+        </a>
+      </div>
     </div>
   </main>
   <SiteFooter />

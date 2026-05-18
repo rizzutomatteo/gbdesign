@@ -1,51 +1,113 @@
 ---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import { site } from '../../config/site';
 
 interface Props {}
+
+const tutti = await getCollection('montaggi');
+const lavoriInEvidenza = tutti
+  .filter((m) => m.data.in_evidenza)
+  .sort((a, b) => b.data.dataLavoro.getTime() - a.data.dataLavoro.getTime())
+  .slice(0, 3);
 ---
 
 <section id="lavori" class="bg-warm-50 relative overflow-hidden py-14 sm:py-20 md:py-24">
-  <!-- Sfumatura decorativa laterale -->
   <div
     class="from-warm-100/60 pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l to-transparent"
   >
   </div>
 
-  <div class="relative z-10 mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-    <p class="text-brand mb-3 text-xs font-bold tracking-[0.3em] uppercase sm:text-sm">Portfolio</p>
-    <h2
-      class="font-display text-ink-900 mb-5 text-2xl leading-snug font-bold sm:mb-6 sm:text-3xl md:text-4xl"
-    >
-      I nostri lavori
-    </h2>
-
-    <div class="bg-warm-300 mx-auto mb-6 h-px w-12"></div>
-
-    <p class="text-ink-600 mx-auto mb-3 max-w-2xl text-base leading-relaxed sm:text-lg">
-      Cucine complete, cabine armadio, librerie a parete: ogni lavoro parla da solo.
-    </p>
-    <p class="text-ink-400 mx-auto mb-10 max-w-xl text-base leading-relaxed sm:mb-12">
-      Guarda le nostre foto su Facebook: vedrai la cura che mettiamo in ogni vite, ogni anta, ogni
-      centimetro.
-    </p>
-
-    <a
-      href={site.social.facebook}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="bg-brand hover:bg-brand-dark inline-flex w-full items-center justify-center gap-3 rounded-lg px-8 py-4 font-bold text-white shadow-[0_4px_16px_rgba(191,40,43,0.28)] transition-all duration-200 hover:-translate-y-px hover:shadow-[0_6px_22px_rgba(191,40,43,0.38)] sm:w-auto"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        aria-hidden="true"
+  <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mb-12 text-center sm:mb-14">
+      <p class="text-brand mb-3 text-xs font-bold tracking-[0.3em] uppercase sm:text-sm">
+        Portfolio
+      </p>
+      <h2
+        class="font-display text-ink-900 mb-5 text-2xl leading-snug font-bold sm:mb-6 sm:text-3xl md:text-4xl"
       >
-        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-      </svg>
-      Guarda i nostri lavori su Facebook
-    </a>
+        I nostri lavori
+      </h2>
+      <p class="text-ink-600 mx-auto max-w-2xl text-base leading-relaxed sm:text-lg">
+        Cucine complete, cabine armadio, librerie a parete: ogni lavoro parla da solo.
+      </p>
+    </div>
+
+    {
+      lavoriInEvidenza.length > 0 && (
+        <div class="mb-10 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+          {lavoriInEvidenza.map((m) => (
+            <div class="border-warm-200 hover:border-warm-300 group overflow-hidden rounded-2xl border bg-white shadow-[0_2px_12px_rgba(26,22,18,0.07)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_36px_rgba(26,22,18,0.12)]">
+              {m.data.foto ? (
+                <Image
+                  src={m.data.foto}
+                  alt={m.data.titolo}
+                  width={400}
+                  height={220}
+                  class="h-48 w-full object-cover"
+                  loading="lazy"
+                />
+              ) : (
+                <div class="bg-warm-100 flex h-48 items-center justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="text-warm-300"
+                    aria-hidden="true"
+                  >
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                  </svg>
+                </div>
+              )}
+              <div class="p-6">
+                <h3 class="font-display text-ink-900 mb-1 text-lg leading-snug font-bold">
+                  {m.data.titolo}
+                </h3>
+                <p class="text-brand mb-3 text-xs font-semibold">{m.data.luogo}</p>
+                <p class="text-ink-600 text-sm leading-relaxed">{m.data.descrizione}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+      <a
+        href="/montaggi"
+        class="bg-brand hover:bg-brand-dark inline-flex w-full items-center justify-center gap-3 rounded-lg px-8 py-4 font-bold text-white shadow-[0_4px_16px_rgba(191,40,43,0.28)] transition-all duration-200 hover:-translate-y-px hover:shadow-[0_6px_22px_rgba(191,40,43,0.38)] sm:w-auto"
+      >
+        Vedi tutti i lavori
+      </a>
+      {
+        site.social.facebook && (
+          <a
+            href={site.social.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border-warm-300 hover:border-brand/60 text-ink-700 hover:text-brand inline-flex w-full items-center justify-center gap-2 rounded-lg border-2 bg-white/60 px-8 py-4 font-bold transition-all duration-200 hover:bg-white sm:w-auto"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+            </svg>
+            Guarda su Facebook
+          </a>
+        )
+      }
+    </div>
   </div>
 </section>
