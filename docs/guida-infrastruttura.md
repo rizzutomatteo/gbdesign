@@ -1242,17 +1242,13 @@ NODE_VERSION = "22"
 
 ---
 
-### 18.4 Lighthouse CI in GitHub Actions
+### 18.4 Lighthouse CI ✅ locale — ⏳ GitHub Actions da aggiungere
 
-**Cosa manca**: il score di Lighthouse (Performance, SEO, Accessibility) viene verificato solo manualmente. Non c'è automazione che fallisca il workflow se il score scende sotto la soglia.
+**Stato**: `@lhci/cli` è installato e `.lighthouserc.json` è configurato. Il comando funziona in locale. Manca ancora il workflow GitHub Actions che lo esegue automaticamente su ogni PR.
 
 **Perché serve**: ogni PR potrebbe introdurre un'immagine non ottimizzata o uno script che abbassa il LCP. Senza automazione, questo si scopre solo dopo il deploy.
 
-**Come aggiungerlo**:
-
-Installare: `npm install --save-dev @lhci/cli`
-
-Creare `.lighthouserc.json`:
+#### `.lighthouserc.json` attuale
 
 ```json
 {
@@ -1260,13 +1256,17 @@ Creare `.lighthouserc.json`:
     "collect": {
       "url": ["http://localhost:4321/"],
       "startServerCommand": "npm run preview",
-      "startServerReadyPattern": "Local:"
+      "startServerReadyPattern": "Local:",
+      "startServerReadyTimeout": 30000,
+      "settings": {
+        "chromeFlags": "--no-sandbox --disable-dev-shm-usage"
+      }
     },
     "assert": {
       "assertions": {
-        "categories:performance": ["error", { "minScore": 0.9 }],
-        "categories:seo": ["error", { "minScore": 0.95 }],
-        "categories:accessibility": ["error", { "minScore": 0.95 }]
+        "categories:performance": ["warn", { "minScore": 0.9 }, "error", { "minScore": 0.85 }],
+        "categories:seo": ["warn", { "minScore": 0.9 }, "error", { "minScore": 0.9 }],
+        "categories:accessibility": ["warn", { "minScore": 0.9 }, "error", { "minScore": 0.9 }]
       }
     },
     "upload": {
@@ -1276,7 +1276,51 @@ Creare `.lighthouserc.json`:
 }
 ```
 
-Aggiungere `.github/workflows/lighthouse.yml`:
+Le soglie usano un doppio livello: `warn` avvisa senza bloccare, `error` blocca il CI. Le soglie SEO e accessibility hanno lo stesso valore per warn ed error, quindi in pratica si comportano come un hard block.
+
+`startServerReadyTimeout: 30000` dà 30 secondi al server preview per avviarsi (il default è 15s, troppo poco su macchine lente).
+
+#### Eseguire Lighthouse in locale su Windows + WSL2
+
+`npx lhci autorun` gira **completamente in locale** — non ha bisogno di internet per girare (solo alla fine carica i risultati su `temporary-public-storage` per averli linkabili). Il flusso è:
+
+1. Avvia `npm run preview` (serve `dist/`, quindi serve aver fatto `npm run build` prima)
+2. Apre Chrome e naviga su `http://localhost:4321/`
+3. Esegue Lighthouse 3 volte e fa la media dei punteggi
+4. Confronta i punteggi con le soglie in `.lighthouserc.json`
+5. Esce con codice 0 (OK) o 1 (fallimento) in base alle soglie
+
+**Il problema su WSL2**: Lighthouse cerca Chrome nell'ambiente Linux, ma su WSL2 senza Chrome Linux installato trova il `google-chrome.exe` di Windows. Prova ad aprirlo, ma non riesce a connettersi alla porta DevTools perché il processo Chrome gira sul lato Windows mentre Lighthouse ascolta sul lato Linux.
+
+**Soluzione**: installare Google Chrome per Linux nella WSL2.
+
+```bash
+# Scarica il pacchetto .deb
+wget -q -O /tmp/google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+# Installa (richiede password sudo)
+sudo apt install -y /tmp/google-chrome.deb
+```
+
+**Perché `--no-sandbox --disable-dev-shm-usage`**: Chrome in ambienti Linux senza display (WSL2, container Docker, runner CI) non ha accesso al namespace sandbox del kernel. Senza `--no-sandbox`, il browser si avvia ma non riesce ad aprire nessuna pagina. `--disable-dev-shm-usage` risolve un problema di memoria condivisa che causa crash su sistemi con `/dev/shm` piccolo (comune nei container).
+
+Questi due flag sono **sicuri** in questo contesto perché LHCI apre Chrome solo per misurare un sito locale, non per navigare contenuti non fidati.
+
+#### Come eseguire
+
+```bash
+# Prima, assicurarsi che dist/ sia aggiornato
+npm run build
+
+# Poi eseguire Lighthouse
+npx lhci autorun
+```
+
+Se il build è già fresco (es. hai appena fatto `npm run preview` e il sito gira), puoi saltare il build. Il server preview che LHCI avvia usa `dist/` così com'è.
+
+#### GitHub Actions (ancora da aggiungere)
+
+Per completare l'automazione, aggiungere `.github/workflows/lighthouse.yml`:
 
 ```yaml
 name: Lighthouse CI
@@ -1296,6 +1340,8 @@ jobs:
       - run: npm run build
       - run: npx lhci autorun
 ```
+
+In GitHub Actions non serve installare Chrome separatamente: `ubuntu-latest` ha già Chromium. I flag `--no-sandbox --disable-dev-shm-usage` nel `.lighthouserc.json` sono necessari anche lì (i runner CI sono container Linux senza display).
 
 ---
 
@@ -1417,17 +1463,17 @@ netlify.toml             @rizzutomatteo
 
 ### Riepilogo — priorità
 
-| #   | Cosa aggiungere       | Tempo stimato | Impatto                 |
-| --- | --------------------- | ------------- | ----------------------- |
-| 1   | `.env.example`        | 5 minuti      | Onboarding + sicurezza  |
-| 2   | `.editorconfig`       | 5 minuti      | Consistenza editor      |
-| 3   | Allinea versione Node | 5 minuti      | Coerenza infrastruttura |
-| 4   | Lighthouse CI         | 30 minuti     | Quality gate automatico |
-| 5   | Dependabot            | 10 minuti     | Sicurezza dipendenze    |
-| 6   | `SECURITY.md`         | 10 minuti     | Responsible disclosure  |
-| 7   | Bundle size check     | 15 minuti     | Performance gate        |
-| 8   | `CODEOWNERS`          | 10 minuti     | Governance PR           |
+| #   | Cosa aggiungere       | Tempo stimato             | Impatto                 |
+| --- | --------------------- | ------------------------- | ----------------------- |
+| 1   | `.env.example`        | 5 minuti                  | Onboarding + sicurezza  |
+| 2   | `.editorconfig`       | 5 minuti                  | Consistenza editor      |
+| 3   | Allinea versione Node | 5 minuti                  | Coerenza infrastruttura |
+| 4   | Lighthouse CI         | ✅ locale / ⏳ GH Actions | Quality gate automatico |
+| 5   | Dependabot            | 10 minuti                 | Sicurezza dipendenze    |
+| 6   | `SECURITY.md`         | 10 minuti                 | Responsible disclosure  |
+| 7   | Bundle size check     | 15 minuti                 | Performance gate        |
+| 8   | `CODEOWNERS`          | 10 minuti                 | Governance PR           |
 
 ---
 
-_Ultima revisione: 18 maggio 2026._
+_Ultima revisione: 19 maggio 2026._

@@ -3,7 +3,11 @@
     "collect": {
       "url": ["http://localhost:4321/"],
       "startServerCommand": "npm run preview",
-      "startServerReadyPattern": "Local:"
+      "startServerReadyPattern": "Local:",
+      "startServerReadyTimeout": 30000,
+      "settings": {
+        "chromeFlags": "--no-sandbox --disable-dev-shm-usage"
+      }
     },
     "assert": {
       "assertions": {
