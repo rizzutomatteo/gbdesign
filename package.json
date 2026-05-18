@@ -21,7 +21,7 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
     "@tailwindcss/vite": "^4.3.0",
-    "astro": "^6.3.1",
+    "astro": "^6.3.5",
     "tailwindcss": "^4.3.0",
     "zod": "^4.4.3"
   },
@@ -34,7 +34,7 @@
     "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.60.0",
     "@tailwindcss/postcss": "^4.3.0",
-    "@types/node": "^25.7.0",
+    "@types/node": "^25.9.0",
     "knip": "^5.88.1",
     "lefthook": "^2.1.6",
     "prettier": "^3.8.3",
