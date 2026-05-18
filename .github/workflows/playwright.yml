@@ -33,7 +33,7 @@ jobs:
           [ "$total" -le "$limit" ] || (echo "ERRORE: bundle JS supera 50 KB" && exit 1)
       - name: Run Playwright tests
         run: npx playwright test
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: ${{ !cancelled() }}
         with:
           name: playwright-report
