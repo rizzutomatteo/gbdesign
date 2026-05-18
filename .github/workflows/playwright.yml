@@ -25,6 +25,12 @@ jobs:
         run: npm run check
       - name: Build
         run: npm run build
+      - name: Bundle size check (JS < 30 KB)
+        run: |
+          total=$(find dist/_astro -name "*.js" -exec wc -c {} + | tail -1 | awk '{print $1}')
+          limit=$((30 * 1024))
+          echo "JS totale: $((total / 1024)) KB / limite 30 KB"
+          [ "$total" -le "$limit" ] || (echo "ERRORE: bundle JS supera 30 KB" && exit 1)
       - name: Run Playwright tests
         run: npx playwright test
       - uses: actions/upload-artifact@v4
