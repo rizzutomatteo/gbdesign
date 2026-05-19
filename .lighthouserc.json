@@ -6,6 +6,7 @@
       "startServerReadyPattern": "Local:",
       "startServerReadyTimeout": 30000,
       "settings": {
+        "chromePath": "/usr/bin/google-chrome-stable",
         "chromeFlags": "--no-sandbox --disable-dev-shm-usage"
       }
     },
